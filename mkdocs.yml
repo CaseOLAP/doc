@@ -1,0 +1,64 @@
+
+
+site_name: CaseOLAP
+
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    
+theme:
+  name: 'rtd-dropdown'
+  highlightjs: true
+  hljs_languages: []
+  include_homepage_in_sidebar: true
+  prev_next_buttons_location: bottom
+  navigation_depth: 4
+  titles_only: false
+  sticky_navigation: true
+  collapse_navigation: true
+ 
+ 
+  
+      
+markdown_extensions:
+  - codehilite:
+      linenums: false
+      guess_lang: false
+      use_pygments: true
+      noclasses: true
+      pygments_style: manni
+
+
+
+nav:
+- Home: index.md
+
+- Setting Up Tools:
+  - Setting up AWS cloud: setup/env.md
+  - Setting up Python: setup/anaconda.md
+  - Setting up Neo4J: setup/lib.md
+  - Setting up MongoDB: setup/env.md
+  - Setting up Spark: setup/env.md
+  - Setting up Node: setup/env.md
+  - Setting up Elasticsearch : setup/jupyter.md
+  - Setting up Git: setup/git.md
+
+- Introduction: 
+  - Workflow: workflow.md
+  
+- Pipelines:
+  - Download Pipeline: Download.md
+  - Parsing Pipeline: Parsing.md
+  - Indexing: Indexing.md
+  - Text-Cube Creation: TextCube.md
+  - EntityCount: EntityCOunt.md
+  - CaseOLAP: CaseOLAP.md
+
+
+
+
+ 
+ 
