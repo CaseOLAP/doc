@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>EntityCount - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "EntityCount";
+    var mkdocs_page_input_path = "EntityCount.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/jupyter/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Indexing/">Indexing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        EntityCount
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#entity-count">
+      Entity Count
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#import-required-libearies">Import required libearies</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#setting-up-input-output-directories">Setting up input output directories</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#read-in-paper-info-and-entity-info">Read in paper info and entity info</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#search-and-count-entities-to-optimize-and-find-count-from-indexer">Search and count entities: to optimize and find count from indexer</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#entity-count-metadata-update-in-each-cell">
+      Entity count metadata update in each Cell
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#pmid-to-entity-count-dictionary">PMID to Entity count Dictionary</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#pmid-to-category-dictionary">PMID to Category Dictionary</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../CaseOLAP/">CaseOLAP</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pipelines &raquo;</li>
+        
+      
+    
+    <li>EntityCount</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="entity-count">Entity Count</h1>
+<p>CaseOLAP score calculation requires the entity count per document. This step provides the data which connects metadata for text-cube structure and entity-count per document.</p>
+<p><strong>Selection of entity</strong> : Entity(phrase) are defined by user to be studied under the text-cube document structure. User defined entity could be protein names, chemicals, disease or signs and symptoms etc.
+Search and listing of entity based document: The search functionality in  Elasticsearch DSL package uses index name, parameters and query to list the document from indexed database. The query includes all representatives of the specific entity e.g. synonyms, abbreviations. </p>
+<p><strong>Entity count</strong> : Then each document from the list is analysed one by one to count the entity also called term frequency, <code>tf(p,c)</code> . With the help of text-cube metadata, for each of the document in cell of the text-cube, the entity count is recorded as PMID to entity count mapping.</p>
+<p><strong>Text-cube metadata update</strong> : Once the entity count is completed, text cube metadata is updated by adding PMID to entity count mapping . Following are the additional metadata prepared:
+- count the total occurance of each entity <code>cntP(c)</code>  within each cell,
+- count the total number of documents <code>df(p,c)</code> within a cell in which entity appears.
+- calculate normalized term frequency  <code>ntf(p,c)</code> [eq ref]  and normalized document frequency  ndf(p,c) [eq ref] using quantities obtained above.</p>
+<h4 id="import-required-libearies">Import required libearies</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch</span> <span style="color: #006699; font-weight: bold">import</span> Elasticsearch
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch_dsl</span> <span style="color: #006699; font-weight: bold">import</span> Search, Q
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">collections</span> <span style="color: #006699; font-weight: bold">import</span> Counter
+
+year_constraints <span style="color: #555555">=</span> <span style="color: #336666">None</span>
+</pre></div>
+
+
+<h4 id="setting-up-input-output-directories">Setting up input output directories</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>input_index_dir <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;../../elasticsearch-6.2.2/data&quot;</span>
+input_file_pmid_and_cat <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;input/pmid_and_cat.json&quot;</span> <span style="color: #0099FF; font-style: italic"># a file containing cell to pmid mapping</span>
+input_file_entity_list <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;../data/entities.txt&quot;</span>  <span style="color: #0099FF; font-style: italic"># a file containing all entities</span>
+output_file_paper_entity_count <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;output/paper_entity_count.txt&quot;</span><span style="color: #0099FF; font-style: italic"># an output file for entity count per PMID</span>
+output_file_paper_category <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;output/paper_category.txt&quot;</span> <span style="color: #0099FF; font-style: italic"># an output file containing PMID to cell mapping</span>
+</pre></div>
+
+
+<h4 id="read-in-paper-info-and-entity-info">Read in paper info and entity info</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Read in paper info and entity info</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(input_file_pmid_and_cat, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_in:
+    pmid_and_cat <span style="color: #555555">=</span> json<span style="color: #555555">.</span>load(f_in)
+concerned_pmid_set <span style="color: #555555">=</span> <span style="color: #336666">set</span>(<span style="color: #336666">map</span>(<span style="color: #006699; font-weight: bold">lambda</span> x: x[<span style="color: #FF6600">0</span>], pmid_and_cat))
+
+entity_count_per_pmid <span style="color: #555555">=</span> {pmid: Counter() <span style="color: #006699; font-weight: bold">for</span> pmid <span style="color: #000000; font-weight: bold">in</span> concerned_pmid_set}
+
+
+entity_dict <span style="color: #555555">=</span> {}
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(input_file_entity_list, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_in:
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f_in:
+        <span style="color: #0099FF; font-style: italic"># synonums seperated by &quot;|&quot; and represented by the first one on each line</span>
+        line_split <span style="color: #555555">=</span> line<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;|&quot;</span>)
+        entity_dict[line_split[<span style="color: #FF6600">0</span>]] <span style="color: #555555">=</span> line_split
+</pre></div>
+
+
+<h4 id="search-and-count-entities-to-optimize-and-find-count-from-indexer">Search and count entities: to optimize and find count from indexer</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Search and count entities: to optimize and find count from indexer</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+es <span style="color: #555555">=</span> Elasticsearch(timeout<span style="color: #555555">=</span><span style="color: #FF6600">300</span>)
+k <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+<span style="color: #006699; font-weight: bold">for</span> entity_rep <span style="color: #000000; font-weight: bold">in</span> entity_dict:
+    <span style="color: #006699; font-weight: bold">for</span> entity <span style="color: #000000; font-weight: bold">in</span> entity_dict[entity_rep]:
+
+
+        <span style="color: #0099FF; font-style: italic">#entity_space_sep = &quot;&quot;.join(map(lambda x: &quot; &quot; if x == &quot;_&quot; else x, entity))</span>
+        entity_space_sep <span style="color: #555555">=</span> entity<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&quot;_&quot;</span>, <span style="color: #CC3300">&quot; &quot;</span>)
+
+
+
+        <span style="color: #0099FF; font-style: italic"># s = Search(using=es, index=&quot;pmc_all_index&quot;).query(&quot;match&quot;, abstract=entity_space_sep)</span>
+        s <span style="color: #555555">=</span> Search(using<span style="color: #555555">=</span>es, index<span style="color: #555555">=</span><span style="color: #CC3300">&quot;pubmed&quot;</span>)\
+                    <span style="color: #555555">.</span>params(request_timeout<span style="color: #555555">=</span><span style="color: #FF6600">300</span>)\
+                    <span style="color: #555555">.</span>query(<span style="color: #CC3300">&quot;match_phrase&quot;</span>, abstract<span style="color: #555555">=</span>entity_space_sep)
+
+
+        num_hits <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        num_valid_hits <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        num_counts <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+
+        <span style="color: #006699; font-weight: bold">for</span> hit <span style="color: #000000; font-weight: bold">in</span> s<span style="color: #555555">.</span>scan():
+            num_hits <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+            cur_pmid <span style="color: #555555">=</span> <span style="color: #336666">str</span>(hit<span style="color: #555555">.</span>pmid)
+            <span style="color: #006699; font-weight: bold">if</span> cur_pmid <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> concerned_pmid_set:
+                <span style="color: #006699; font-weight: bold">continue</span>
+
+            <span style="color: #0099FF; font-style: italic">#if hit.PMCflag != 0:</span>
+            <span style="color: #0099FF; font-style: italic">#    continue</span>
+            <span style="color: #006699; font-weight: bold">if</span> year_constraints <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #336666">None</span>:
+                <span style="color: #0099FF; font-style: italic"># to-do</span>
+                <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;To add year constraint handler.&quot;</span>)
+
+
+            abs_lower <span style="color: #555555">=</span> hit<span style="color: #555555">.</span>abstract<span style="color: #555555">.</span>lower()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&quot;-&quot;</span>, <span style="color: #CC3300">&quot; &quot;</span>)
+            entity_lower <span style="color: #555555">=</span> entity_space_sep<span style="color: #555555">.</span>lower()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&quot;-&quot;</span>, <span style="color: #CC3300">&quot; &quot;</span>)
+            entity_cnt <span style="color: #555555">=</span> abs_lower<span style="color: #555555">.</span>count(entity_lower)
+
+
+            <span style="color: #006699; font-weight: bold">if</span> entity_cnt <span style="color: #555555">==</span> <span style="color: #FF6600">0</span>:
+                <span style="color: #0099FF; font-style: italic">#print &quot;----------&quot;, entity_space_sep, &quot;----------&quot;</span>
+                <span style="color: #0099FF; font-style: italic">#print abs_lower</span>
+                <span style="color: #006699; font-weight: bold">continue</span>
+
+
+            entity_count_per_pmid[cur_pmid][entity_rep] <span style="color: #555555">+=</span> entity_cnt
+            num_valid_hits <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+            num_counts <span style="color: #555555">+=</span> entity_cnt
+
+        <span style="color: #0099FF; font-style: italic">#print(entity, &quot;# hits:&quot;, num_hits, &quot;# valid hits:&quot;, num_valid_hits, &quot;# counts:&quot;, num_counts)</span>
+    k <span style="color: #555555">=</span> k <span style="color: #555555">+</span><span style="color: #FF6600">1</span>
+    <span style="color: #006699; font-weight: bold">if</span> k<span style="color: #555555">%</span><span style="color: #FF6600">1000</span> <span style="color: #555555">==</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(k,<span style="color: #CC3300">&#39;entity counted!&#39;</span>)
+</pre></div>
+
+
+<h4 id="entity-count-metadata-update-in-each-cell">Entity count metadata update in each Cell</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Output</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #0099FF; font-style: italic">## paper entity count &amp; paper category</span>
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(output_file_paper_entity_count, <span style="color: #CC3300">&quot;w&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_out_entity_count,\
+        <span style="color: #336666">open</span>(output_file_paper_category, <span style="color: #CC3300">&quot;w&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_out_category:
+    f_out_category<span style="color: #555555">.</span>write(<span style="color: #CC3300">&quot;doc_id</span><span style="color: #CC3300; font-weight: bold">\t</span><span style="color: #CC3300">label_id</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #CC3300">&quot;</span>)
+
+    paper_new_id <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
+
+    <span style="color: #006699; font-weight: bold">for</span> cur_pmid, cur_cat <span style="color: #000000; font-weight: bold">in</span> pmid_and_cat:
+
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(entity_count_per_pmid[cur_pmid]) <span style="color: #555555">==</span> <span style="color: #FF6600">0</span>:
+            <span style="color: #006699; font-weight: bold">continue</span>
+
+
+        <span style="color: #0099FF; font-style: italic"># print paper category</span>
+        f_out_category<span style="color: #555555">.</span>write(<span style="color: #336666">str</span>(cur_pmid) <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\t</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">+</span> <span style="color: #336666">str</span>(cur_cat) <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #CC3300">&quot;</span>)
+
+
+        <span style="color: #0099FF; font-style: italic"># print paper entity count</span>
+        f_out_entity_count<span style="color: #555555">.</span>write(<span style="color: #336666">str</span>(cur_pmid))
+
+
+        <span style="color: #006699; font-weight: bold">for</span> entity <span style="color: #000000; font-weight: bold">in</span> entity_count_per_pmid[cur_pmid]:
+            f_out_entity_count<span style="color: #555555">.</span>write(<span style="color: #CC3300">&quot; &quot;</span> <span style="color: #555555">+</span> entity <span style="color: #555555">+</span><span style="color: #CC3300">&quot;|&quot;</span> <span style="color: #555555">+</span> <span style="color: #336666">str</span>(entity_count_per_pmid[cur_pmid][entity]))
+
+
+        f_out_entity_count<span style="color: #555555">.</span>write(<span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #CC3300">&quot;</span>)
+
+
+        paper_new_id <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+</pre></div>
+
+
+<h5 id="pmid-to-entity-count-dictionary">PMID to Entity count Dictionary</h5>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;paper_entity_count.txt&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> ff:
+    pmid2pcount <span style="color: #555555">=</span> {}
+    PMID2PCOUNT <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> ff:
+        item <span style="color: #555555">=</span> line<span style="color: #555555">.</span>split()
+        pmid <span style="color: #555555">=</span> item[<span style="color: #FF6600">0</span>]
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(item)<span style="color: #555555">&gt;</span><span style="color: #FF6600">1</span>:
+            prot_freq <span style="color: #555555">=</span> {}
+            <span style="color: #006699; font-weight: bold">for</span> pf <span style="color: #000000; font-weight: bold">in</span> item[<span style="color: #FF6600">1</span>:]:
+                pfs <span style="color: #555555">=</span> pf<span style="color: #555555">.</span>split(<span style="color: #CC3300">&#39;|&#39;</span>)
+                prot_freq<span style="color: #555555">.</span>update({pfs[<span style="color: #FF6600">0</span>]:pfs[<span style="color: #FF6600">1</span>]})
+                pmid2pcount<span style="color: #555555">.</span>update({pmid:prot_freq})
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;pmid2pcount.json&#39;</span>, <span style="color: #CC3300">&#39;w&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> fp:
+                json<span style="color: #555555">.</span>dump(pmid2pcount, fp)
+</pre></div>
+
+
+<h4 id="pmid-to-category-dictionary">PMID to Category Dictionary</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;paper_category.txt&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f:
+
+    allpmids <span style="color: #555555">=</span> []
+    PMID2CVD <span style="color: #555555">=</span> []
+    cvd2pmids <span style="color: #555555">=</span> {}
+    dis0 <span style="color: #555555">=</span> []
+    dis1 <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f:
+        item <span style="color: #555555">=</span> line<span style="color: #555555">.</span>split()
+        <span style="color: #006699; font-weight: bold">if</span> item[<span style="color: #FF6600">0</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&#39;doc_id&#39;</span>:
+            <span style="color: #006699; font-weight: bold">if</span> item[<span style="color: #FF6600">0</span>] <span style="color: #000000; font-weight: bold">in</span>  pmid2pcount:
+                allpmids<span style="color: #555555">.</span>append(item[<span style="color: #FF6600">0</span>])
+                PMID2CVD<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;pmid&#39;</span>:item[<span style="color: #FF6600">0</span>],<span style="color: #CC3300">&#39;cat&#39;</span>:item[<span style="color: #FF6600">1</span>]})
+
+                <span style="color: #006699; font-weight: bold">if</span> item[<span style="color: #FF6600">1</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;0&#39;</span>:
+                    dis0<span style="color: #555555">.</span>append(item[<span style="color: #FF6600">0</span>])
+                <span style="color: #006699; font-weight: bold">elif</span> item[<span style="color: #FF6600">1</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;1&#39;</span>:     
+                    dis1<span style="color: #555555">.</span>append(item[<span style="color: #FF6600">0</span>])
+
+cvd2pmids<span style="color: #555555">.</span>update({dis[<span style="color: #FF6600">0</span>]:dis0,dis[<span style="color: #FF6600">1</span>]:dis1})                   
+
+
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;cat2pmids.json&#39;</span>, <span style="color: #CC3300">&#39;w&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> fp:
+                json<span style="color: #555555">.</span>dump(cvd2pmids, fp)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../CaseOLAP/" class="btn btn-neutral float-right" title="CaseOLAP">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../TextCube/" class="btn btn-neutral" title="Text-Cube Creation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../TextCube/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../CaseOLAP/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>CaseOLAP - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CaseOLAP";
+    var mkdocs_page_input_path = "CaseOLAP.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/jupyter/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Indexing/">Indexing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../EntityCount/">EntityCount</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        CaseOLAP
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#caseolap-score-calculation">
+      CaseOLAP score calculation
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#import-required-libraries">Import required libraries</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#data">Data</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#caseolap-score-calculation_1">Caseolap Score Calculation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#test-run">Test Run</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pipelines &raquo;</li>
+        
+      
+    
+    <li>CaseOLAP</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="caseolap-score-calculation">CaseOLAP score calculation</h1>
+<p><strong>CaseOLAP score calculation</strong> : CaseOLAP score are the quantification of user defined entity-category association. It start with the text-cube document structure and finds the entity in each document in each cell of the text-cube and by implementing updated text-cube metadata, it calculates the CaseOLAP score with following steps:</p>
+<p><strong>Integrity </strong>: Integrity of user defined phrase is taken to be 1. (Autophrase, Segphrase)</p>
+<p><strong>Popularity</strong> : It depends on how frequently a protein name is mentioned within one category, and it is calculated only using the statistics from the cells of documents pertaining to that individual category. Rare protein names in a cell are ranked low, while an increase in their frequency of mention has a diminishing return.
+ - In each of the cell c in text-cube, term frequency <code>tf(p,c)</code> of each entity is calculated.
+ -  Using individual term frequency for each entity(protein), total sum of the term frequency  cntP(c) is calculated.
+ - A normalized popularity of phrase <code>p</code> in cell <code>c</code>, <code>pop(p,c)</code> is calculated by using <code>tf(p,c)</code> and <code>ntfP(c)</code> calculated in 6.2.1 and 6.2.2. [eq ref].</p>
+<p><strong>Distinctiveness</strong> : It is based on the relevance  of a entity name to a specific category by comparing the occurrence of the protein name in the target data set, i.e., the cell documents describing one cell, to the contrastive data set, i.e., the cells of documents describing the remaining cells.
+ - Normalized term frequency <code>ntf(p,c)</code> [eq ref]  and normalized document frequency <code>ndf(p,c)</code> [eq ref] at 5.4.3 are used to  calculated the relevance score <code>rel(p,c)</code> [eq. ref] of protein <code>p</code> in cell <code>c</code>.
+ - Normalized distinctiveness disti(p,c) [eq ref]  is calculated by using relevance score of protein p in cell c and and relevance across neighbouring cells <code>c’ (c’  K(p,c)</code> : neighbourhoods of cell <code>c</code>).</p>
+<p><strong>CaseOLAP score</strong>: It is the product of Integrity, Popularity and Distinctiveness calculated in 6.1,6.2 and 6.3.</p>
+<h5 id="import-required-libraries">Import required libraries</h5>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+</pre></div>
+
+
+<h4 id="data">Data</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;input/cat2pmids.json&#39;</span>, <span style="color: #CC3300">&#39;r&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> f:
+    cvd2pmids <span style="color: #555555">=</span> json<span style="color: #555555">.</span>load(f)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;total cat2pmids:&#39;</span>,<span style="color: #336666">len</span>(cat2pmids))
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;input/pmid2pcount.json&#39;</span>, <span style="color: #CC3300">&#39;r&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> f:
+    pmid2pcount <span style="color: #555555">=</span> json<span style="color: #555555">.</span>load(f)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;total pmid2pcount:&#39;</span>,<span style="color: #336666">len</span>(pmid2pcount))
+</pre></div>
+
+
+<h3 id="caseolap-score-calculation_1">Caseolap Score Calculation</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">Caseolap</span>(<span style="color: #336666">object</span>):
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>,cvd2pmids,pmid2pcount):
+
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cellnames <span style="color: #555555">=</span> []
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cvd2pmids <span style="color: #555555">=</span> cvd2pmids
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>pmid2pcount <span style="color: #555555">=</span> pmid2pcount
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmids <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmid2pcount <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins <span style="color: #555555">=</span> []
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_uniqp <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2tf <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_tf <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_cntp <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pop <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2pmid <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ntf <span style="color: #555555">=</span>{}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ndf <span style="color: #555555">=</span>{}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_rel <span style="color: #555555">=</span>{}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_dist <span style="color: #555555">=</span> {}
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_caseolap <span style="color: #555555">=</span>{}
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">df_builder</span>(<span style="color: #336666">self</span>,cell_quant,fname): 
+            flatdata <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins:
+                d <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;protein&#39;</span>:p}
+                <span style="color: #006699; font-weight: bold">for</span> name <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cellnames:
+                    d<span style="color: #555555">.</span>update({name:cell_quant[name][p]})
+                flatdata<span style="color: #555555">.</span>append(d)    
+            df <span style="color: #555555">=</span>  pd<span style="color: #555555">.</span>DataFrame(flatdata)
+            df <span style="color: #555555">=</span> df<span style="color: #555555">.</span>set_index(<span style="color: #CC3300">&#39;protein&#39;</span>)
+            df<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;data/&#39;</span><span style="color: #555555">+</span>fname<span style="color: #555555">+</span><span style="color: #CC3300">&#39;.csv&#39;</span>)
+            <span style="color: #006699; font-weight: bold">return</span> df  
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">dump_json</span>(<span style="color: #336666">self</span>,data,fname):
+            <span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&#39;data/&#39;</span><span style="color: #555555">+</span>fname<span style="color: #555555">+</span><span style="color: #CC3300">&#39;.json&#39;</span>, <span style="color: #CC3300">&#39;w&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> dl:
+                json<span style="color: #555555">.</span>dump(data, dl)
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_pmids_collector</span>(<span style="color: #336666">self</span>, dump <span style="color: #555555">=</span> <span style="color: #336666">False</span>,verbose <span style="color: #555555">=</span><span style="color: #336666">False</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cvd2pmids<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cell_pmids <span style="color: #555555">=</span> value
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cellnames<span style="color: #555555">.</span>append(cell_name)
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmids<span style="color: #555555">.</span>update({cell_name:cell_pmids})
+
+                <span style="color: #006699; font-weight: bold">if</span> verbose:
+                    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;total pmids collected for cell - &#39;</span>,cell_name,<span style="color: #336666">len</span>(cell_pmids))
+            <span style="color: #006699; font-weight: bold">if</span> dump:
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>dump_json(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmids,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;cellpmids&#39;</span>)
+
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_pmid2pcount_collector</span>(<span style="color: #336666">self</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmids<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cell_pmids <span style="color: #555555">=</span> value
+                ipmid2pcount <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> pmid <span style="color: #000000; font-weight: bold">in</span> cell_pmids:
+                    pmid_pcount <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>pmid2pcount[pmid]
+                    ipmid2pcount<span style="color: #555555">.</span>update({pmid:pmid_pcount})
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmid2pcount<span style="color: #555555">.</span>update({cell_name:ipmid2pcount})
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">all_protein_finder</span>(<span style="color: #336666">self</span>,dump <span style="color: #555555">=</span><span style="color: #336666">False</span>,verbose <span style="color: #555555">=</span> <span style="color: #336666">False</span>):
+            allproteins <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmid2pcount<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellpmid2pcount <span style="color: #555555">=</span> value
+                cellproteins <span style="color: #555555">=</span> []
+                <span style="color: #006699; font-weight: bold">for</span> key, value <span style="color: #000000; font-weight: bold">in</span> cellpmid2pcount<span style="color: #555555">.</span>items():
+                    pmid <span style="color: #555555">=</span> key
+                    pmid_pcount <span style="color: #555555">=</span> value
+                    <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> pmid_pcount<span style="color: #555555">.</span>items():
+                        allproteins<span style="color: #555555">.</span>append(key)
+                        cellproteins<span style="color: #555555">.</span>append(key)
+                    uprotein <span style="color: #555555">=</span> <span style="color: #336666">list</span>(<span style="color: #336666">set</span>(cellproteins))
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_uniqp<span style="color: #555555">.</span>update({cell_name:uprotein}) 
+
+                <span style="color: #006699; font-weight: bold">if</span> verbose:
+                    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;total proteins collected for cell - &#39;</span>,cell_name,<span style="color: #336666">len</span>(uprotein))
+
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins <span style="color: #555555">=</span> <span style="color: #336666">list</span>(<span style="color: #336666">set</span>(allproteins))
+
+            <span style="color: #006699; font-weight: bold">if</span> verbose:
+                    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;total proteins collected: &#39;</span>,<span style="color: #336666">len</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins))
+
+            <span style="color: #006699; font-weight: bold">if</span> dump:
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>dump_json(<span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;allproteins&#39;</span>)
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>dump_json(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_uniqp,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;unique_proteins&#39;</span>)
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_map</span>(<span style="color: #336666">self</span>,cellpmid2pcount,select):
+                map_dict <span style="color: #555555">=</span> []
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cellpmid2pcount<span style="color: #555555">.</span>items():
+                    pmid <span style="color: #555555">=</span> key
+                    pmid_pcount <span style="color: #555555">=</span> value
+                    <span style="color: #006699; font-weight: bold">for</span> key, value <span style="color: #000000; font-weight: bold">in</span> pmid_pcount<span style="color: #555555">.</span>items():
+                        <span style="color: #006699; font-weight: bold">if</span> select <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;tf&#39;</span>:
+                            map_dict<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;protein&#39;</span>: key, <span style="color: #CC3300">&#39;tf&#39;</span>:<span style="color: #336666">int</span>(value)})
+                        <span style="color: #006699; font-weight: bold">elif</span> select <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;pmid&#39;</span>:
+                            map_dict<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;protein&#39;</span>: key, <span style="color: #CC3300">&#39;pmid&#39;</span>:pmid})
+                <span style="color: #006699; font-weight: bold">return</span> map_dict
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_reduce</span>(<span style="color: #336666">self</span>,Dict,col,operation): 
+                df <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(Dict)
+                df <span style="color: #555555">=</span> df<span style="color: #555555">.</span>set_index(col[<span style="color: #FF6600">0</span>])
+
+                <span style="color: #006699; font-weight: bold">if</span> operation <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;sum&#39;</span>:
+                    gdf <span style="color: #555555">=</span> df<span style="color: #555555">.</span>groupby(col[<span style="color: #FF6600">0</span>])<span style="color: #555555">.</span>sum()
+                <span style="color: #006699; font-weight: bold">elif</span> operation <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;count&#39;</span>:
+                    gdf <span style="color: #555555">=</span> df<span style="color: #555555">.</span>groupby(col[<span style="color: #FF6600">0</span>])<span style="color: #555555">.</span>count()
+
+                index_name <span style="color: #555555">=</span> <span style="color: #336666">list</span>(gdf<span style="color: #555555">.</span>index)
+                csum <span style="color: #555555">=</span> <span style="color: #336666">list</span>(gdf[col[<span style="color: #FF6600">1</span>]])
+                ucount <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(index_name,csum):
+                    ucount<span style="color: #555555">.</span>update({x:y})
+                <span style="color: #006699; font-weight: bold">return</span> ucount
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_p2tf_finder</span>(<span style="color: #336666">self</span>):      
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmid2pcount<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellpmid2pcount <span style="color: #555555">=</span> value
+
+                <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;map-reduce&#39;&#39;&#39;</span>
+                CellP2tf <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_map(cellpmid2pcount,select <span style="color: #555555">=</span><span style="color: #CC3300">&#39;tf&#39;</span>)
+                cellp2tf <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_reduce(CellP2tf,[<span style="color: #CC3300">&#39;protein&#39;</span>,<span style="color: #CC3300">&#39;tf&#39;</span>],operation <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;sum&#39;</span>)  
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2tf<span style="color: #555555">.</span>update({cell_name:cellp2tf})
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_tf_finder</span>(<span style="color: #336666">self</span>):       
+                <span style="color: #006699; font-weight: bold">for</span> key, value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2tf<span style="color: #555555">.</span>items():
+                    cell_name <span style="color: #555555">=</span> key
+                    cellp2tf <span style="color: #555555">=</span> value
+                    celltf <span style="color: #555555">=</span> {}
+                    <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins:
+                        <span style="color: #006699; font-weight: bold">if</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_uniqp[cell_name]:
+                            celltf<span style="color: #555555">.</span>update({p:cellp2tf[p]})
+                        <span style="color: #006699; font-weight: bold">else</span>:
+                            celltf<span style="color: #555555">.</span>update({p:<span style="color: #FF6600">0</span>})
+
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_tf<span style="color: #555555">.</span>update({cell_name:celltf})
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_pop_finder</span>(<span style="color: #336666">self</span>,dump<span style="color: #555555">=</span><span style="color: #336666">False</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_tf<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cell_tf <span style="color: #555555">=</span> value
+                cellpop <span style="color: #555555">=</span> {}
+                cntp <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+                <span style="color: #0099FF; font-style: italic">#----------------------------</span>
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cell_tf<span style="color: #555555">.</span>items():
+                        cntp <span style="color: #555555">=</span> cntp<span style="color: #555555">+</span><span style="color: #336666">int</span>(value)
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_cntp<span style="color: #555555">.</span>update({cell_name:cntp})
+                <span style="color: #0099FF; font-style: italic">#------------------------------</span>
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cell_tf<span style="color: #555555">.</span>items():
+                        pop <span style="color: #555555">=</span> np<span style="color: #555555">.</span>log(value <span style="color: #555555">+</span><span style="color: #FF6600">1</span>)<span style="color: #555555">/</span>np<span style="color: #555555">.</span>log(cntp)
+                        cellpop<span style="color: #555555">.</span>update({key:pop})
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pop<span style="color: #555555">.</span>update({cell_name:cellpop})
+
+            <span style="color: #006699; font-weight: bold">if</span> dump:
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>df_builder(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pop,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;pop&#39;</span>)
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_p2pmid_finder</span>(<span style="color: #336666">self</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pmid2pcount<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellpmid2pcount <span style="color: #555555">=</span> value
+
+                <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;map-reduce&#39;&#39;&#39;</span>
+                CellP2pmid <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_map(cellpmid2pcount,select <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;pmid&#39;</span>)
+                cellp2pmid <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_reduce(CellP2pmid,[<span style="color: #CC3300">&#39;protein&#39;</span>,<span style="color: #CC3300">&#39;pmid&#39;</span>],operation <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;count&#39;</span>) 
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2pmid<span style="color: #555555">.</span>update({cell_name:cellp2pmid})   
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_ntf_finder</span>(<span style="color: #336666">self</span>):
+            k1 <span style="color: #555555">=</span> <span style="color: #FF6600">1.2</span>
+            b <span style="color: #555555">=</span> <span style="color: #FF6600">0.75</span>
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_tf<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                celltf <span style="color: #555555">=</span> value
+                <span style="color: #0099FF; font-style: italic">#----------------------------</span>
+                nonzero_celltf <span style="color: #555555">=</span> []
+                <span style="color: #006699; font-weight: bold">for</span> key,value  <span style="color: #000000; font-weight: bold">in</span> celltf<span style="color: #555555">.</span>items():
+                    <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">int</span>(value)<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span>:
+                        nonzero_celltf<span style="color: #555555">.</span>append(<span style="color: #336666">int</span>(value))
+                <span style="color: #0099FF; font-style: italic">#-------------------------------------------        </span>
+                av_cntp <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_cntp[cell_name]<span style="color: #555555">/</span><span style="color: #336666">float</span>(<span style="color: #336666">len</span>(nonzero_celltf))
+                cellntf <span style="color: #555555">=</span> {}
+
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> celltf<span style="color: #555555">.</span>items():
+                    p <span style="color: #555555">=</span> key
+                    tf <span style="color: #555555">=</span> value
+                    ntf <span style="color: #555555">=</span> (tf<span style="color: #555555">*</span>(k1<span style="color: #555555">+</span><span style="color: #FF6600">1</span>))<span style="color: #555555">/</span><span style="color: #336666">float</span>(tf<span style="color: #555555">+</span>(k1<span style="color: #555555">*</span>(<span style="color: #FF6600">1</span><span style="color: #555555">-</span>b<span style="color: #555555">+</span>(b<span style="color: #555555">*</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_cntp[cell_name]<span style="color: #555555">/</span><span style="color: #336666">float</span>(av_cntp))))))
+                    cellntf<span style="color: #555555">.</span>update({p:ntf})
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ntf<span style="color: #555555">.</span>update({cell_name:cellntf})
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_ndf_finder</span>(<span style="color: #336666">self</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_p2pmid<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellp2pmid <span style="color: #555555">=</span> value
+                all_pmid_counts <span style="color: #555555">=</span> []
+                cellndf <span style="color: #555555">=</span> {}
+
+                <span style="color: #0099FF; font-style: italic">#--------------------------------------------</span>
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cellp2pmid<span style="color: #555555">.</span>items():
+                    all_pmid_counts<span style="color: #555555">.</span>append(value)
+                maxv <span style="color: #555555">=</span> <span style="color: #336666">max</span>(all_pmid_counts) 
+                <span style="color: #0099FF; font-style: italic">#-----------------------------------------</span>
+
+                <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins:
+                    <span style="color: #006699; font-weight: bold">if</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_uniqp[cell_name]:
+                        c <span style="color: #555555">=</span> cellp2pmid[p]
+                        ndf <span style="color: #555555">=</span> np<span style="color: #555555">.</span>log(<span style="color: #FF6600">1</span> <span style="color: #555555">+</span> c)<span style="color: #555555">/</span>np<span style="color: #555555">.</span>log(<span style="color: #FF6600">1</span> <span style="color: #555555">+</span> maxv)
+                    <span style="color: #006699; font-weight: bold">else</span>:
+                        ndf <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+                    cellndf<span style="color: #555555">.</span>update({p:ndf}) 
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ndf<span style="color: #555555">.</span>update({cell_name:cellndf})
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_rel_finder</span>(<span style="color: #336666">self</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ntf<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellntf <span style="color: #555555">=</span> value
+                cellrel <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins:
+                    rel <span style="color: #555555">=</span> cellntf[p]<span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #555555">.</span>cell_ndf[cell_name][p]
+                    cellrel<span style="color: #555555">.</span>update({p:rel})
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_rel<span style="color: #555555">.</span>update({cell_name:cellrel})
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_dist_finder</span>(<span style="color: #336666">self</span>,dump<span style="color: #555555">=</span><span style="color: #336666">False</span>): 
+            cell_exprel <span style="color: #555555">=</span> {}
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_rel<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellrel <span style="color: #555555">=</span> value
+                cellexprel <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cellrel<span style="color: #555555">.</span>items():
+                    cellexprel<span style="color: #555555">.</span>update({key:np<span style="color: #555555">.</span>exp(value)})
+
+                cell_exprel<span style="color: #555555">.</span>update({cell_name:cellexprel})
+
+            <span style="color: #0099FF; font-style: italic">#-----------------------------------------------------</span>
+            p2din <span style="color: #555555">=</span> {}
+            <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>all_proteins:
+                din <span style="color: #555555">=</span> <span style="color: #FF6600">1.0</span>
+                <span style="color: #006699; font-weight: bold">for</span> cellname <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cellnames:
+                    din <span style="color: #555555">=</span> din <span style="color: #555555">+</span> cell_exprel[cellname][p]
+                p2din<span style="color: #555555">.</span>update({p:din})
+
+            <span style="color: #0099FF; font-style: italic">#--------------------------------------------------------</span>
+
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cell_exprel<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                cellexprel <span style="color: #555555">=</span> value
+                celldist <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> cellexprel<span style="color: #555555">.</span>items():
+                    celldist<span style="color: #555555">.</span>update({key:value<span style="color: #555555">/</span>p2din[key]})
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_dist<span style="color: #555555">.</span>update({cell_name:celldist})
+
+            <span style="color: #006699; font-weight: bold">if</span> dump:
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>df_builder(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_dist,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;dist&#39;</span>)
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">cell_cseolap_finder</span>(<span style="color: #336666">self</span>,dump<span style="color: #555555">=</span><span style="color: #336666">False</span>):
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_dist<span style="color: #555555">.</span>items():
+                cell_name <span style="color: #555555">=</span> key
+                celldist <span style="color: #555555">=</span> value
+                cellcaseolap <span style="color: #555555">=</span> {}
+                <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> celldist<span style="color: #555555">.</span>items():
+                    cellcaseolap<span style="color: #555555">.</span>update({key:(value<span style="color: #555555">*</span><span style="color: #336666">self</span><span style="color: #555555">.</span>cell_pop[cell_name][key])})
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>cell_caseolap<span style="color: #555555">.</span>update({cell_name:cellcaseolap})
+
+            <span style="color: #006699; font-weight: bold">if</span> dump:
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>df_builder(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_caseolap,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;caseolap&#39;</span>)
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>dump_json(<span style="color: #336666">self</span><span style="color: #555555">.</span>cell_caseolap,fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;caseolap&#39;</span>)
+</pre></div>
+
+
+<h3 id="test-run">Test Run</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>C <span style="color: #555555">=</span> Caseolap(cvd2pmids,pmid2pcount)
+C<span style="color: #555555">.</span>cell_pmids_collector(dump <span style="color: #555555">=</span><span style="color: #336666">True</span>,verbose <span style="color: #555555">=</span><span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic">#C.cell_pmids</span>
+C<span style="color: #555555">.</span>cell_pmid2pcount_collector()
+<span style="color: #0099FF; font-style: italic">#C.cell_pmid2pcount</span>
+C<span style="color: #555555">.</span>all_protein_finder(dump <span style="color: #555555">=</span><span style="color: #336666">True</span>,verbose <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic">#C.all_proteins</span>
+C<span style="color: #555555">.</span>all_protein_finder()
+<span style="color: #0099FF; font-style: italic">#C.all_proteins</span>
+<span style="color: #0099FF; font-style: italic">#C.cell_uniqp   </span>
+C<span style="color: #555555">.</span>cell_p2tf_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_p2tf</span>
+C<span style="color: #555555">.</span>cell_tf_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_tf</span>
+C<span style="color: #555555">.</span>cell_pop_finder(dump<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic">#C.cell_pop</span>
+C<span style="color: #555555">.</span>cell_p2pmid_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_p2pmid</span>
+C<span style="color: #555555">.</span>cell_ntf_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_ntf</span>
+C<span style="color: #555555">.</span>cell_ndf_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_ndf</span>
+C<span style="color: #555555">.</span>cell_rel_finder()
+<span style="color: #0099FF; font-style: italic">#C.cell_rel</span>
+C<span style="color: #555555">.</span>cell_dist_finder(dump<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic">#C.cell_dist</span>
+C<span style="color: #555555">.</span>cell_cseolap_finder(dump<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+<span style="color: #0099FF; font-style: italic">#C.cell_caseolap</span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../EntityCount/" class="btn btn-neutral" title="EntityCount"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../EntityCount/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

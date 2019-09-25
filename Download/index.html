@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Download Pipeline - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Download Pipeline";
+    var mkdocs_page_input_path = "Download.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/env/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/jupyter/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Download Pipeline
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Indexing/">Indexing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../EntityCount/">EntityCount</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../CaseOLAP/">CaseOLAP</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pipelines &raquo;</li>
+        
+      
+    
+    <li>Download Pipeline</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="download-pipeline">Download Pipeline</h1>
+<p>This pipeline downloads the data from the source server. It checks the integrity of the downloaded data and extracts it to the target directory. Following are the outline the download of the pipeline.</p>
+<p><strong>1. Import Required Python packages</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">re</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">time</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">subprocess</span>
+</pre></div>
+
+
+<p><strong>2. Specify source and target data directory</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DATA_DIR <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;./&#39;</span>
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;FTP address for baseline directory of Pubmed &#39;&#39;&#39;</span>
+BASELINE_DIR <span style="color: #555555">=</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(DATA_DIR,\
+                            <span style="color: #CC3300">&#39;ftp.ncbi.nlm.nih.gov/pubmed/baseline/&#39;</span>)
+
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;FTP address for baseline directory of Pubmed&#39;&#39;&#39;</span>
+UPDATE_FILES_DIR <span style="color: #555555">=</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(DATA_DIR,\
+                                <span style="color: #CC3300">&#39;ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/&#39;</span>)
+</pre></div>
+
+
+<p><strong>3. Controlling download with <code>os</code> package and <code>wget</code> command.</strong></p>
+<p><code>os.path.join()</code> functionality is implemented to join one or more path components intelligently. 
+     <code>os.system (wget command)</code>  functionality is implemented to execute the wget command in a subshell. 
+     The following are optional syntax modifiers for the wget command to control the download:
+ - flag  <code>-q</code> turns off wget output,
+ - flag <code>-r</code> turns on recursive retrieving, 
+ - directory prefix <code>--directory-prefix=%s</code>  sets the prefix of all other files and subdirectories,
+ - directory based limit <code>--no-parent</code>  guarantees that you will never leave the existing hierarchy of the directory.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">download_pubmed_baseline</span>():
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Baseline&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Start downloading pubmed baseline files.&quot;</span>, <span style="color: #CC3300">&quot;ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline/&quot;</span>)
+    t1 <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+    rc <span style="color: #555555">=</span> os<span style="color: #555555">.</span>system(<span style="color: #CC3300">&#39;wget -q -r --directory-prefix=</span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> --no-parent ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline/&#39;</span> <span style="color: #555555">%</span> DATA_DIR)
+    <span style="color: #006699; font-weight: bold">if</span> rc <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Return code of downloading pubmed baseline files via wget is </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, not zero.&quot;</span> <span style="color: #555555">%</span> rc)
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Link: ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline&quot;</span>)
+        <span style="color: #336666">exit</span>(rc)
+    t2 <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Finish downloading pubmed baseline files. </span><span style="color: #AA0000">%f</span><span style="color: #CC3300">s&quot;</span> <span style="color: #555555">%</span> (t2 <span style="color: #555555">-</span> t1))
+
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">download_pubmed_update</span>():   
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Update&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Start downloading pubmed updatefiles.&quot;</span>, <span style="color: #CC3300">&quot;ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/&quot;</span>)
+    rc <span style="color: #555555">=</span> os<span style="color: #555555">.</span>system(<span style="color: #CC3300">&#39;wget -q -r --directory-prefix=</span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> --no-parent ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/&#39;</span> <span style="color: #555555">%</span> DATA_DIR)
+    <span style="color: #006699; font-weight: bold">if</span> rc <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Return code of downloading pubmed update files via wget is </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, not zero.&quot;</span> <span style="color: #555555">%</span> rc)
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Link: ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles&quot;</span>)
+        <span style="color: #336666">exit</span>(rc)
+    t3 <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Finish downloading pubmed updatefiles. </span><span style="color: #AA0000">%f</span><span style="color: #CC3300">s&quot;</span> <span style="color: #555555">%</span> (t3 <span style="color: #555555">-</span> t2))
+
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">download_bioconcepts2pubtator_offsets</span>():
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;bioconcepts2pubtator&#39;&#39;&#39;</span>
+    rc <span style="color: #555555">=</span> os<span style="color: #555555">.</span>system(<span style="color: #CC3300">&#39;wget -q --directory-prefix=</span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> ftp://ftp.ncbi.nlm.nih.gov/pub/lu/PubTator/bioconcepts2pubtator_offsets.gz&#39;</span> <span style="color: #555555">%</span> DATA_DIR)
+    <span style="color: #006699; font-weight: bold">if</span> rc <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Return code of downloading pubmed update files via wget is </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, not zero.&quot;</span> <span style="color: #555555">%</span> rc)
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Link: ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles&quot;</span>)
+        <span style="color: #336666">exit</span>(rc)
+</pre></div>
+
+
+<p><strong>4. Md5-checksum</strong></p>
+<p>An MD5-checksum is a 32-character hexadecimal number that is computed on a file. This number helps to verify the integrity of the file download. Implementing the <code>re</code> and <code>subprocess</code> packages adds MD5-checksum functionality.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">check_all_md5_in_dir</span>(<span style="color: #336666">dir</span>):
+
+    <span style="color: #006699; font-weight: bold">if</span> os<span style="color: #555555">.</span>system(<span style="color: #CC3300">&quot;which md5sum 1&gt;/dev/null&quot;</span>) <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;md5sum not found&quot;</span>)           
+        <span style="color: #0099FF; font-style: italic"># Continue executing</span>
+        <span style="color: #006699; font-weight: bold">return</span>
+
+    count <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;==== Start checking md5 in </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> ====&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">dir</span>)
+    <span style="color: #006699; font-weight: bold">if</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>isdir(<span style="color: #336666">dir</span>):
+        <span style="color: #006699; font-weight: bold">for</span> <span style="color: #336666">file</span> <span style="color: #000000; font-weight: bold">in</span> os<span style="color: #555555">.</span>listdir(<span style="color: #336666">dir</span>):
+            <span style="color: #006699; font-weight: bold">if</span> re<span style="color: #555555">.</span>search(<span style="color: #CC3300">&#39;^medline17n\d\d\d\d.xml.gz$&#39;</span>, <span style="color: #336666">file</span>):
+                count <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                check_md5(os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(<span style="color: #336666">dir</span>, <span style="color: #336666">file</span>))
+                <span style="color: #006699; font-weight: bold">if</span> count <span style="color: #555555">%</span> <span style="color: #FF6600">100</span> <span style="color: #555555">==</span> <span style="color: #FF6600">0</span>:
+                    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;</span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> files checked&quot;</span> <span style="color: #555555">%</span> count)
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;==== All md5 check succeeded (</span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> files) ====&quot;</span> <span style="color: #555555">%</span> count) 
+
+
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Directory not found: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> (for md5 check)&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">dir</span>)
+
+
+
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">check_md5</span>(<span style="color: #336666">file</span>):
+    <span style="color: #006699; font-weight: bold">if</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>isfile(<span style="color: #336666">file</span>) <span style="color: #000000; font-weight: bold">and</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>isfile(<span style="color: #336666">file</span> <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;.md5&quot;</span>):
+
+        <span style="color: #0099FF; font-style: italic"># Work only on Linux, user &quot;md5&quot; for Mac</span>
+        stdout <span style="color: #555555">=</span> subprocess<span style="color: #555555">.</span>check_output(<span style="color: #CC3300">&quot;md5sum </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">file</span>, shell<span style="color: #555555">=</span><span style="color: #336666">True</span>)<span style="color: #555555">.</span>decode(<span style="color: #CC3300">&#39;utf-8&#39;</span>)
+
+        md5_calculated <span style="color: #555555">=</span> re<span style="color: #555555">.</span>search(<span style="color: #CC3300">&#39;[0-9a-f]{32}&#39;</span>, stdout)<span style="color: #555555">.</span>group(<span style="color: #FF6600">0</span>)
+        md5 <span style="color: #555555">=</span> re<span style="color: #555555">.</span>search(<span style="color: #CC3300">&#39;[0-9a-f]{32}&#39;</span>, <span style="color: #336666">open</span>(<span style="color: #336666">file</span> <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;.md5&quot;</span>, <span style="color: #CC3300">&#39;r&#39;</span>)<span style="color: #555555">.</span>readline())<span style="color: #555555">.</span>group(<span style="color: #FF6600">0</span>)
+
+        <span style="color: #006699; font-weight: bold">if</span> md5 <span style="color: #555555">!=</span> md5_calculated:
+            <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Error: md5 check failed for file </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">file</span>)
+            <span style="color: #336666">exit</span>(<span style="color: #FF6600">1</span>)
+</pre></div>
+
+
+<p><strong>5. Data extraction</strong> : </p>
+<p>Downloaded data files are in a compressed <code>‘.gz’</code> format, which need to be extracted. A data extraction pipeline can be created with the following steps:
+- import regular expression <code>(re)</code>, and <code>subprocess</code> modules,
+- list all data files using <code>os.listdir</code> functionality,
+- with <code>os</code> and <code>wget</code> command, <code>gunzip -fqk</code> , extract all files in a loop.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Assume filename is *.gz</span>
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">extract</span>(<span style="color: #336666">file</span>):
+    rc <span style="color: #555555">=</span> os<span style="color: #555555">.</span>system(<span style="color: #CC3300">&#39;gunzip -fqk </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> <span style="color: #336666">file</span>)
+    <span style="color: #006699; font-weight: bold">if</span> rc <span style="color: #555555">!=</span> <span style="color: #FF6600">0</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;gunzip return code for file </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> is </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, not zero&quot;</span> <span style="color: #555555">%</span> (<span style="color: #336666">file</span>, rc))
+        <span style="color: #336666">exit</span>(rc)
+    <span style="color: #006699; font-weight: bold">return</span> rc
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">extract_all_gz_in_dir</span>(<span style="color: #336666">dir</span>):
+    <span style="color: #006699; font-weight: bold">if</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>isdir(<span style="color: #336666">dir</span>):
+        count <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;==== Start extracting in </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> ====&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">dir</span>)
+        t1 <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+        <span style="color: #006699; font-weight: bold">for</span> <span style="color: #336666">file</span> <span style="color: #000000; font-weight: bold">in</span> os<span style="color: #555555">.</span>listdir(<span style="color: #336666">dir</span>):
+            <span style="color: #006699; font-weight: bold">if</span> re<span style="color: #555555">.</span>search(<span style="color: #CC3300">&#39;.*\.gz$&#39;</span>, <span style="color: #336666">file</span>):
+                extract(os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(<span style="color: #336666">dir</span>, <span style="color: #336666">file</span>))
+                count <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                <span style="color: #006699; font-weight: bold">if</span> count <span style="color: #555555">%</span> <span style="color: #FF6600">50</span> <span style="color: #555555">==</span> <span style="color: #FF6600">0</span>:
+                    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;</span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> files extracted, </span><span style="color: #AA0000">%f</span><span style="color: #CC3300">s taken so far&quot;</span> <span style="color: #555555">%</span> (count, time<span style="color: #555555">.</span>time() <span style="color: #555555">-</span> t1))
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;==== All files extracted (</span><span style="color: #AA0000">%d</span><span style="color: #CC3300"> files). Total time: </span><span style="color: #AA0000">%f</span><span style="color: #CC3300">s ====&quot;</span> <span style="color: #555555">%</span> (count, time<span style="color: #555555">.</span>time() <span style="color: #555555">-</span> t1))
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Directory not found: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> (for extraction)&quot;</span> <span style="color: #555555">%</span> <span style="color: #336666">dir</span>)        
+</pre></div>
+
+
+<ol>
+<li><strong>Run the pipeline</strong></li>
+</ol>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>BASELINE_DIR <span style="color: #555555">=</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(DATA_DIR, <span style="color: #CC3300">&#39;ftp.ncbi.nlm.nih.gov/pubmed/baseline/&#39;</span>)
+UPDATE_FILES_DIR <span style="color: #555555">=</span> os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(DATA_DIR, <span style="color: #CC3300">&#39;ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/&#39;</span>)
+
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Download&#39;&#39;&#39;</span>    
+download_pubmed_baseline()
+download_pubmed_update()
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;MD5 Checksum&#39;&#39;&#39;</span>
+check_all_md5_in_dir(BASELINE_DIR)
+check_all_md5_in_dir(UPDATE_FILES_DIR)
+
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Extraction&#39;&#39;&#39;</span>
+extract_all_gz_in_dir(BASELINE_DIR)
+extract_all_gz_in_dir(UPDATE_FILES_DIR)
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;bioconcepts2pubtator&#39;&#39;&#39;</span>
+download_bioconcepts2pubtator_offsets()
+extract(os<span style="color: #555555">.</span>path<span style="color: #555555">.</span>join(DATA_DIR, <span style="color: #CC3300">&#39;bioconcepts2pubtator_offsets.gz&#39;</span>))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Parsing/" class="btn btn-neutral float-right" title="Parsing Pipeline">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../workflow/" class="btn btn-neutral" title="Workflow"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../workflow/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Parsing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
