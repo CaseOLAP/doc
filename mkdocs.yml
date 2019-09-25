@@ -39,10 +39,7 @@ nav:
 - Setting Up Tools:
   - Setting up AWS cloud: setup/env.md
   - Setting up Python: setup/anaconda.md
-  - Setting up Neo4J: setup/lib.md
   - Setting up MongoDB: setup/env.md
-  - Setting up Spark: setup/env.md
-  - Setting up Node: setup/env.md
   - Setting up Elasticsearch : setup/jupyter.md
   - Setting up Git: setup/git.md
 
@@ -54,7 +51,7 @@ nav:
   - Parsing Pipeline: Parsing.md
   - Indexing: Indexing.md
   - Text-Cube Creation: TextCube.md
-  - EntityCount: EntityCOunt.md
+  - EntityCount: EntityCount.md
   - CaseOLAP: CaseOLAP.md
 
 
