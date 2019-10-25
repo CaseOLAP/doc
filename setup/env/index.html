@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Setting up MongoDB - CaseOLAP</title>
+  <title>Setting up Environment - CaseOLAP</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Setting up MongoDB";
+    var mkdocs_page_name = "Setting up Environment";
     var mkdocs_page_input_path = "setup/env.md";
     var mkdocs_page_url = null;
   </script>
@@ -71,13 +71,6 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./">Setting up AWS cloud</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
     <a class="" href="../anaconda/">Setting up Python</a>
   </li>
         
@@ -88,7 +81,7 @@
     
     <li class="navtree toctree-l2 page current">
       <a class="current" href="./">
-        Setting up MongoDB
+        Setting up Environment
           <span class="toctree-expand"></span>
       </a>
     </li>
@@ -157,7 +150,21 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../jupyter/">Setting up Elasticsearch</a>
+    <a class="" href="../elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../mongo/">Setting up MongoDB</a>
   </li>
         
           
@@ -273,7 +280,7 @@
         
       
     
-    <li>Setting up MongoDB</li>
+    <li>Setting up Environment</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -297,7 +304,9 @@ conda upgrade --all
 
 
 <p>or update above command line to your .zsh_config file.</p>
-<p>Once you have Anaconda installed, managing packages is fairly straightforward. To install a package, type</p>
+<ul>
+<li><strong>Install Package</strong>:Once you have Anaconda installed, managing packages is fairly straightforward. To install a package, type</li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install package_name 
 </pre></div>
 
@@ -313,7 +322,9 @@ conda upgrade --all
 
 
 <p>Conda also automatically installs dependencies for you. For example scipy depends on numpy, it uses and requires numpy. If you install just scipy (conda install scipy), Conda will also install numpy if it isn't already installed.</p>
-<p>Most of the commands are pretty intuitive. To uninstall, use</p>
+<ul>
+<li><strong>Remove Package</strong> : Most of the commands are pretty intuitive. To uninstall, use</li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda remove package_name
 </pre></div>
 
@@ -323,17 +334,23 @@ conda upgrade --all
 </pre></div>
 
 
-<p>If you want to update all packages in an environment, which is often useful, use </p>
+<ul>
+<li><strong>Update Package</strong> : If you want to update all packages in an environment, which is often useful, use </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda update --all
 </pre></div>
 
 
-<p>And finally, to list installed packages, it's </p>
+<ul>
+<li><strong>List Package</strong>: to list installed packages, it's </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda list 
 </pre></div>
 
 
-<p>If you don't know the exact name of the package you're looking for, you can try searching with</p>
+<ul>
+<li><strong>Search Package Name</strong>: If you don't know the exact name of the package you're looking for, you can try searching with</li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda search search_term
 </pre></div>
 
@@ -349,22 +366,30 @@ conda upgrade --all
 </pre></div>
 
 
-<p>Here -n env_name sets the name of your environment (-n for name) and list of packages is the list of packages you want installed in the environment. For example, to create an environment named my_env and install numpy in it, type </p>
+<ul>
+<li><strong>Name</strong> : Here -n env_name sets the name of your environment (-n for name) and list of packages is the list of packages you want installed in the environment. For example, to create an environment named my_env and install numpy in it, type </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n my_env numpy
 </pre></div>
 
 
-<p>When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, do something like </p>
+<ul>
+<li><strong>Version</strong>: When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, do something like </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py3 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span> or conda create -n py2 <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">2</span>
 </pre></div>
 
 
-<p>I actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use </p>
+<ul>
+<li><strong>Different Python versions</strong> : I actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda create -n py <span style="color: #003333">python</span><span style="color: #555555">=</span><span style="color: #FF6600">3</span>.3
 </pre></div>
 
 
-<p>for Python 3.3.</p>
+<ul>
+<li><strong>Activate Environment</strong> : for Python 3.3.</li>
+</ul>
 <p>Once you have an environment created, use </p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">source</span> activate my_env 
 </pre></div>
@@ -391,7 +416,9 @@ conda upgrade --all
 
 
 <h3 id="saving-and-loading-environments">Saving and loading environments</h3>
-<p>A really useful feature is sharing environments so others can install all the packages used in your code, with the correct versions. You can save the packages to a YAML file with </p>
+<ul>
+<li><strong>Export the environment</strong> : A really useful feature is sharing environments so others can install all the packages used in your code, with the correct versions. You can save the packages to a YAML file with </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env <span style="color: #336666">export</span> &gt; environment.yaml
 </pre></div>
 
@@ -407,7 +434,9 @@ Above you can see the name of the environment and all the dependencies (along wi
 </pre></div>
 
 
-<p>writes the exported text to a YAML file <code>environment.yaml</code>. This file can now be shared and others will be able to create the same environment you used for the project.</p>
+<ul>
+<li><strong>Create environment from exported file</strong> : writes the exported text to a YAML file <code>environment.yaml</code>. This file can now be shared and others will be able to create the same environment you used for the project.</li>
+</ul>
 <p>To create an environment from an environment file use</p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env create -f environment.yaml
 </pre></div>
@@ -415,7 +444,9 @@ Above you can see the name of the environment and all the dependencies (along wi
 
 <p>This will create a new environment with the same name listed in <code>environment.yaml</code>.</p>
 <h3 id="listing-environments">Listing environments</h3>
-<p>If you forget what your environments are named (happens to me sometimes), use </p>
+<ul>
+<li><strong>List the environments</strong> : If you forget what your environments are named (happens to me sometimes), use </li>
+</ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda env list 
 </pre></div>
 
@@ -452,7 +483,7 @@ Above you can see the name of the environment and all the dependencies (along wi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../jupyter/" class="btn btn-neutral float-right" title="Setting up Elasticsearch">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../elastic/" class="btn btn-neutral float-right" title="Setting up Elasticsearch">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../anaconda/" class="btn btn-neutral" title="Setting up Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -484,7 +515,7 @@ Above you can see the name of the environment and all the dependencies (along wi
         <span><a href="../anaconda/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../jupyter/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../elastic/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

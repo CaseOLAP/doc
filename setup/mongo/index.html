@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Setting up Elasticsearch - CaseOLAP</title>
+  <title>Setting up MongoDB - CaseOLAP</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Setting up Elasticsearch";
-    var mkdocs_page_input_path = "setup/jupyter.md";
+    var mkdocs_page_name = "Setting up MongoDB";
+    var mkdocs_page_input_path = "setup/mongo.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -71,13 +71,6 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../env/">Setting up AWS cloud</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
     <a class="" href="../anaconda/">Setting up Python</a>
   </li>
         
@@ -85,7 +78,21 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../env/">Setting up MongoDB</a>
+    <a class="" href="../env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../neo4j/">Setting up Neo4J</a>
   </li>
         
           
@@ -95,21 +102,35 @@
     
     <li class="navtree toctree-l2 page current">
       <a class="current" href="./">
-        Setting up Elasticsearch
+        Setting up MongoDB
           <span class="toctree-expand"></span>
       </a>
     </li>
     
       
 
-  <li class="toctree-l2 current with-children">
-    <a href="#installing-jupyter-notebook">
-      Installing Jupyter Notebook
-      <span class="toctree-expand"></span>
-    </a>
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#downloading-and-installing">Downloading and Installing</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#sample-application-with-python">Sample application with Python:</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#read-more">Read More</a>
+        </li>
+    
+    </ul>
   </li>
-
-
 
 
   
@@ -227,7 +248,7 @@
         
       
     
-    <li>Setting up Elasticsearch</li>
+    <li>Setting up MongoDB</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -237,38 +258,80 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="installing-jupyter-notebook">Installing Jupyter Notebook</h1>
-<p>By far the easiest way to install Jupyter is with Anaconda. Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.</p>
-<p>To install Jupyter notebooks in a conda environment, use </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>conda install jupyter notebook
+                <h1 id="setting-up-mongodb">Setting Up MongoDB</h1>
+<p>MongoDB is NOSQL database. THe detail of the installation can be founs at <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">official website of MongoDB</a>. Following is th installation steps obtained at 2019-Oct 15.</p>
+<h3 id="downloading-and-installing">Downloading and Installing</h3>
+<p><strong>1. Import the public key used by the package management system.</strong></p>
+<p>From a terminal, issue the following command to import the MongoDB public GPG Key from https://www.mongodb.org/static/pgp/server-4.2.asc:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | 
+sudo apt-key add -
 </pre></div>
 
 
-<p>Jupyter notebooks are also available through pip with </p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install jupyter notebook
+<p>The operation should respond with an OK.</p>
+<p><strong>2. Create a list file for MongoDB.</strong></p>
+<p>Create the list file <code>/etc/apt/sources.list.d/mongodb-org-4.2.list</code> for your version of Ubuntu.</p>
+<p>Click on the appropriate tab for your version of Ubuntu. If you are unsure of what Ubuntu version the host is running, open a terminal or shell on the host and execute <code>lsb_release -dc</code>.</p>
+<p>Ubuntu 18.04 (Bionic): The following instruction is for Ubuntu 18.04 (Bionic). For Ubuntu 16.04 (Xenial), click on the appropriate tab. Create the /etc/apt/sources.list.d/mongodb-org-4.2.list file for Ubuntu 18.04 (Bionic):</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 
+multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
 </pre></div>
 
 
-<p>Markdown Cheatsheet : https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</p>
-<p>Convert a notebook to an HTML file, in your terminal use</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>jupyter nbconvert --to html notebook.ipynb
+<p><strong><em>3. Reload local package database.</em></strong>
+Issue the following command to reload the local package database:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get update
 </pre></div>
 
 
-<p>Convert: https://nbconvert.readthedocs.io/en/latest/usage.html</p>
-<p>To create the slideshow from the notebook file, you'll need to use nbconvert:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    jupyter nbconvert notebook.ipynb --to slides
+<p><strong><em>4. Install the MongoDB packages.</em></strong>
+You can install either the latest stable version of MongoDB or a specific version of MongoDB.</p>
+<p>Install the latest version of MongoDB.  Install a specific release of MongoDB.
+To install the latest stable version, issue the following</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install -y mongodb-org
 </pre></div>
 
 
-<p>This just converts the notebook to the necessary files for the slideshow, but you need to serve it with an HTTP server to actually see the presentation.</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>To convert it and immediately see it, use
+<h3 id="sample-application-with-python">Sample application with Python:</h3>
+<ul>
+<li>Install the python package <code>pymongo</code> in the environment</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install pymongo
 </pre></div>
 
 
-<p>jupyter nbconvert notebook.ipynb --to slides --post serve
-This will open up the slideshow in your browser so you can present it.</p>
-<p>panda presentation: <a href="http://nbviewer.jupyter.org/format/slides/github/jorisvandenbossche/2015-PyDataParis/blob/master/pandas_introduction.ipynb#/">presentation</a></p>
+<ul>
+<li>Create Database and Collection</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pymongo</span>
+client <span style="color: #555555">=</span> pymongo<span style="color: #555555">.</span>MongoClient(<span style="color: #CC3300">&quot;mongodb://localhost:27017/&quot;</span>)
+db <span style="color: #555555">=</span> client[<span style="color: #CC3300">&quot;test&quot;</span>]
+collection <span style="color: #555555">=</span> db[<span style="color: #CC3300">&quot;test_collection&quot;</span>]
+</pre></div>
+
+
+<ul>
+<li>Next, Populate the collection</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>x <span style="color: #555555">=</span> collection<span style="color: #555555">.</span>insert_many(DATA)
+</pre></div>
+
+
+<ul>
+<li>Print out one sample data:</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>x <span style="color: #555555">=</span> collection<span style="color: #555555">.</span>find_one()
+<span style="color: #006699; font-weight: bold">print</span>(x) 
+</pre></div>
+
+
+<hr />
+<h3 id="read-more">Read More</h3>
+<ol>
+<li><a href="https://docs.mongodb.com/manual/core/document/">MongoDB Documents</a></li>
+<li><a href="https://docs.mongodb.com/manual/tutorial/">MongoDB Tutorials -I</a></li>
+<li><a href="https://www.tutorialspoint.com/mongodb/index.htm">MongoDB Tutorials Point</a></li>
+</ol>
               
             </div>
           </div>
@@ -279,7 +342,7 @@ This will open up the slideshow in your browser so you can present it.</p>
         <a href="../git/" class="btn btn-neutral float-right" title="Setting up Git">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../env/" class="btn btn-neutral" title="Setting up MongoDB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../neo4j/" class="btn btn-neutral" title="Setting up Neo4J"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -305,7 +368,7 @@ This will open up the slideshow in your browser so you can present it.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../env/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../neo4j/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../git/" style="color: #fcfcfc">Next &raquo;</a></span>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Python Libraries - CaseOLAP</title>
+  <title>Setting up Neo4J - CaseOLAP</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Python Libraries";
-    var mkdocs_page_input_path = "setup/lib.md";
+    var mkdocs_page_name = "Setting up Neo4J";
+    var mkdocs_page_input_path = "setup/neo4j.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -71,13 +71,6 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../env/">Setting up AWS cloud</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
     <a class="" href="../anaconda/">Setting up Python</a>
   </li>
         
@@ -85,14 +78,71 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../env/">Setting up MongoDB</a>
+    <a class="" href="../env/">Setting up Environment</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../jupyter/">Setting up Elasticsearch</a>
+    <a class="" href="../elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Setting up Neo4J
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#install-neo4j">Install Neo4j</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#startting-stopping-or-restarting-service">Startting Stopping or Restarting Service</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#for-forgotten-password">For Forgotten Password</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#for-remote-access">For remote access</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#how-to-use-new-graph-database">How to use new graph database</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../mongo/">Setting up MongoDB</a>
   </li>
         
           
@@ -203,8 +253,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Setting Up Tools &raquo;</li>
+        
+      
     
-    <li>Python Libraries</li>
+    <li>Setting up Neo4J</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -214,24 +268,79 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="python-libraries">Python Libraries</h1>
-<p>Following are the best Python Libraries:</p>
+                <h1 id="setting-up-neo4j">Setting Up Neo4j</h1>
+<p>The detail instruction for installing Neo4j(latest version) can be found at <a href="https://neo4j.com/docs/operations-manual/current/installation/linux/debian/">official website of Neo4j</a>. Here are the simple steps created the current time (2019 -Oct 15).</p>
+<p>Before you install, make sure the correct version of java is installed in your device</p>
+<h3 id="install-neo4j">Install Neo4j</h3>
 <ul>
-<li>TensorFlow</li>
-<li>Scikit-Learn</li>
-<li>Numpy</li>
-<li>Keras</li>
-<li>PyTorch</li>
-<li>LightGBM</li>
-<li>Eli5</li>
-<li>SciPy</li>
-<li>Theano</li>
-<li>Pandas</li>
+<li><strong>To install Neo4j Community Edition:</strong></li>
 </ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install <span style="color: #003333">neo4j</span><span style="color: #555555">=</span>&lt;version&gt;
+</pre></div>
+
+
+<ul>
+<li><strong>To install Neo4j Enterprise Edition:</strong></li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install neo4j-enterprise<span style="color: #555555">=</span>&lt;version&gt;
+</pre></div>
+
+
+<h3 id="startting-stopping-or-restarting-service">Startting Stopping or Restarting Service</h3>
+<ul>
+<li><strong>To start the neo4j service</strong>:</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
+</pre></div>
+
+
+<p>Go to <code>IP/localhost:7474</code> to have neo4j browser.</p>
+<ul>
+<li><strong>To stop the neo4j service</strong>:</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
+</pre></div>
+
+
+<ul>
+<li><strong>To restart the neo4j service</strong>:</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
+</pre></div>
+
+
+<h3 id="for-forgotten-password">For Forgotten Password</h3>
+<ol>
+<li>Stop the neo4j service</li>
+<li>remove the auth file inside <code>/var/lib/neo4j/data/dbms</code> </li>
+<li>restart the service</li>
+<li>Follow <code>server connect</code> command to recreate password</li>
+</ol>
+<h3 id="for-remote-access">For remote access</h3>
+<ol>
+<li>Stop the neo4j service</li>
+<li>Setup <code>0.0.0.0</code> instead of <code>localhost</code> in the configuration file</li>
+<li>Start the neo4j service</li>
+</ol>
+<h3 id="how-to-use-new-graph-database">How to use new graph database</h3>
+<ol>
+<li>Stop the neo4j service</li>
+<li>Find out <code>neo4j.config</code> file and repoint the new graph database.</li>
+<li>Start the neo4j service</li>
+</ol>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mongo/" class="btn btn-neutral float-right" title="Setting up MongoDB">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../elastic/" class="btn btn-neutral" title="Setting up Elasticsearch"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -255,6 +364,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../elastic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mongo/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
