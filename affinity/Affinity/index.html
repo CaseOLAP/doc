@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Affinity Propagation - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Affinity Propagation";
+    var mkdocs_page_input_path = "affinity/Affinity.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Affinity Propagation
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#clustering-affinity-propagation">
+      Clustering: Affinity Propagation
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#get-data">Get Data</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#split-data">Split data</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#select-pair">Select Pair</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#affinity-propagation">Affinity Propagation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#data-and-plot">Data and Plot</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#add-uniprot">Add Uniprot</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Machine Learning &raquo;</li>
+        
+      
+    
+    <li>Affinity Propagation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="clustering-affinity-propagation">Clustering: Affinity Propagation</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">sklearn.cluster</span> <span style="color: #006699; font-weight: bold">import</span> AffinityPropagation
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">itertools</span> <span style="color: #006699; font-weight: bold">import</span> cycle
+</pre></div>
+
+
+<h3 id="get-data">Get Data</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(<span style="color: #CC3300">&#39;../datareader/score/old-score.csv&#39;</span>)
+data<span style="color: #555555">.</span>index <span style="color: #555555">=</span> data[<span style="color: #CC3300">&#39;phrase&#39;</span>]
+ndf <span style="color: #555555">=</span> data<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;phrase&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ndf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>CM</th>
+      <th>ARR</th>
+      <th>VD</th>
+      <th>CHD</th>
+    </tr>
+    <tr>
+      <th>phrase</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1,25-dihydroxyvitamin_d(3)_24-hydroxylase,_mitochondrial</th>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0.446767</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1,4-alpha-glucan-branching_enzyme</th>
+      <td>1</td>
+      <td>0.290414</td>
+      <td>0.000000</td>
+      <td>1.035505</td>
+      <td>0.091431</td>
+      <td>0.0</td>
+      <td>0.372223</td>
+    </tr>
+    <tr>
+      <th>1,5-anhydro-d-fructose_reductase</th>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>2.220267</td>
+    </tr>
+    <tr>
+      <th>1-phosphatidylinositol_3-phosphate_5-kinase</th>
+      <td>3</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.308680</td>
+      <td>0.0</td>
+      <td>0.317226</td>
+    </tr>
+    <tr>
+      <th>1-phosphatidylinositol_4,5-bisphosphate_phosphodiesterase_beta-1</th>
+      <td>4</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.472116</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ndf<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(3175, 7)
+</pre></div>
+
+
+<h3 id="split-data">Split data</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>tdata <span style="color: #555555">=</span> ndf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cva_ihd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([ <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cva_cm <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([ <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cva_arr <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([ <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cva_vd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([ <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cva_chd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+ihd_cm <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+ihd_arr <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+ihd_vd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+ihd_chd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cm_arr <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cm_vd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+cm_chd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+arr_vd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+arr_chd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+vd_chd <span style="color: #555555">=</span> tdata<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;ARR&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">remover</span>(df,cvd1,cvd2):
+
+    protein <span style="color: #555555">=</span> df<span style="color: #555555">.</span>index
+    d1 <span style="color: #555555">=</span> df[cvd1]
+    d2 <span style="color: #555555">=</span> df[cvd2]
+    DT <span style="color: #555555">=</span> []
+    c <span style="color: #555555">=</span> <span style="color: #FF6600">0.5</span>
+    cutoff <span style="color: #555555">=</span> <span style="color: #336666">list</span>(df<span style="color: #555555">.</span>mean()<span style="color: #555555">+</span>(c<span style="color: #555555">*</span>df<span style="color: #555555">.</span>std()))
+    <span style="color: #006699; font-weight: bold">for</span> p,a,b <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(protein,d1,d2):
+        <span style="color: #006699; font-weight: bold">if</span> a <span style="color: #555555">&gt;</span> cutoff[<span style="color: #FF6600">0</span>] <span style="color: #000000; font-weight: bold">or</span>  b <span style="color: #555555">&gt;</span> cutoff[<span style="color: #FF6600">1</span>] :
+            DT<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;protein&#39;</span>: p, cvd1: a, cvd2: b},)
+    dfr <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(DT)
+    dfr<span style="color: #555555">.</span>index <span style="color: #555555">=</span> dfr[<span style="color: #CC3300">&#39;protein&#39;</span>]
+    dfr <span style="color: #555555">=</span> dfr<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+    <span style="color: #006699; font-weight: bold">return</span> dfr
+</pre></div>
+
+
+<h3 id="select-pair">Select Pair</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;ARR&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVA&#39;</span>
+df <span style="color: #555555">=</span> cva_arr
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">1.0</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;IHD&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVA&#39;</span>
+df <span style="color: #555555">=</span> cva_ihd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">1.0</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CM&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVA&#39;</span>
+df <span style="color: #555555">=</span> cva_cm
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;VD&#39;</span>  <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVA&#39;</span>
+df <span style="color: #555555">=</span> cva_vd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CHD&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVA&#39;</span>
+df <span style="color: #555555">=</span> cva_chd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;IHD&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CM&#39;</span>
+df <span style="color: #555555">=</span> ihd_cm
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;IHD&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;ARR&#39;</span>
+df <span style="color: #555555">=</span> ihd_arr
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;IHD&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;VD&#39;</span>
+df <span style="color: #555555">=</span> ihd_vd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;IHD&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CHD&#39;</span>
+df <span style="color: #555555">=</span> ihd_chd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CM&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;ARR&#39;</span>
+df <span style="color: #555555">=</span> cm_arr
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CM&#39;</span> <span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;VD&#39;</span>
+df <span style="color: #555555">=</span> cm_vd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CM&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CHD&#39;</span>
+df <span style="color: #555555">=</span> cm_chd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;ARR&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;VD&#39;</span>
+df <span style="color: #555555">=</span> arr_vd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;ARR&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CHD&#39;</span>
+df <span style="color: #555555">=</span> arr_chd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvd1 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;VD&#39;</span><span style="color: #0099FF; font-style: italic">#</span>
+cvd2 <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CHD&#39;</span>
+df <span style="color: #555555">=</span> vd_chd
+pref<span style="color: #555555">=-</span><span style="color: #FF6600">0.1</span>
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>rdf <span style="color: #555555">=</span> remover(df,cvd1,cvd2)
+rdf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CVA</th>
+      <th>IHD</th>
+    </tr>
+    <tr>
+      <th>protein</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1-phosphatidylinositol_4,5-bisphosphate_phosphodiesterase_delta-1</th>
+      <td>0.484608</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2',3'-cyclic-nucleotide_3'-phosphodiesterase</th>
+      <td>2.739150</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>3-hydroxy-3-methylglutaryl-coenzyme_a_reductase</th>
+      <td>1.006448</td>
+      <td>3.095639</td>
+    </tr>
+    <tr>
+      <th>43_kda_receptor-associated_protein_of_the_synapse</th>
+      <td>1.283404</td>
+      <td>0.169499</td>
+    </tr>
+    <tr>
+      <th>5-hydroxytryptamine_receptor_1a</th>
+      <td>0.846001</td>
+      <td>0.484862</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>rdf<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(628, 2)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>X <span style="color: #555555">=</span> rdf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+p <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(<span style="color: #336666">list</span>(X<span style="color: #555555">.</span>index))
+</pre></div>
+
+
+<h3 id="affinity-propagation">Affinity Propagation</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Compute Affinity Propagation</span>
+af <span style="color: #555555">=</span> AffinityPropagation(preference <span style="color: #555555">=</span> pref)<span style="color: #555555">.</span>fit(X)
+indices <span style="color: #555555">=</span> af<span style="color: #555555">.</span>cluster_centers_indices_
+labels <span style="color: #555555">=</span> af<span style="color: #555555">.</span>labels_
+n_clusters <span style="color: #555555">=</span> <span style="color: #336666">len</span>(indices)
+n_clusters
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>23
+</pre></div>
+
+
+<h3 id="data-and-plot">Data and Plot</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sns<span style="color: #555555">.</span>set()
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">15</span>])
+DTT <span style="color: #555555">=</span>[]
+X <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(X)
+colors <span style="color: #555555">=</span> cycle(<span style="color: #CC3300">&#39;bgrcmykbgrcmykbgrcmykbgrcmyk&#39;</span>)
+<span style="color: #006699; font-weight: bold">for</span> k, col <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(<span style="color: #336666">range</span>(n_clusters), colors):
+    class_members <span style="color: #555555">=</span> labels <span style="color: #555555">==</span> k
+    cluster_center <span style="color: #555555">=</span> X[indices[k]]
+    ln <span style="color: #555555">=</span> <span style="color: #336666">len</span>(X[class_members, <span style="color: #FF6600">0</span>])
+    <span style="color: #006699; font-weight: bold">if</span> ln <span style="color: #555555">&gt;</span><span style="color: #FF6600">1</span>:
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(ln):
+            DTT<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;label&#39;</span>: k,\
+                        <span style="color: #CC3300">&#39;protein&#39;</span>: p[class_members][i],\
+                        cvd1: X[class_members, <span style="color: #FF6600">0</span>][i],\
+                        cvd2: X[class_members, <span style="color: #FF6600">1</span>][i],\
+                        <span style="color: #CC3300">&#39;color&#39;</span>:col})
+    <span style="color: #006699; font-weight: bold">else</span>:
+
+        DTT<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;label&#39;</span>: k,\
+                        <span style="color: #CC3300">&#39;protein&#39;</span>: p[class_members][<span style="color: #FF6600">0</span>],\
+                        cvd1: X[class_members, <span style="color: #FF6600">0</span>][<span style="color: #FF6600">0</span>],\
+                        cvd2: X[class_members, <span style="color: #FF6600">1</span>][<span style="color: #FF6600">0</span>],\
+                        <span style="color: #CC3300">&#39;color&#39;</span>:col})
+
+    <span style="color: #0099FF; font-style: italic"># plot data</span>
+    plt<span style="color: #555555">.</span>plot(X[class_members, <span style="color: #FF6600">0</span>], X[class_members, <span style="color: #FF6600">1</span>], col <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;.&#39;</span>)
+    <span style="color: #0099FF; font-style: italic"># plot center</span>
+    plt<span style="color: #555555">.</span>plot(cluster_center[<span style="color: #FF6600">0</span>], cluster_center[<span style="color: #FF6600">1</span>], <span style="color: #CC3300">&#39;.&#39;</span>, markerfacecolor<span style="color: #555555">=</span>col,
+             markeredgecolor<span style="color: #555555">=</span><span style="color: #CC3300">&#39;k&#39;</span>, markersize<span style="color: #555555">=</span><span style="color: #FF6600">14</span>)
+    <span style="color: #0099FF; font-style: italic"># draw lines</span>
+    <span style="color: #006699; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> X[class_members]:
+        plt<span style="color: #555555">.</span>plot([cluster_center[<span style="color: #FF6600">0</span>], x[<span style="color: #FF6600">0</span>]], [cluster_center[<span style="color: #FF6600">1</span>], x[<span style="color: #FF6600">1</span>]], col)
+
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Estimated number of clusters: </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> n_clusters)
+plt<span style="color: #555555">.</span>xlabel(cvd1, fontsize <span style="color: #555555">=</span> <span style="color: #FF6600">25</span>)
+plt<span style="color: #555555">.</span>ylabel(cvd2, fontsize <span style="color: #555555">=</span> <span style="color: #FF6600">25</span> )
+plt<span style="color: #555555">.</span>savefig(<span style="color: #CC3300">&#39;plot/&#39;</span><span style="color: #555555">+</span>cvd1<span style="color: #555555">+</span><span style="color: #CC3300">&#39;-&#39;</span><span style="color: #555555">+</span>cvd2<span style="color: #555555">+</span><span style="color: #CC3300">&#39;.pdf&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_33_0.png" /></p>
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>listdf <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(DTT)
+listdf<span style="color: #555555">.</span>index <span style="color: #555555">=</span> listdf[<span style="color: #CC3300">&#39;protein&#39;</span>]
+listdf <span style="color: #555555">=</span> listdf<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+listdf<span style="color: #555555">.</span>head(<span style="color: #FF6600">5</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CVA</th>
+      <th>color</th>
+      <th>label</th>
+    </tr>
+    <tr>
+      <th>protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1-phosphatidylinositol_4,5-bisphosphate_phosphodiesterase_delta-1</th>
+      <td>0.000000</td>
+      <td>0.484608</td>
+      <td>b</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5-hydroxytryptamine_receptor_2a</th>
+      <td>0.174764</td>
+      <td>0.555104</td>
+      <td>b</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>78_kda_glucose-regulated_protein</th>
+      <td>0.065296</td>
+      <td>0.529532</td>
+      <td>b</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>achaete-scute_homolog_1</th>
+      <td>0.000000</td>
+      <td>0.449759</td>
+      <td>b</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>adenylyl_cyclase-associated_protein_2</th>
+      <td>0.000000</td>
+      <td>0.449759</td>
+      <td>b</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="add-uniprot">Add Uniprot</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(<span style="color: #CC3300">&#39;uniprot.csv&#39;</span>)
+data<span style="color: #555555">.</span>index <span style="color: #555555">=</span> data[<span style="color: #CC3300">&#39;protein&#39;</span>]
+udf <span style="color: #555555">=</span> data<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+udf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>uniprot_id</th>
+      <th>gene_names</th>
+      <th>has_multiple_IDs</th>
+    </tr>
+    <tr>
+      <th>protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>natriuretic_peptides_b</th>
+      <td>P16860</td>
+      <td>NPPB</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>angiotensin-converting_enzyme</th>
+      <td>P12821</td>
+      <td>ACE DCP DCP1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>potassium_voltage-gated_channel_subfamily_h_member_2</th>
+      <td>Q12809</td>
+      <td>KCNH2 ERG ERG1 HERG</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>c-reactive_protein</th>
+      <td>P02741</td>
+      <td>CRP PTX1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>apolipoprotein_e</th>
+      <td>P02649</td>
+      <td>APOE</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>idx_cvd <span style="color: #555555">=</span> <span style="color: #336666">list</span>(listdf<span style="color: #555555">.</span>index)
+idx_uprt <span style="color: #555555">=</span>  <span style="color: #336666">list</span>(udf<span style="color: #555555">.</span>index)
+
+prot_dict <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> idx_cvd:
+    data <span style="color: #555555">=</span> listdf<span style="color: #555555">.</span>loc[item,:]
+    <span style="color: #006699; font-weight: bold">if</span> item <span style="color: #000000; font-weight: bold">in</span> idx_uprt:
+         prot_dict<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;Protein&#39;</span>:item,\
+                     cvd1:data[<span style="color: #FF6600">0</span>],\
+                     cvd2:data[<span style="color: #FF6600">1</span>],\
+                     <span style="color: #CC3300">&#39;color&#39;</span>:data[<span style="color: #FF6600">2</span>],\
+                     <span style="color: #CC3300">&#39;label&#39;</span>: data[<span style="color: #FF6600">3</span>],\
+                     <span style="color: #CC3300">&#39;uprot&#39;</span>:udf<span style="color: #555555">.</span>loc[item,:][<span style="color: #FF6600">0</span>]})
+
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #336666">print</span>(item,<span style="color: #CC3300">&#39;Match not Found&#39;</span>)
+        prot_dict<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;Protein&#39;</span>:item,\
+                     cvd1:data[<span style="color: #FF6600">0</span>],\
+                     cvd2:data[<span style="color: #FF6600">1</span>],\
+                     <span style="color: #CC3300">&#39;color&#39;</span>:data[<span style="color: #FF6600">2</span>],\
+                     <span style="color: #CC3300">&#39;label&#39;</span>: data[<span style="color: #FF6600">3</span>],\
+                     <span style="color: #CC3300">&#39;uprot&#39;</span>:<span style="color: #CC3300">&#39;NAN&#39;</span>})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(prot_dict)
+resultdf<span style="color: #555555">.</span>index <span style="color: #555555">=</span> resultdf[<span style="color: #CC3300">&#39;Protein&#39;</span>]
+resultdf <span style="color: #555555">=</span> resultdf<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;Protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+resultdf<span style="color: #555555">.</span>head(<span style="color: #FF6600">10</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>color</th>
+      <th>label</th>
+      <th>uprot</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>brain-derived_neurotrophic_factor</th>
+      <td>0.492909</td>
+      <td>0.026065</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P23560</td>
+    </tr>
+    <tr>
+      <th>alpha-galactosidase_a</th>
+      <td>0.488128</td>
+      <td>0.003105</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P06280</td>
+    </tr>
+    <tr>
+      <th>neurotrophin-3</th>
+      <td>0.510094</td>
+      <td>0.025944</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P20783</td>
+    </tr>
+    <tr>
+      <th>tetraspanin-33</th>
+      <td>0.686945</td>
+      <td>0.003340</td>
+      <td>b</td>
+      <td>0</td>
+      <td>Q86UF1</td>
+    </tr>
+    <tr>
+      <th>glutamate_receptor_ionotropic,_nmda_2c</th>
+      <td>0.479266</td>
+      <td>0.051119</td>
+      <td>b</td>
+      <td>0</td>
+      <td>Q14957</td>
+    </tr>
+    <tr>
+      <th>nestin</th>
+      <td>0.404329</td>
+      <td>0.040345</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P48681</td>
+    </tr>
+    <tr>
+      <th>glutamate_receptor_ionotropic,_nmda_2b</th>
+      <td>0.480174</td>
+      <td>0.050999</td>
+      <td>b</td>
+      <td>0</td>
+      <td>Q13224</td>
+    </tr>
+    <tr>
+      <th>glutamate_receptor_ionotropic,_nmda_1</th>
+      <td>0.479685</td>
+      <td>0.051063</td>
+      <td>b</td>
+      <td>0</td>
+      <td>Q05586</td>
+    </tr>
+    <tr>
+      <th>microtubule-associated_protein_2</th>
+      <td>0.520331</td>
+      <td>0.000000</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P11137</td>
+    </tr>
+    <tr>
+      <th>glial_fibrillary_acidic_protein</th>
+      <td>0.568521</td>
+      <td>0.003560</td>
+      <td>b</td>
+      <td>0</td>
+      <td>P14136</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;data/&#39;</span> <span style="color: #555555">+</span> cvd1 <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;-&#39;</span> <span style="color: #555555">+</span> cvd2 <span style="color: #555555">+</span> <span style="color: #CC3300">&#39;.csv&#39;</span>)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../hcluster/hierarchical/" class="btn btn-neutral" title="Hierarchical Clustering"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../hcluster/hierarchical/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

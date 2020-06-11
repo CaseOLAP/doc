@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Principle Component Analysis - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Principle Component Analysis";
+    var mkdocs_page_input_path = "pca/PCA-CVD.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Principle Component Analysis
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#pca-cvd">
+      PCA : CVD
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#data">Data</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#biplot-vcd">Biplot: VCD</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#normalized-data-pca">Normalized data PCA</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Machine Learning &raquo;</li>
+        
+      
+    
+    <li>Principle Component Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="pca-cvd">PCA : CVD</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+<span style="color: #555555">%</span>matplotlib inline
+
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">plotly.plotly</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">py</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">plotly.graph_objs</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">go</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">plotly.tools</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">tls</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">sklearn.decomposition</span> <span style="color: #006699; font-weight: bold">import</span> PCA
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">scipy.stats</span> <span style="color: #006699; font-weight: bold">import</span> norm
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.backends.backend_pdf</span> <span style="color: #006699; font-weight: bold">import</span> PdfPages
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">scipy.cluster.hierarchy</span> <span style="color: #006699; font-weight: bold">import</span> dendrogram, linkage
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sns<span style="color: #555555">.</span>set(font_scale<span style="color: #555555">=</span><span style="color: #FF6600">1.8</span>)
+</pre></div>
+
+
+<h3 id="data">Data</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(<span style="color: #CC3300">&#39;../datareader/score/score.csv&#39;</span>)
+data <span style="color: #555555">=</span> data<span style="color: #555555">.</span>set_index(<span style="color: #CC3300">&#39;Protein&#39;</span>)
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">rearrang</span>(olddf):
+    col <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;CVA&#39;</span>,<span style="color: #CC3300">&#39;IHD&#39;</span>,<span style="color: #CC3300">&#39;CM&#39;</span>,<span style="color: #CC3300">&#39;ARR&#39;</span>,<span style="color: #CC3300">&#39;VD&#39;</span>,<span style="color: #CC3300">&#39;CHD&#39;</span>]
+    newdf <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame()
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> col:
+        newdf[t]<span style="color: #555555">=</span> olddf[t]
+    <span style="color: #006699; font-weight: bold">return</span> newdf
+ndf <span style="color: #555555">=</span> rearrang(data)
+ndf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>CM</th>
+      <th>ARR</th>
+      <th>VD</th>
+      <th>CHD</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>small_ubiquitin-related_modifier_1</th>
+      <td>0.041144</td>
+      <td>0.012216</td>
+      <td>0.078019</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.024314</td>
+    </tr>
+    <tr>
+      <th>metalloproteinase_inhibitor_4</th>
+      <td>0.042887</td>
+      <td>0.054740</td>
+      <td>0.095265</td>
+      <td>0.045032</td>
+      <td>0.034227</td>
+      <td>0.005072</td>
+    </tr>
+    <tr>
+      <th>aromatic-l-amino-acid_decarboxylase</th>
+      <td>0.055959</td>
+      <td>0.010260</td>
+      <td>0.011459</td>
+      <td>0.070661</td>
+      <td>0.000000</td>
+      <td>0.007809</td>
+    </tr>
+    <tr>
+      <th>nadph_oxidase_activator_1</th>
+      <td>0.035732</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tumor_necrosis_factor_ligand_superfamily_member_14</th>
+      <td>0.035732</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">feature_norm</span>(df):
+    dff <span style="color: #555555">=</span> df<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+    fchr <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;CVA&#39;</span>,<span style="color: #CC3300">&#39;IHD&#39;</span>,<span style="color: #CC3300">&#39;CM&#39;</span>,<span style="color: #CC3300">&#39;ARR&#39;</span>,<span style="color: #CC3300">&#39;VD&#39;</span>,<span style="color: #CC3300">&#39;CHD&#39;</span>]
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> fchr:
+        dff[t] <span style="color: #555555">=</span> (df[t]<span style="color: #555555">-</span>df[t]<span style="color: #555555">.</span>min())<span style="color: #555555">/</span>(df[t]<span style="color: #555555">.</span>max()<span style="color: #555555">-</span>df[t]<span style="color: #555555">.</span>min())
+    <span style="color: #006699; font-weight: bold">return</span> dff
+ndfn <span style="color: #555555">=</span> feature_norm(ndf)
+ndfn<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>CM</th>
+      <th>ARR</th>
+      <th>VD</th>
+      <th>CHD</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>small_ubiquitin-related_modifier_1</th>
+      <td>0.059894</td>
+      <td>0.029087</td>
+      <td>0.226948</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.040827</td>
+    </tr>
+    <tr>
+      <th>metalloproteinase_inhibitor_4</th>
+      <td>0.062432</td>
+      <td>0.130334</td>
+      <td>0.277115</td>
+      <td>0.147418</td>
+      <td>0.093665</td>
+      <td>0.008517</td>
+    </tr>
+    <tr>
+      <th>aromatic-l-amino-acid_decarboxylase</th>
+      <td>0.081461</td>
+      <td>0.024430</td>
+      <td>0.033333</td>
+      <td>0.231319</td>
+      <td>0.000000</td>
+      <td>0.013113</td>
+    </tr>
+    <tr>
+      <th>nadph_oxidase_activator_1</th>
+      <td>0.052016</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tumor_necrosis_factor_ligand_superfamily_member_14</th>
+      <td>0.052016</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="biplot-vcd">Biplot: VCD</h3>
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvddata <span style="color: #555555">=</span> ndf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+<span style="color: #0099FF; font-style: italic"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
+pca <span style="color: #555555">=</span> PCA(n_components <span style="color: #555555">=</span><span style="color: #FF6600">2</span>)
+pca<span style="color: #555555">.</span>fit(cvddata<span style="color: #555555">.</span>T)
+
+
+<span style="color: #0099FF; font-style: italic"># TODO: Transform the good data using the PCA fit above</span>
+reduced_data <span style="color: #555555">=</span> pca<span style="color: #555555">.</span>transform(cvddata<span style="color: #555555">.</span>T)
+
+
+<span style="color: #0099FF; font-style: italic"># Create a DataFrame for the reduced data</span>
+reduced_data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(reduced_data)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>reduced_data
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.729121</td>
+      <td>-1.000078</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.659602</td>
+      <td>2.072654</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.460644</td>
+      <td>0.529615</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.871578</td>
+      <td>-0.387538</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.961345</td>
+      <td>-0.462087</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-1.095155</td>
+      <td>-0.752566</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">biplot</span>(reduced_data, pca,fname):
+
+
+    names  <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;CVA&#39;</span>,<span style="color: #CC3300">&#39;IHD&#39;</span>,<span style="color: #CC3300">&#39;CM&#39;</span>,<span style="color: #CC3300">&#39;ARR&#39;</span>,<span style="color: #CC3300">&#39;VD&#39;</span>,<span style="color: #CC3300">&#39;CHD&#39;</span>]
+    clrs <span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;navy&#39;</span>,<span style="color: #CC3300">&#39;green&#39;</span>,<span style="color: #CC3300">&#39;firebrick&#39;</span>,<span style="color: #CC3300">&#39;mediumslateblue&#39;</span>,<span style="color: #CC3300">&#39;darkgoldenrod&#39;</span>, <span style="color: #CC3300">&#39;deepskyblue&#39;</span>]
+
+
+
+    fig, ax <span style="color: #555555">=</span> plt<span style="color: #555555">.</span>subplots(figsize <span style="color: #555555">=</span> (<span style="color: #FF6600">10</span>,<span style="color: #FF6600">10</span>))
+
+    <span style="color: #0099FF; font-style: italic"># scatterplot of the reduced CVDs  </span>
+    ax<span style="color: #555555">.</span>scatter(x<span style="color: #555555">=</span>reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span><span style="color: #FF6600">50</span>,\
+               y<span style="color: #555555">=</span>reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span><span style="color: #FF6600">50</span>, 
+               facecolors<span style="color: #555555">=</span>clrs,\
+               edgecolors<span style="color: #555555">=</span><span style="color: #CC3300">&#39;b&#39;</span>,\
+               s<span style="color: #555555">=</span><span style="color: #FF6600">2000</span>,\
+               alpha<span style="color: #555555">=</span><span style="color: #FF6600">0.5</span>)
+
+
+    <span style="color: #006699; font-weight: bold">for</span> i,x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>([<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">4</span>,<span style="color: #FF6600">5</span>],reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span><span style="color: #FF6600">50</span>,reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span><span style="color: #FF6600">50</span>):
+        ax<span style="color: #555555">.</span>annotate(names[i], xy<span style="color: #555555">=</span>(x<span style="color: #555555">-</span><span style="color: #FF6600">6.0</span>, y<span style="color: #555555">-</span><span style="color: #FF6600">2.0</span>), xytext<span style="color: #555555">=</span>(x<span style="color: #555555">-</span><span style="color: #FF6600">6.0</span>, y<span style="color: #555555">-</span><span style="color: #FF6600">2.0</span>),fontsize <span style="color: #555555">=</span> <span style="color: #FF6600">15</span>)
+
+
+    feature_vectors <span style="color: #555555">=</span> pca<span style="color: #555555">.</span>components_<span style="color: #555555">.</span>T
+
+
+    <span style="color: #0099FF; font-style: italic"># we use scaling factors to make the arrows easier to see</span>
+    asize, tpos <span style="color: #555555">=</span> <span style="color: #FF6600">700</span>, <span style="color: #FF6600">500</span>,
+
+
+    <span style="color: #0099FF; font-style: italic"># projections of the original features</span>
+    <span style="color: #006699; font-weight: bold">for</span> i, v <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">enumerate</span>(feature_vectors):
+           ax<span style="color: #555555">.</span>arrow(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">0</span>, v[<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span>asize, v[<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span>asize, 
+                          head_width<span style="color: #555555">=</span><span style="color: #FF6600">0.01</span>,\
+                          head_length<span style="color: #555555">=</span><span style="color: #FF6600">0.02</span>,\
+                          linewidth<span style="color: #555555">=</span><span style="color: #FF6600">0.1</span>,\
+                          color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;red&#39;</span>)
+
+
+    plt<span style="color: #555555">.</span>axis([<span style="color: #555555">-</span><span style="color: #FF6600">90</span>, <span style="color: #FF6600">150</span>, <span style="color: #555555">-</span><span style="color: #FF6600">90</span>, <span style="color: #FF6600">120</span>])
+    ax<span style="color: #555555">.</span>set_xlabel(<span style="color: #CC3300">&quot;Dimension 1&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    ax<span style="color: #555555">.</span>set_ylabel(<span style="color: #CC3300">&quot;Dimension 2&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    ax<span style="color: #555555">.</span>set_title(<span style="color: #CC3300">&quot;PC plane with original feature projections.&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">16</span>);
+    plt<span style="color: #555555">.</span>axhline(y<span style="color: #555555">=</span><span style="color: #FF6600">0</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;k&#39;</span>)
+    plt<span style="color: #555555">.</span>axvline(x<span style="color: #555555">=</span><span style="color: #FF6600">0</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;k&#39;</span>)
+    plt<span style="color: #555555">.</span>savefig(fname)
+    <span style="color: #006699; font-weight: bold">return</span> ax
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Create a biplot</span>
+biplot(reduced_data, pca, fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVD-biplot.pdf&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f10760c59b0&gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_1.png" /></p>
+<h3 id="normalized-data-pca">Normalized data PCA</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>cvddata <span style="color: #555555">=</span> ndfn<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+<span style="color: #0099FF; font-style: italic"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
+pca <span style="color: #555555">=</span> PCA(n_components <span style="color: #555555">=</span><span style="color: #FF6600">2</span>)
+pca<span style="color: #555555">.</span>fit(cvddata<span style="color: #555555">.</span>T)
+
+
+<span style="color: #0099FF; font-style: italic"># TODO: Transform the good data using the PCA fit above</span>
+reduced_data <span style="color: #555555">=</span> pca<span style="color: #555555">.</span>transform(cvddata<span style="color: #555555">.</span>T)
+
+
+<span style="color: #0099FF; font-style: italic"># Create a DataFrame for the reduced data</span>
+reduced_data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(reduced_data)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">nbiplot</span>(reduced_data, pca,fname):
+
+
+    names  <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;CVA&#39;</span>,<span style="color: #CC3300">&#39;IHD&#39;</span>,<span style="color: #CC3300">&#39;CM&#39;</span>,<span style="color: #CC3300">&#39;ARR&#39;</span>,<span style="color: #CC3300">&#39;VD&#39;</span>,<span style="color: #CC3300">&#39;CHD&#39;</span>]
+    clrs <span style="color: #555555">=</span>[<span style="color: #CC3300">&#39;navy&#39;</span>,<span style="color: #CC3300">&#39;green&#39;</span>,<span style="color: #CC3300">&#39;firebrick&#39;</span>,<span style="color: #CC3300">&#39;mediumslateblue&#39;</span>,<span style="color: #CC3300">&#39;darkgoldenrod&#39;</span>, <span style="color: #CC3300">&#39;deepskyblue&#39;</span>]
+
+
+
+    fig, ax <span style="color: #555555">=</span> plt<span style="color: #555555">.</span>subplots(figsize <span style="color: #555555">=</span> (<span style="color: #FF6600">10</span>,<span style="color: #FF6600">10</span>))
+
+    <span style="color: #0099FF; font-style: italic"># scatterplot of the reduced CVDs  </span>
+    ax<span style="color: #555555">.</span>scatter(x<span style="color: #555555">=</span>reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span><span style="color: #FF6600">20</span>,\
+               y<span style="color: #555555">=</span>reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span><span style="color: #FF6600">20</span>, 
+               facecolors<span style="color: #555555">=</span>clrs,\
+               edgecolors<span style="color: #555555">=</span><span style="color: #CC3300">&#39;b&#39;</span>,\
+               s<span style="color: #555555">=</span><span style="color: #FF6600">2000</span>,\
+               alpha<span style="color: #555555">=</span><span style="color: #FF6600">0.5</span>)
+
+
+    <span style="color: #006699; font-weight: bold">for</span> i,x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>([<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">4</span>,<span style="color: #FF6600">5</span>],reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span><span style="color: #FF6600">20</span>,reduced_data<span style="color: #555555">.</span>loc[:,<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span><span style="color: #FF6600">20</span>):
+        ax<span style="color: #555555">.</span>annotate(names[i], xy<span style="color: #555555">=</span>(x<span style="color: #555555">-</span><span style="color: #FF6600">3.0</span>, y<span style="color: #555555">-</span><span style="color: #FF6600">1.0</span>), xytext<span style="color: #555555">=</span>(x<span style="color: #555555">-</span><span style="color: #FF6600">3.0</span>, y<span style="color: #555555">-</span><span style="color: #FF6600">1.0</span>),fontsize <span style="color: #555555">=</span> <span style="color: #FF6600">15</span>)
+
+
+    feature_vectors <span style="color: #555555">=</span> pca<span style="color: #555555">.</span>components_<span style="color: #555555">.</span>T
+
+
+    <span style="color: #0099FF; font-style: italic"># we use scaling factors to make the arrows easier to see</span>
+    asize, tpos <span style="color: #555555">=</span> <span style="color: #FF6600">700</span>, <span style="color: #FF6600">500</span>,
+
+
+    <span style="color: #0099FF; font-style: italic"># projections of the original features</span>
+    <span style="color: #006699; font-weight: bold">for</span> i, v <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">enumerate</span>(feature_vectors):
+           ax<span style="color: #555555">.</span>arrow(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">0</span>, v[<span style="color: #FF6600">0</span>]<span style="color: #555555">*</span>asize, v[<span style="color: #FF6600">1</span>]<span style="color: #555555">*</span>asize, 
+                          head_width<span style="color: #555555">=</span><span style="color: #FF6600">0.01</span>,\
+                          head_length<span style="color: #555555">=</span><span style="color: #FF6600">0.02</span>,\
+                          linewidth<span style="color: #555555">=</span><span style="color: #FF6600">0.1</span>,\
+                          color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;red&#39;</span>)
+
+
+    plt<span style="color: #555555">.</span>axis([<span style="color: #555555">-</span><span style="color: #FF6600">90</span>, <span style="color: #FF6600">150</span>, <span style="color: #555555">-</span><span style="color: #FF6600">90</span>, <span style="color: #FF6600">120</span>])
+    ax<span style="color: #555555">.</span>set_xlabel(<span style="color: #CC3300">&quot;Dimension 1&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    ax<span style="color: #555555">.</span>set_ylabel(<span style="color: #CC3300">&quot;Dimension 2&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    ax<span style="color: #555555">.</span>set_title(<span style="color: #CC3300">&quot;PC plane with original feature projections.&quot;</span>, fontsize<span style="color: #555555">=</span><span style="color: #FF6600">16</span>);
+    plt<span style="color: #555555">.</span>axhline(y<span style="color: #555555">=</span><span style="color: #FF6600">0</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;k&#39;</span>)
+    plt<span style="color: #555555">.</span>axvline(x<span style="color: #555555">=</span><span style="color: #FF6600">0</span>, color<span style="color: #555555">=</span><span style="color: #CC3300">&#39;k&#39;</span>)
+    plt<span style="color: #555555">.</span>savefig(fname)
+    <span style="color: #006699; font-weight: bold">return</span> ax
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># Create a biplot</span>
+nbiplot(reduced_data, pca, fname <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;CVD-nbiplot.pdf&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f107737d518&gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_15_1.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../tsne/tSNE-average/" class="btn btn-neutral float-right" title="tSNE">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../caseolap/CaseOLAP/" class="btn btn-neutral" title="CaseOLAP Score"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../caseolap/CaseOLAP/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../tsne/tSNE-average/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

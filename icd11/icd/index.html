@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ICD 11 Codes - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ICD 11 Codes";
+    var mkdocs_page_input_path = "icd11/icd.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        ICD 11 Codes
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#icd-11-data">
+      ICD-11 Data
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#getting-client-key-for-api-connection">Getting Client Key for API connection</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#get-the-oauth2-token">Get the OAUTH2 token</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#access-icd-api">Access ICD API</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#mms-data">MMS Data</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#a-sample-file-parser">A Sample File Parser</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#view-sample-icd-11-tree-cor-cardiovascular-disease-here">View Sample ICD 11 tree cor Cardiovascular Disease here</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data Preparation &raquo;</li>
+        
+      
+    
+    <li>ICD 11 Codes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="icd-11-data">ICD-11 Data</h2>
+<p>ICD is the foundation for the identification of health trends and statistics globally, and the international standard for reporting diseases and health conditions. It is the diagnostic classification standard for all clinical and research purposes. ICD defines the universe of diseases, disorders, injuries and other related health conditions, listed in a comprehensive, hierarchical fashion that allows for:</p>
+<p>easy storage, retrieval and analysis of health information for evidenced-based decision-making;
+sharing and comparing health information between hospitals, regions, settings and countries; and
+data comparisons in the same location across different time periods.
+Uses include monitoring of the incidence and prevalence of diseases, observing reimbursements and resource allocation trends, and keeping track of safety and quality guidelines. They also include the counting of deaths as well as diseases, injuries, symptoms, reasons for encounter, factors that influence health status, and external causes of disease. <a href="https://www.who.int/classifications/icd/en/">Source</a></p>
+<ul>
+<li><a href="https://caseolap.github.io/meshtrees/trees/cvdicd.html">View Sample ICD 11 Tree for Cardiovascular Disease</a></li>
+</ul>
+<h4 id="getting-client-key-for-api-connection">Getting Client Key for API connection</h4>
+<p>By default one client Id and client secret is provided to be able to authenticate your software to use the ICD APIs. You may however, add more clients or remove some of them.
+(IMPORTANT!!! If a client key is removed, clients configured with this Id/secret will not be able access the API anymore)</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ClientId: xxxxxx
+ClientSecret: xxxxxxx
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">requests</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ClientId <span style="color: #555555">=</span>  <span style="color: #CC3300">&quot;xxxxxx&quot;</span>
+ClientSecret <span style="color: #555555">=</span>  <span style="color: #CC3300">&quot;xxxxxx&quot;</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>token_endpoint <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;https://icdaccessmanagement.who.int/connect/token&#39;</span>
+client_id <span style="color: #555555">=</span> ClientId
+client_secret <span style="color: #555555">=</span> ClientSecret
+scope <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;icdapi_access&#39;</span>
+grant_type <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;client_credentials&#39;</span>
+</pre></div>
+
+
+<h4 id="get-the-oauth2-token">Get the OAUTH2 token</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># set data to post</span>
+payload <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;client_id&#39;</span>: client_id, 
+           <span style="color: #CC3300">&#39;client_secret&#39;</span>: client_secret, 
+           <span style="color: #CC3300">&#39;scope&#39;</span>: scope, 
+           <span style="color: #CC3300">&#39;grant_type&#39;</span>: grant_type}
+
+<span style="color: #0099FF; font-style: italic"># make request</span>
+r <span style="color: #555555">=</span> requests<span style="color: #555555">.</span>post(token_endpoint, data<span style="color: #555555">=</span>payload, verify<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)<span style="color: #555555">.</span>json()
+token <span style="color: #555555">=</span> r[<span style="color: #CC3300">&#39;access_token&#39;</span>]
+</pre></div>
+
+
+<h4 id="access-icd-api">Access ICD API</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>uri <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;https://id.who.int/icd/entity&#39;</span>
+
+<span style="color: #0099FF; font-style: italic"># HTTP header fields to set</span>
+
+headers <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;Authorization&#39;</span>:  <span style="color: #CC3300">&#39;Bearer &#39;</span><span style="color: #555555">+</span>token, 
+           <span style="color: #CC3300">&#39;Accept&#39;</span>: <span style="color: #CC3300">&#39;application/json&#39;</span>, 
+           <span style="color: #CC3300">&#39;Accept-Language&#39;</span>: <span style="color: #CC3300">&#39;en&#39;</span>,
+           <span style="color: #CC3300">&#39;API-Version&#39;</span>: <span style="color: #CC3300">&#39;v2&#39;</span>}
+
+<span style="color: #0099FF; font-style: italic"># make request           </span>
+r <span style="color: #555555">=</span> requests<span style="color: #555555">.</span>get(uri, headers<span style="color: #555555">=</span>headers, verify<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+
+<span style="color: #0099FF; font-style: italic"># print the result</span>
+<span style="color: #0099FF; font-style: italic"># print (r.text) </span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">print</span>(r<span style="color: #555555">.</span>json())
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{&#39;@context&#39;: &#39;http://id.who.int/icd/contexts/contextForTopLevel.json&#39;,
+&#39;@id&#39;: &#39;http://id.who.int/icd/entity&#39;,
+&#39;title&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: 
+&#39;International Classification of Diseases 11th Revision&#39;},
+&#39;releaseId&#39;: &#39;2019-04&#39;, &#39;releaseDate&#39;: &#39;2019-04-06&#39;, &#39;child&#39;: 
+[&#39;http://id.who.int/icd/entity/1435254666&#39;,
+&#39;http://id.who.int/icd/entity/1630407678&#39;,
+&#39;http://id.who.int/icd/entity/1766440644&#39;,
+&#39;http://id.who.int/icd/entity/1954798891&#39;,
+&#39;http://id.who.int/icd/entity/21500692&#39;,
+&#39;http://id.who.int/icd/entity/334423054&#39;,
+&#39;http://id.who.int/icd/entity/274880002&#39;,
+&#39;http://id.who.int/icd/entity/1296093776&#39;,
+&#39;http://id.who.int/icd/entity/868865918&#39;, 
+&#39;http://id.who.int/icd/entity/1218729044&#39;, 
+&#39;http://id.who.int/icd/entity/426429380&#39;, 
+&#39;http://id.who.int/icd/entity/197934298&#39;, 
+&#39;http://id.who.int/icd/entity/1256772020&#39;,
+&#39;http://id.who.int/icd/entity/1639304259&#39;, 
+&#39;http://id.who.int/icd/entity/1473673350&#39;
+,&#39;http://id.who.int/icd/entity/30659757&#39;,
+&#39;http://id.who.int/icd/entity/577470983&#39;,
+&#39;http://id.who.int/icd/entity/714000734&#39;,
+&#39;http://id.who.int/icd/entity/1306203631&#39;,
+&#39;http://id.who.int/icd/entity/223744320&#39;,
+&#39;http://id.who.int/icd/entity/1843895818&#39;,
+&#39;http://id.who.int/icd/entity/435227771&#39;,
+&#39;http://id.who.int/icd/entity/850137482&#39;,
+&#39;http://id.who.int/icd/entity/1249056269&#39;,
+&#39;http://id.who.int/icd/entity/1596590595&#39;,
+&#39;http://id.who.int/icd/entity/718687701&#39;,
+&#39;http://id.who.int/icd/entity/231358748&#39;, 
+&#39;http://id.who.int/icd/entity/979408586&#39;, 
+&#39;http://id.who.int/icd/entity/1801349023&#39;],
+&#39;browserUrl&#39;: &#39;NA&#39;}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>D <span style="color: #555555">=</span> r<span style="color: #555555">.</span>json()
+ROOTS <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> D[<span style="color: #CC3300">&#39;child&#39;</span>]:
+    ROOTS<span style="color: #555555">.</span>append(item<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;ROOTS.json&quot;</span>, <span style="color: #CC3300">&#39;w&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> ff:
+    json<span style="color: #555555">.</span>dump(ROOTS,ff)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#ROOTS</span>
+</pre></div>
+
+
+<h4 id="mms-data">MMS Data</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>uri <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;https://id.who.int/icd/entity/1435254666&#39;</span>
+
+<span style="color: #0099FF; font-style: italic"># HTTP header fields to set</span>
+
+headers <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;Authorization&#39;</span>:  <span style="color: #CC3300">&#39;Bearer &#39;</span><span style="color: #555555">+</span>token, 
+           <span style="color: #CC3300">&#39;Accept&#39;</span>: <span style="color: #CC3300">&#39;application/json&#39;</span>, 
+           <span style="color: #CC3300">&#39;Accept-Language&#39;</span>: <span style="color: #CC3300">&#39;en&#39;</span>,
+           <span style="color: #CC3300">&#39;API-Version&#39;</span>: <span style="color: #CC3300">&#39;v2&#39;</span>}
+
+<span style="color: #0099FF; font-style: italic"># make request           </span>
+r <span style="color: #555555">=</span> requests<span style="color: #555555">.</span>get(uri, headers<span style="color: #555555">=</span>headers, verify<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+
+<span style="color: #0099FF; font-style: italic"># print the result</span>
+<span style="color: #0099FF; font-style: italic"># print (r.text) </span>
+<span style="color: #336666">print</span>(r<span style="color: #555555">.</span>json())
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{&#39;@context&#39;: &#39;http://id.who.int/icd/contexts/contextForFoundationEntity.json&#39;,
+&#39;@id&#39;: &#39;http://id.who.int/icd/entity/1435254666&#39;, 
+&#39;parent&#39;: [&#39;http://id.who.int/icd/entity&#39;],
+&#39;child&#39;: [&#39;http://id.who.int/icd/entity/588616678&#39;,
+&#39;http://id.who.int/icd/entity/1904876434&#39;, 
+&#39;http://id.who.int/icd/entity/979278646&#39;, 
+&#39;http://id.who.int/icd/entity/1539889147&#39;,
+&#39;http://id.who.int/icd/entity/1412960686&#39;,
+&#39;http://id.who.int/icd/entity/1935092859&#39;,
+&#39;http://id.who.int/icd/entity/487269828&#39;, 
+&#39;http://id.who.int/icd/entity/1000704511&#39;,
+&#39;http://id.who.int/icd/entity/1104303944&#39;,
+&#39;http://id.who.int/icd/entity/1585949804&#39;,
+&#39;http://id.who.int/icd/entity/1959883044&#39;,
+&#39;http://id.who.int/icd/entity/921595235&#39;, 
+&#39;http://id.who.int/icd/entity/1251496839&#39;,
+&#39;http://id.who.int/icd/entity/1136802325&#39;,
+&#39;http://id.who.int/icd/entity/145723401&#39;, 
+&#39;http://id.who.int/icd/entity/985510409&#39;,
+&#39;http://id.who.int/icd/entity/293771399&#39;,
+&#39;http://id.who.int/icd/entity/5960175&#39;, 
+&#39;http://id.who.int/icd/entity/911707612&#39;,
+&#39;http://id.who.int/icd/entity/1965146397&#39;,
+&#39;http://id.who.int/icd/entity/142052508&#39;,
+&#39;http://id.who.int/icd/entity/1760597414&#39;,
+&#39;http://id.who.int/icd/entity/458687859&#39;,
+&#39;http://id.who.int/icd/entity/2143513892&#39;],
+&#39;browserUrl&#39;: &#39;NA&#39;, &#39;title&#39;: {&#39;@language&#39;: &#39;en&#39;,
+&#39;@value&#39;: &#39;Certain infectious or parasitic diseases&#39;}, 
+&#39;synonym&#39;: [{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;, 
+&#39;@value&#39;: &#39;infection NOS&#39;}}, {&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;,
+&#39;@value&#39;: &#39;infection of unspecified organism and unspecified site&#39;}},
+{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;,
+&#39;@value&#39;: &#39;infectious disease NOS&#39;}},
+{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: 
+&#39;infection unknown&#39;}}, {&#39;label&#39;: {&#39;@language&#39;: 
+&#39;en&#39;, &#39;@value&#39;: &#39;infection process NOS&#39;}}], 
+&#39;definition&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: 
+&#39;This chapter includes certain conditions caused 
+by a pathogenic organism or microorganism, 
+such as a bacterium, virus, parasite, or fungus.&#39;},
+&#39;exclusion&#39;: [{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;:
+&#39;Infection arising from device, implant or graft,
+not elsewhere classified&#39;}, &#39;foundationReference&#39;:
+&#39;http://id.who.int/icd/entity/1612485599&#39;}]}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>uri <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;http://id.who.int/icd/release/11/2019-04/mms/135352227&#39;</span>
+
+<span style="color: #0099FF; font-style: italic"># HTTP header fields to set</span>
+
+headers <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;Authorization&#39;</span>:  <span style="color: #CC3300">&#39;Bearer &#39;</span><span style="color: #555555">+</span>token, 
+           <span style="color: #CC3300">&#39;Accept&#39;</span>: <span style="color: #CC3300">&#39;application/json&#39;</span>, 
+           <span style="color: #CC3300">&#39;Accept-Language&#39;</span>: <span style="color: #CC3300">&#39;en&#39;</span>,
+           <span style="color: #CC3300">&#39;API-Version&#39;</span>: <span style="color: #CC3300">&#39;v2&#39;</span>}
+
+<span style="color: #0099FF; font-style: italic"># make request           </span>
+r <span style="color: #555555">=</span> requests<span style="color: #555555">.</span>get(uri, headers<span style="color: #555555">=</span>headers, verify<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+
+<span style="color: #0099FF; font-style: italic"># print the result</span>
+<span style="color: #0099FF; font-style: italic"># print (r.text) </span>
+<span style="color: #336666">print</span>(r<span style="color: #555555">.</span>json())
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{&#39;@context&#39;: &#39;http://id.who.int/icd/contexts/contextForLinearizationEntity.json&#39;, 
+&#39;@id&#39;: &#39;http://id.who.int/icd/release/11/2019-04/mms/135352227&#39;,
+    &#39;parent&#39;: [&#39;http://id.who.int/icd/release/11/2019-04/mms/588616678&#39;],
+    &#39;child&#39;: [&#39;http://id.who.int/icd/release/11/2019-04/mms/257068234&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/416025325&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/2080365623&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/344162786&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/250688797&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/1000894786&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/794462570&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/1528414070&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/1780040028&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/515117475&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/135352227/other&#39;,
+    &#39;http://id.who.int/icd/release/11/2019-04/mms/135352227/unspecified&#39;],
+    &#39;browserUrl&#39;: &#39;https://icd.who.int/browse11/l-m/en#/http%3a%\
+    2f%2fid.who.int%2ficd%2fentity%2f135352227&#39;,
+    &#39;code&#39;: &#39;&#39;, &#39;source&#39;: &#39;http://id.who.int/icd/entity/135352227&#39;,
+    &#39;classKind&#39;: &#39;block&#39;, &#39;blockId&#39;: &#39;BlockL2-1A0&#39;, 
+    &#39;codeRange&#39;: &#39;1A00-1A0Z&#39;, &#39;foundationChildElsewhere&#39;:
+    [{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;:
+    &#39;Abdominal actinomycosis&#39;}, &#39;foundationReference&#39;: 
+    &#39;http://id.who.int/icd/entity/2143116824&#39;,
+    &#39;linearizationReference&#39;: &#39;http://id.who.int/icd/release/11/2019-04/mms/2143116824&#39;},
+    {&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: &#39;Listerial gastroenteritis&#39;},
+    &#39;foundationReference&#39;: &#39;http://id.who.int/icd/entity/974967764&#39;,
+    &#39;linearizationReference&#39;: &#39;http://id.who.int/icd/release/11/2019-04/mms/419706488/other&#39;}], 
+    &#39;title&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: &#39;Bacterial intestinal infections&#39;},
+    &#39;definition&#39;: {&#39;@language&#39;: &#39;en&#39;, &#39;@value&#39;: &#39;Any condition of the intestines,
+    caused by an infection with a bacterial source.&#39;}, 
+    &#39;exclusion&#39;: [{&#39;label&#39;: {&#39;@language&#39;: &#39;en&#39;,
+    &#39;@value&#39;: &#39;Bacterial foodborne intoxications&#39;},
+    &#39;foundationReference&#39;: &#39;http://id.who.int/icd/entity/1834648119&#39;,
+    &#39;linearizationReference&#39;: &#39;http://id.who.int/icd/release/11/2019-04/mms/1834648119&#39;}]}
+</pre></div>
+
+
+<h4 id="a-sample-file-parser">A Sample File Parser</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">file_parser</span>(file):
+    <span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(file , <span style="color: #CC3300">&quot;r&quot;</span>)<span style="color: #006699; font-weight: bold">as</span> f:
+        FDATA <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f:
+            raw <span style="color: #555555">=</span> json<span style="color: #555555">.</span>loads(line)
+            item <span style="color: #555555">=</span> collections<span style="color: #555555">.</span>defaultdict(<span style="color: #006699; font-weight: bold">lambda</span> : <span style="color: #CC3300">&#39;Key Not found&#39;</span>) 
+            <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> raw<span style="color: #555555">.</span>items():
+                item[key] <span style="color: #555555">=</span> value
+
+            <span style="color: #0099FF; font-style: italic">#print(item)</span>
+            title <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;title&#39;</span>][<span style="color: #CC3300">&quot;@value&quot;</span>]
+            ID <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;@id&quot;</span>]<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]
+
+            parents <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">if</span>  item[<span style="color: #CC3300">&#39;parent&#39;</span>]<span style="color: #555555">!=</span> <span style="color: #CC3300">&quot;Key Not found&quot;</span>:
+                <span style="color: #006699; font-weight: bold">for</span> pt <span style="color: #000000; font-weight: bold">in</span> item[<span style="color: #CC3300">&#39;parent&#39;</span>]:
+                    parents<span style="color: #555555">.</span>append(pt<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+
+
+            childs <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">if</span> item[<span style="color: #CC3300">&#39;child&#39;</span>] <span style="color: #555555">!=</span> <span style="color: #CC3300">&quot;Key Not found&quot;</span>:
+                <span style="color: #006699; font-weight: bold">for</span> ct <span style="color: #000000; font-weight: bold">in</span> item[<span style="color: #CC3300">&#39;child&#39;</span>]:
+                    childs<span style="color: #555555">.</span>append(ct<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+
+            definition <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;definition&quot;</span>]
+            <span style="color: #006699; font-weight: bold">if</span> definition <span style="color: #555555">!=</span> <span style="color: #CC3300">&quot;Key Not found&quot;</span>:
+                deff <span style="color: #555555">=</span> definition[<span style="color: #CC3300">&quot;@value&quot;</span>]
+            <span style="color: #006699; font-weight: bold">else</span>:
+                deff <span style="color: #555555">=</span> definition
+
+            synonym <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;synonym&quot;</span>]
+            <span style="color: #006699; font-weight: bold">if</span> synonym <span style="color: #555555">!=</span> <span style="color: #CC3300">&quot;Key Not found&quot;</span>:
+                syn <span style="color: #555555">=</span> []
+                <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> synonym:
+                    syn<span style="color: #555555">.</span>append(t[<span style="color: #CC3300">&quot;@value&quot;</span>])
+            <span style="color: #006699; font-weight: bold">else</span>:
+                syn <span style="color: #555555">=</span> synonym
+
+            FDATA<span style="color: #555555">.</span>append({ID :{<span style="color: #CC3300">&quot;title&quot;</span>:title,\
+                          <span style="color: #CC3300">&quot;synonym&quot;</span> : syn,\
+                          <span style="color: #CC3300">&quot;definition&quot;</span>:deff,\
+                          <span style="color: #CC3300">&quot;parents&quot;</span>:parents,\
+                          <span style="color: #CC3300">&quot;childs&quot;</span>:childs}})
+        <span style="color: #006699; font-weight: bold">return</span> FDATA
+</pre></div>
+
+
+<h4 id="view-sample-icd-11-tree-cor-cardiovascular-disease-here"><a href="https://caseolap.github.io/meshtrees/trees/cvdicd.html">View Sample ICD 11 tree cor Cardiovascular Disease here</a></h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../reactome/Pathways/" class="btn btn-neutral float-right" title="Reactome">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../uniprot/uniprot/" class="btn btn-neutral" title="Uniprot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../uniprot/uniprot/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../reactome/Pathways/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

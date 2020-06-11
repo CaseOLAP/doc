@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Uniprot2Pathways - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Uniprot2Pathways";
+    var mkdocs_page_input_path = "reactome/Uniprot2Pathways.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Uniprot2Pathways</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="extraction-of-all-uniprot-to-pathways">Extraction of All Uniprot to Pathways</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DATA <span style="color: #555555">=</span> []
+HUMAN <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;UniProt2Reactome_All_Levels.txt&quot;</span>,<span style="color: #CC3300">&#39;r&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> f1:
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f1:
+
+        <span style="color: #0099FF; font-style: italic">#print(line.split(&quot;\t&quot;))</span>
+        sl <span style="color: #555555">=</span> line<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\t</span><span style="color: #CC3300">&quot;</span>)
+        <span style="color: #0099FF; font-style: italic">#print(sl)</span>
+        UID <span style="color: #555555">=</span> sl[<span style="color: #FF6600">0</span>]
+        RID <span style="color: #555555">=</span> sl[<span style="color: #FF6600">1</span>]
+        WAD <span style="color: #555555">=</span> sl[<span style="color: #FF6600">2</span>]
+        name <span style="color: #555555">=</span> sl[<span style="color: #FF6600">3</span>]
+        GEN <span style="color: #555555">=</span> sl[<span style="color: #FF6600">4</span>]
+        specis<span style="color: #555555">=</span> sl[<span style="color: #FF6600">5</span>]
+
+        <span style="color: #006699; font-weight: bold">if</span> specis[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #CC3300">&quot;</span>:
+            specis <span style="color: #555555">=</span> specis[<span style="color: #FF6600">0</span>:<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]
+
+        DATA<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;UID&quot;</span>: UID,\
+                     <span style="color: #CC3300">&quot;RID&quot;</span>:RID,\
+                     <span style="color: #CC3300">&quot;WAD&quot;</span>:WAD,\
+                     <span style="color: #CC3300">&quot;name&quot;</span>:name,\
+                     <span style="color: #CC3300">&quot;GEN&quot;</span>: GEN,\
+                     <span style="color: #CC3300">&quot;specis&quot;</span>:specis\
+                    })
+
+        <span style="color: #006699; font-weight: bold">if</span> specis <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;Homo sapiens&quot;</span>:
+            HUMAN<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;UID&quot;</span>: UID,\
+                         <span style="color: #CC3300">&quot;RID&quot;</span>:RID,\
+                         <span style="color: #CC3300">&quot;WAD&quot;</span>:WAD,\
+                         <span style="color: #CC3300">&quot;name&quot;</span>:name,\
+                         <span style="color: #CC3300">&quot;GEN&quot;</span>:GEN,\
+                         <span style="color: #CC3300">&quot;specis&quot;</span>:specis\
+                    })
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">len</span>(DATA)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>784328
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">len</span>(HUMAN)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>125359
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>HDF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(HUMAN)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>HDF<span style="color: #555555">.</span>head(<span style="color: #FF6600">50</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GEN</th>
+      <th>RID</th>
+      <th>UID</th>
+      <th>WAD</th>
+      <th>name</th>
+      <th>specis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TAS</td>
+      <td>R-HSA-109582</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-10...</td>
+      <td>Hemostasis</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TAS</td>
+      <td>R-HSA-1280218</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-12...</td>
+      <td>Adaptive Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>IEA</td>
+      <td>R-HSA-1280218</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-12...</td>
+      <td>Adaptive Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TAS</td>
+      <td>R-HSA-166658</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Complement cascade</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TAS</td>
+      <td>R-HSA-166663</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Initial triggering of complement</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>TAS</td>
+      <td>R-HSA-166786</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Creation of C4 and C2 activators</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>TAS</td>
+      <td>R-HSA-168249</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Innate Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>IEA</td>
+      <td>R-HSA-168249</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Innate Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>TAS</td>
+      <td>R-HSA-168256</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>IEA</td>
+      <td>R-HSA-168256</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>TAS</td>
+      <td>R-HSA-173623</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-17...</td>
+      <td>Classical antibody-mediated complement activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>TAS</td>
+      <td>R-HSA-198933</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-19...</td>
+      <td>Immunoregulatory interactions between a Lympho...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>TAS</td>
+      <td>R-HSA-202733</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Cell surface interactions at the vascular wall</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>TAS</td>
+      <td>R-HSA-2029480</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Fcgamma receptor (FCGR) dependent phagocytosis</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>IEA</td>
+      <td>R-HSA-2029480</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Fcgamma receptor (FCGR) dependent phagocytosis</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>IEA</td>
+      <td>R-HSA-2029481</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>FCGR activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>TAS</td>
+      <td>R-HSA-2029481</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>FCGR activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>TAS</td>
+      <td>R-HSA-2029482</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Regulation of actin dynamics for phagocytic cu...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>TAS</td>
+      <td>R-HSA-2029485</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Role of phospholipids in phagocytosis</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>TAS</td>
+      <td>R-HSA-2168880</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-21...</td>
+      <td>Scavenging of heme from plasma</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TAS</td>
+      <td>R-HSA-2173782</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-21...</td>
+      <td>Binding and Uptake of Ligands by Scavenger Rec...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>TAS</td>
+      <td>R-HSA-2454202</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-24...</td>
+      <td>Fc epsilon receptor (FCERI) signaling</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>IEA</td>
+      <td>R-HSA-2454202</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-24...</td>
+      <td>Fc epsilon receptor (FCERI) signaling</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>TAS</td>
+      <td>R-HSA-2730905</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-27...</td>
+      <td>Role of LAT2/NTAL/LAB on calcium mobilization</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>IEA</td>
+      <td>R-HSA-2730905</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-27...</td>
+      <td>Role of LAT2/NTAL/LAB on calcium mobilization</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>TAS</td>
+      <td>R-HSA-2871796</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-28...</td>
+      <td>FCERI mediated MAPK activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>TAS</td>
+      <td>R-HSA-2871809</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-28...</td>
+      <td>FCERI mediated Ca+2 mobilization</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>IEA</td>
+      <td>R-HSA-2871809</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-28...</td>
+      <td>FCERI mediated Ca+2 mobilization</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>TAS</td>
+      <td>R-HSA-2871837</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-28...</td>
+      <td>FCERI mediated NF-kB activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>TAS</td>
+      <td>R-HSA-5653656</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-56...</td>
+      <td>Vesicle-mediated transport</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>TAS</td>
+      <td>R-HSA-5690714</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-56...</td>
+      <td>CD22 mediated BCR regulation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>TAS</td>
+      <td>R-HSA-977606</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-97...</td>
+      <td>Regulation of Complement cascade</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>TAS</td>
+      <td>R-HSA-983695</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-98...</td>
+      <td>Antigen activates B Cell Receptor (BCR) leadin...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>IEA</td>
+      <td>R-HSA-983695</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-98...</td>
+      <td>Antigen activates B Cell Receptor (BCR) leadin...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>TAS</td>
+      <td>R-HSA-983705</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-98...</td>
+      <td>Signaling by the B Cell Receptor (BCR)</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>IEA</td>
+      <td>R-HSA-983705</td>
+      <td>A0A075B6P5</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-98...</td>
+      <td>Signaling by the B Cell Receptor (BCR)</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>TAS</td>
+      <td>R-HSA-109582</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-10...</td>
+      <td>Hemostasis</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>TAS</td>
+      <td>R-HSA-1280218</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-12...</td>
+      <td>Adaptive Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>IEA</td>
+      <td>R-HSA-1280218</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-12...</td>
+      <td>Adaptive Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>TAS</td>
+      <td>R-HSA-166658</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Complement cascade</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>TAS</td>
+      <td>R-HSA-166663</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Initial triggering of complement</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>TAS</td>
+      <td>R-HSA-166786</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Creation of C4 and C2 activators</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>TAS</td>
+      <td>R-HSA-168249</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Innate Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>IEA</td>
+      <td>R-HSA-168249</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Innate Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>TAS</td>
+      <td>R-HSA-168256</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>IEA</td>
+      <td>R-HSA-168256</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-16...</td>
+      <td>Immune System</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>TAS</td>
+      <td>R-HSA-173623</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-17...</td>
+      <td>Classical antibody-mediated complement activation</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>TAS</td>
+      <td>R-HSA-198933</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-19...</td>
+      <td>Immunoregulatory interactions between a Lympho...</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>TAS</td>
+      <td>R-HSA-202733</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Cell surface interactions at the vascular wall</td>
+      <td>Homo sapiens</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>TAS</td>
+      <td>R-HSA-2029480</td>
+      <td>A0A075B6S6</td>
+      <td>https://reactome.org/PathwayBrowser/#/R-HSA-20...</td>
+      <td>Fcgamma receptor (FCGR) dependent phagocytosis</td>
+      <td>Homo sapiens</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>HDF<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&quot;Uniprot2Pathways_HomoSpiens.csv&quot;</span>)
+</pre></div>
+
+
+<h3 id="uniprot-to-pathways">Uniprot to Pathways</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>unames <span style="color: #555555">=</span> <span style="color: #336666">list</span>(<span style="color: #336666">set</span>(HDF[<span style="color: #CC3300">&#39;name&#39;</span>]))
+<span style="color: #336666">len</span>(unames)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>2229
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Name2uniprot <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> name <span style="color: #000000; font-weight: bold">in</span> unames:
+    alluniprot <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> ID,nm <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(HDF[<span style="color: #CC3300">&#39;UID&#39;</span>],HDF[<span style="color: #CC3300">&#39;name&#39;</span>]):
+        <span style="color: #006699; font-weight: bold">if</span> nm <span style="color: #555555">==</span> name:
+            alluniprot<span style="color: #555555">.</span>append(ID)
+    Name2uniprot<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;Pathway&quot;</span>: name,<span style="color: #CC3300">&quot;UIDs&quot;</span>:alluniprot, <span style="color: #CC3300">&quot;count&quot;</span>: <span style="color: #336666">len</span>(alluniprot)})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>NUP <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(Name2uniprot)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>NUP<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&quot;Pathways2Uniprot.csv&quot;</span>)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

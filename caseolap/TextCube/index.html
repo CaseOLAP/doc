@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Text-Cube Creation - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Text-Cube Creation";
+    var mkdocs_page_input_path = "caseolap/TextCube.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Text-Cube Creation
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#import-required-libraries">Import required libraries</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#collection-of-all-decendent-mesh-nods-in-mesh-tree">Collection of all decendent MeSH nods in MeSH tree</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#application-of-mesh-to-pmid-mapping-to-find-documents-for-each-cell">Application of Mesh to PMID mapping to find documents for each cell</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#creation-of-pmid-to-cell-mapping">Creation of PMID to Cell mapping</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CaseOLAP Pipelines &raquo;</li>
+        
+      
+    
+    <li>Text-Cube Creation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="text-cube-creation">Text-cube creation</h1>
+<p>Text-cube creation is an intelligent data engineering step in CaseOLAP which outputs a functional document structure with dimensions and cells informed by user provided document metadata. Each cell within the text-cube corresponds to a subset of documents. Following are the steps to create a text-cube.</p>
+<p><strong>Selection of user defined categories</strong> :  User selects the MeSH descriptors associated with the defined categories. Using those MeSH descriptors, cells of the documents are prepared. MeSH to PMID mapping prepared at step 2.4 is used to populate user defined cells in text-cube.</p>
+<p><strong>Implementation of MeSH descriptors</strong> :  U.S. National Library of Medicine provides the Medical Subject Heading (MeSH) in the hierarchical tree(data structure) with node ids. This permits searching for publications at varying levels of specificity. With given set of root node ids, one can select all documents for a specific cell by collecting all descendant nodes. </p>
+<p><strong>Text-cube metadata preparation</strong> : A collection of user provided metadata(cell name, associated MeSH, PMID etc) representing each text document in the cell is prepared. There could be the significant number of  documents falling under two or more cells. A dimensional hierarchy is implemented to organize the text-cube, providing each cell with a specific cell context (e.g., a parent cell, child cell, or sibling cell). Following are the steps to prepare cell-document metadata preparation:
+- provide the name of the cell,
+- make a list of document id (PMID) within each cell,
+- count the number of documents in each cell.</p>
+<h4 id="import-required-libraries">Import required libraries</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">time</span>
+</pre></div>
+
+
+<p><strong>Set up input and out file address</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>input_file_meshtree <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;input/mtrees2018.bin&quot;</span>  <span style="color: #0099FF; font-style: italic"># MeSH Tree </span>
+input_file_mesh2pmid <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;mesh2pmid.json&quot;</span> 
+<span style="color: #0099FF; font-style: italic"># MeSH to PMID mapping</span>
+input_file_input_cat <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;input/categories.txt&#39;</span>
+<span style="color: #0099FF; font-style: italic"># file containing MeSH root nodes for each category  </span>
+output_file_pmid_and_cat <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;pmid_and_cat.json&quot;</span> 
+<span style="color: #0099FF; font-style: italic"># file containing pmid to cell mapping</span>
+
+concerned_cat <span style="color: #555555">=</span> []
+</pre></div>
+
+
+<h4 id="collection-of-all-decendent-mesh-nods-in-mesh-tree">Collection of all decendent MeSH nods in MeSH tree</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Find corresponding MeSH Terms for each category.</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(input_file_input_cat, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_in_input_cat:
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f_in_input_cat:
+        concerned_cat<span style="color: #555555">.</span>append(line<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>split())
+num_cat <span style="color: #555555">=</span> <span style="color: #336666">len</span>(concerned_cat)
+
+term_set_per_cat <span style="color: #555555">=</span> [<span style="color: #336666">set</span>() <span style="color: #006699; font-weight: bold">for</span> _ <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(num_cat)]
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(input_file_meshtree, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_in_meshtree:
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f_in_meshtree:
+        term_tree <span style="color: #555555">=</span> line<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;;&quot;</span>)
+        cur_term <span style="color: #555555">=</span> term_tree[<span style="color: #FF6600">0</span>]
+        cur_tree <span style="color: #555555">=</span> term_tree[<span style="color: #FF6600">1</span>]
+
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(num_cat):
+            <span style="color: #006699; font-weight: bold">for</span> cur_cat_tree <span style="color: #000000; font-weight: bold">in</span> concerned_cat[i]:
+                <span style="color: #006699; font-weight: bold">if</span> cur_cat_tree <span style="color: #000000; font-weight: bold">in</span> cur_tree:
+                    term_set_per_cat[i]<span style="color: #555555">.</span>add(cur_term)
+</pre></div>
+
+
+<h4 id="application-of-mesh-to-pmid-mapping-to-find-documents-for-each-cell">Application of <code>Mesh to PMID mapping</code> to find documents for each cell</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Find corresponding papers for each category.</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+
+pmid_set_per_cat <span style="color: #555555">=</span> [<span style="color: #336666">set</span>() <span style="color: #006699; font-weight: bold">for</span> _ <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(num_cat)]
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(input_file_mesh2pmid, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_in:
+
+    start <span style="color: #555555">=</span> time<span style="color: #555555">.</span>time()
+
+    k <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> f_in: 
+
+        mesh2pmid <span style="color: #555555">=</span> {}
+        Info <span style="color: #555555">=</span> json<span style="color: #555555">.</span>loads(line<span style="color: #555555">.</span>strip())
+        <span style="color: #006699; font-weight: bold">for</span> key,value <span style="color: #000000; font-weight: bold">in</span> Info<span style="color: #555555">.</span>items():
+            mesh2pmid<span style="color: #555555">.</span>update({key:value})
+
+        k <span style="color: #555555">=</span> k<span style="color: #555555">+</span><span style="color: #FF6600">1</span>
+        <span style="color: #006699; font-weight: bold">if</span> k<span style="color: #555555">%</span><span style="color: #FF6600">1000</span> <span style="color: #555555">==</span><span style="color: #FF6600">0</span>:
+            <span style="color: #336666">print</span>(k,<span style="color: #CC3300">&#39;done!&#39;</span>)
+            <span style="color: #0099FF; font-style: italic">#break</span>
+
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(num_cat):
+            <span style="color: #006699; font-weight: bold">for</span> cur_term <span style="color: #000000; font-weight: bold">in</span> term_set_per_cat[i]:
+                <span style="color: #006699; font-weight: bold">if</span> cur_term <span style="color: #555555">==</span> key:
+                    pmid_set_per_cat[i] <span style="color: #555555">=</span> pmid_set_per_cat[i] \
+                    <span style="color: #555555">|</span> <span style="color: #336666">set</span>(mesh2pmid[cur_term])      
+</pre></div>
+
+
+<h4 id="creation-of-pmid-to-cell-mapping">Creation of PMID to Cell mapping</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">Serialize papers</span>
+<span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+pmid_and_cat <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(num_cat):
+    <span style="color: #006699; font-weight: bold">for</span> cur_pmid <span style="color: #000000; font-weight: bold">in</span> pmid_set_per_cat[i]:
+        pmid_and_cat<span style="color: #555555">.</span>append([cur_pmid, i])
+
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(output_file_pmid_and_cat, <span style="color: #CC3300">&quot;w&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f_out:
+    json<span style="color: #555555">.</span>dump(pmid_and_cat, f_out)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../EntityCount/" class="btn btn-neutral float-right" title="Entity Search">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../mongoDB/MongoPopulate/" class="btn btn-neutral" title="Populate MongoDB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../mongoDB/MongoPopulate/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../EntityCount/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

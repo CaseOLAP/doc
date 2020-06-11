@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Setting up Elasticsearch - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Setting up Elasticsearch";
+    var mkdocs_page_input_path = "setup/elasticsearch.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Setting up Elasticsearch
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#indexing-of-icd-11-documents">
+      Indexing of ICD 11 Documents
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#import-the-required-libraries">Import the required libraries</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#initialization-of-index">Initialization of Index</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#populating-the-index">Populating the Index</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Setting Up Tools &raquo;</li>
+        
+      
+    
+    <li>Setting up Elasticsearch</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="indexing-of-icd-11-documents">Indexing of ICD 11 Documents</h1>
+<p>Indexing of documents is done in two steps</p>
+<h3 id="import-the-required-libraries">Import the required libraries</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch</span> <span style="color: #006699; font-weight: bold">import</span> Elasticsearch
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch_dsl</span> <span style="color: #006699; font-weight: bold">import</span> Search, Q
+</pre></div>
+
+
+<h3 id="initialization-of-index">Initialization of Index</h3>
+<ul>
+<li>Prepare Name and number of shards, clusters etc.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>INDEX_NAME = &quot;icd11&quot;
+NUMBER_SHARDS = 1 
+NUMBER_REPLICAS = 0
+</pre></div>
+
+
+<ul>
+<li>Prepare request body</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>request_body <span style="color: #555555">=</span> {
+        <span style="color: #CC3300">&quot;settings&quot;</span>: {
+            <span style="color: #CC3300">&quot;number_of_shards&quot;</span>: NUMBER_SHARDS,
+            <span style="color: #CC3300">&quot;number_of_replicas&quot;</span>: NUMBER_REPLICAS
+        },
+        <span style="color: #CC3300">&quot;mappings&quot;</span>: {
+                <span style="color: #CC3300">&quot;properties&quot;</span>: {
+                    <span style="color: #CC3300">&quot;id&quot;</span>: {
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;keyword&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;tree&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;name&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;root&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;degree&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;integer&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;definition&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;synonym&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    }
+                }
+            }
+        }
+</pre></div>
+
+
+<ul>
+<li>Call Elasticsearch</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>es <span style="color: #555555">=</span> Elasticsearch()
+</pre></div>
+
+
+<ul>
+<li>Facilitate deleting old indexing if already exist</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">if</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>exists(INDEX_NAME):
+     res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>delete(index <span style="color: #555555">=</span> INDEX_NAME)
+     <span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Deleting index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+</pre></div>
+
+
+<ul>
+<li>Create new Indexing </li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>create(index <span style="color: #555555">=</span> INDEX_NAME, body <span style="color: #555555">=</span> request_body)
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Create index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+</pre></div>
+
+
+<h3 id="populating-the-index">Populating the Index</h3>
+<ul>
+<li>For each item in the data list, create the data dictionary and op dictionary</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;create data dictionary&#39;&#39;&#39;</span>
+
+data_dict <span style="color: #555555">=</span> {}
+data_dict[<span style="color: #CC3300">&quot;id&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;id&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;tree&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;tree&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;root&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;root&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;name&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;name&quot;</span>]
+data_dict[<span style="color: #CC3300">&#39;parents&#39;</span>]<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;parents&#39;</span>]
+data_dict[<span style="color: #CC3300">&#39;childs&#39;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;childs&#39;</span>]
+data_dict[<span style="color: #CC3300">&quot;sibls&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;sibls&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;degree&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;degree&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;synonym&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;synonym&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;definition&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;definition&quot;</span>]
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;create  op dictionary&#39;&#39;&#39;</span>
+op_dict <span style="color: #555555">=</span> {
+     <span style="color: #CC3300">&quot;index&quot;</span>: {
+          <span style="color: #CC3300">&quot;_index&quot;</span>: INDEX_NAME,
+          <span style="color: #CC3300">&quot;_id&quot;</span>: data_dict[<span style="color: #CC3300">&quot;id&quot;</span>]
+                    }
+                }
+</pre></div>
+
+
+<ul>
+<li>Add each data dictionary into bulk data list</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Put current data into the bulk&#39;&#39;&#39;</span> 
+
+bulk_data<span style="color: #555555">.</span>append(op_dict)
+bulk_data<span style="color: #555555">.</span>append(data_dict)
+</pre></div>
+
+
+<ul>
+<li>Push the doc dictionary to Indexing </li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>INDEX_NAME <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;icd11&quot;</span>
+bulk_size <span style="color: #555555">=</span> <span style="color: #FF6600">50</span>
+es <span style="color: #555555">=</span> Elasticsearch()
+es<span style="color: #555555">.</span>bulk(index<span style="color: #555555">=</span>INDEX_NAME, body<span style="color: #555555">=</span>bulk_data, request_timeout <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../git/" class="btn btn-neutral float-right" title="Setting up Git">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mongoDB/" class="btn btn-neutral" title="Setting up MongoDB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mongoDB/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../git/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

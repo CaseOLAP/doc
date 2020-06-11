@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Uniprot - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Uniprot";
+    var mkdocs_page_input_path = "uniprot/uniprot.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Uniprot
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#collecting-proteins-and-genes-data-from-uniprot-database">
+      Collecting Proteins and Genes data from Uniprot Database
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
+    <a href="#1-getting-data">
+      1. Getting Data
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-i">Step -I</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-ii">Step -II:</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-iii">Step-III:</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#step-iv">Step - IV</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#2-data-wrangling">
+      2. Data Wrangling
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#what-after-getting-protein-data">What After getting Protein Data?</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#q-what-are-the-different-organisms-can-you-find-the-top-50-organisms">Q: What are the different Organisms? Can you find the top 50 Organisms?</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#q-what-are-the-different-viral-hosts-can-you-find-top-virus-hosts">Q: What are the different Viral hosts? Can you find top Virus hosts?</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#3-cleaning-protein-names-synonyms-and-abbreviations">3. Cleaning Protein Names, Synonyms and abbreviations</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data Preparation &raquo;</li>
+        
+      
+    
+    <li>Uniprot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="collecting-proteins-and-genes-data-from-uniprot-database">Collecting Proteins and Genes data from Uniprot Database</h2>
+<p><strong>What is Uniprot Database?</strong></p>
+<p>UniProt is a freely accessible database of protein sequence and functional information, many entries being derived from genome sequencing projects. It contains a large amount of information about the biological function of proteins derived from the research literature.<a href="https://en.wikipedia.org/wiki/UniProt">source: Wikipedia</a></p>
+<p><strong>Why is this protein list important to current COVID-19 Dataset?</strong></p>
+<p>Inorder to gather the information about the biomolecular mechanism from the scientific literature (COVID-19 Dataset), one need to have the list of associated Proteins, Genes, Pathways, Drugs etc. This notebook presents the steps to gather Corona Virus associated proteins, Gene names and associated Pathways from Uniprot database. These lits could be useful to look at the textual documents for further NLP processing and to present the entity relationship.</p>
+<h3 id="1-getting-data">1. Getting Data</h3>
+<h4 id="step-i">Step -I</h4>
+<p>Gp to Uniprot Database (https://www.uniprot.org/) and select UniprotKB in search bar. Then inter corona virus into the search bar.</p>
+<p><img alt="" src="https://github.com/Vasuji/COVID19/blob/master/img/uniprot-search.png?raw=true" /></p>
+<h4 id="step-ii">Step -II:</h4>
+<p>After you hit search operation, you will get a table like disply of the result. It is multi page table. </p>
+<p><img alt="" src="https://github.com/Vasuji/COVID19/blob/master/img/uniprot-table.png?raw=true" /></p>
+<h4 id="step-iii">Step-III:</h4>
+<p>Look at the right most task bar of this table. You can see pen like icon through which you get next window. You can make a selection of the information you want to gather (e.g., Name, Gene, Pathways).</p>
+<p><img alt="" src="https://github.com/Vasuji/COVID19/blob/master/img/pen.png?raw=true" /></p>
+<h4 id="step-iv">Step - IV</h4>
+<p>Once you are done with selection of information, you can go back to previous table and hit download button. You can select the format of the data. Excel file download is one option.</p>
+<p><img alt="" src="https://github.com/Vasuji/COVID19/blob/master/img/uniprot-download.png?raw=true" /></p>
+<h3 id="2-data-wrangling">2. Data Wrangling</h3>
+<h4 id="what-after-getting-protein-data">What After getting Protein Data?</h4>
+<p>Lets play around with this data</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #555555">%</span>matplotlib inline
+file_path <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;../input/corona-virus-proteins-from-uniprot-database/corona.csv&quot;</span>
+df <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(file_path)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df<span style="color: #555555">.</span>head(<span style="color: #FF6600">5</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Entry</th>
+      <th>Entry name</th>
+      <th>Status</th>
+      <th>Protein names</th>
+      <th>Gene names</th>
+      <th>Organism</th>
+      <th>Virus hosts</th>
+      <th>Pathway</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A0A3R5SMJ6</td>
+      <td>A0A3R5SMJ6_WNV</td>
+      <td>unreviewed</td>
+      <td>Genome polyprotein</td>
+      <td>NaN</td>
+      <td>West Nile virus (WNV)</td>
+      <td>Aedes [TaxID: 7158]; Amblyomma variegatum (Tro...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>M1UFP6</td>
+      <td>M1UFP6_9FLAV</td>
+      <td>unreviewed</td>
+      <td>Genome polyprotein</td>
+      <td>NaN</td>
+      <td>Bovine viral diarrhea virus 1b</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P11223</td>
+      <td>SPIKE_IBVB</td>
+      <td>reviewed</td>
+      <td>Spike glycoprotein (S glycoprotein) (E2) (Pepl...</td>
+      <td>S 2</td>
+      <td>Avian infectious bronchitis virus (strain Beau...</td>
+      <td>Gallus gallus (Chicken) [TaxID: 9031]</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P11224</td>
+      <td>SPIKE_CVMA5</td>
+      <td>reviewed</td>
+      <td>Spike glycoprotein (S glycoprotein) (E2) (Pepl...</td>
+      <td>S 3</td>
+      <td>Murine coronavirus (strain A59) (MHV-A59) (Mur...</td>
+      <td>Mus musculus (Mouse) [TaxID: 10090]</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P0C6X9</td>
+      <td>R1AB_CVMA5</td>
+      <td>reviewed</td>
+      <td>Replicase polyprotein 1ab (pp1ab) (ORF1ab poly...</td>
+      <td>rep 1a-1b</td>
+      <td>Murine coronavirus (strain A59) (MHV-A59) (Mur...</td>
+      <td>Mus musculus (Mouse) [TaxID: 10090]</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>There are total 21,876 proteins from different sources</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(21876, 8)
+</pre></div>
+
+
+<h4 id="q-what-are-the-different-organisms-can-you-find-the-top-50-organisms">Q: What are the different Organisms? Can you find the top 50 Organisms?</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df_organism <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(df<span style="color: #555555">.</span>groupby(<span style="color: #CC3300">&quot;Organism&quot;</span>)<span style="color: #555555">.</span>count()[<span style="color: #CC3300">&#39;Entry&#39;</span>])
+df_organism <span style="color: #555555">=</span> df_organism<span style="color: #555555">.</span>sort_values(by <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;Entry&quot;</span>, ascending <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">False</span>)
+df_organism[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">20</span>]<span style="color: #555555">.</span>plot<span style="color: #555555">.</span>barh(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">10</span>], fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>gca()<span style="color: #555555">.</span>invert_yaxis()
+</pre></div>
+
+
+<p><img alt="png" src="../output_14_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df_organism[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">20</span>]
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Entry</th>
+    </tr>
+    <tr>
+      <th>Organism</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Infectious bronchitis virus</th>
+      <td>8184</td>
+    </tr>
+    <tr>
+      <th>Porcine epidemic diarrhea virus</th>
+      <td>4657</td>
+    </tr>
+    <tr>
+      <th>Middle East respiratory syndrome-related coronavirus</th>
+      <td>1139</td>
+    </tr>
+    <tr>
+      <th>Feline coronavirus</th>
+      <td>983</td>
+    </tr>
+    <tr>
+      <th>Human coronavirus OC43 (HCoV-OC43)</th>
+      <td>630</td>
+    </tr>
+    <tr>
+      <th>Avian coronavirus</th>
+      <td>497</td>
+    </tr>
+    <tr>
+      <th>Canine coronavirus</th>
+      <td>463</td>
+    </tr>
+    <tr>
+      <th>Human coronavirus NL63 (HCoV-NL63)</th>
+      <td>333</td>
+    </tr>
+    <tr>
+      <th>Transmissible gastroenteritis virus</th>
+      <td>258</td>
+    </tr>
+    <tr>
+      <th>Porcine deltacoronavirus</th>
+      <td>235</td>
+    </tr>
+    <tr>
+      <th>Bovine coronavirus</th>
+      <td>225</td>
+    </tr>
+    <tr>
+      <th>Human coronavirus 229E (HCoV-229E)</th>
+      <td>210</td>
+    </tr>
+    <tr>
+      <th>Murine hepatitis virus</th>
+      <td>111</td>
+    </tr>
+    <tr>
+      <th>Human coronavirus HKU1 (HCoV-HKU1)</th>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>Porcine hemagglutinating encephalomyelitis virus</th>
+      <td>104</td>
+    </tr>
+    <tr>
+      <th>Porcine respiratory coronavirus</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>Alphacoronavirus sp.</th>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>Human immunodeficiency virus 1</th>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>Bat SARS-like coronavirus</th>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>Hepatitis B virus (HBV)</th>
+      <td>66</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="q-what-are-the-different-viral-hosts-can-you-find-top-virus-hosts">Q: What are the different Viral hosts? Can you find top Virus hosts?</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df[<span style="color: #CC3300">&#39;Virus hosts&#39;</span>] <span style="color: #555555">=</span> df[<span style="color: #CC3300">&#39;Virus hosts&#39;</span>]<span style="color: #555555">.</span>apply(<span style="color: #006699; font-weight: bold">lambda</span> x: <span style="color: #336666">str</span>(x)[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">50</span>] )
+df_host <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(df<span style="color: #555555">.</span>groupby(<span style="color: #CC3300">&quot;Virus hosts&quot;</span>)<span style="color: #555555">.</span>count()[<span style="color: #CC3300">&#39;Entry&#39;</span>])
+df_host <span style="color: #555555">=</span> df_host<span style="color: #555555">.</span>sort_values(by <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;Entry&quot;</span>, ascending <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">False</span>)
+df_host[<span style="color: #FF6600">1</span>:<span style="color: #FF6600">20</span>]<span style="color: #555555">.</span>plot<span style="color: #555555">.</span>barh(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">10</span>], fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>gca()<span style="color: #555555">.</span>invert_yaxis()
+</pre></div>
+
+
+<p><img alt="png" src="../output_17_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df_host[<span style="color: #FF6600">1</span>:<span style="color: #FF6600">20</span>]
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Entry</th>
+    </tr>
+    <tr>
+      <th>Virus hosts</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Homo sapiens (Human) [TaxID: 9606]</th>
+      <td>1385</td>
+    </tr>
+    <tr>
+      <th>Bos taurus (Bovine) [TaxID: 9913]</th>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>Homo sapiens (Human) [TaxID: 9606]; Pan troglodyte</th>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>Gallus gallus (Chicken) [TaxID: 9031]</th>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>Sus scrofa (Pig) [TaxID: 9823]</th>
+      <td>57</td>
+    </tr>
+    <tr>
+      <th>Mus musculus (Mouse) [TaxID: 10090]</th>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>Meleagris gallopavo (Wild turkey) [TaxID: 9103]</th>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>Homo sapiens (Human) [TaxID: 9606]; Paguma larvata</th>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>Alliaria petiolata (Garlic mustard) (Arabis petiol</th>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>Pipistrellus abramus (Japanese pipistrelle) (Pipis</th>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>Tylonycteris pachypus (Lesser bamboo bat) [TaxID:</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>Canis lupus familiaris (Dog) (Canis familiaris) [T</th>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>Rattus norvegicus (Rat) [TaxID: 10116]</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Rousettus leschenaultii (Leschenault's rousette) [</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Equus caballus (Horse) [TaxID: 9796]</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Felidae (cat family) [TaxID: 9681]</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Impatiens [TaxID: 35939]</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Scotophilus kuhlii (Lesser asiatic yellow bat) [Ta</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Rhinolophus sinicus (Chinese rufous horseshoe bat)</th>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="3-cleaning-protein-names-synonyms-and-abbreviations">3. Cleaning Protein Names, Synonyms and abbreviations</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">filter</span>(line):
+    proteins <span style="color: #555555">=</span> <span style="color: #336666">set</span>()
+    line <span style="color: #555555">=</span> <span style="color: #336666">str</span>(line)
+    line <span style="color: #555555">=</span> line<span style="color: #555555">.</span>lower()
+
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;for lines without () or [] terms&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">if</span> <span style="color: #CC3300">&quot;(&quot;</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> line <span style="color: #000000; font-weight: bold">or</span> <span style="color: #CC3300">&quot;[&quot;</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> line:
+        proteins<span style="color: #555555">.</span>add(line<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&#39; &#39;</span>, <span style="color: #CC3300">&#39;_&#39;</span>))
+
+
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;for line including () terms&#39;&#39;&#39;</span>    
+    <span style="color: #006699; font-weight: bold">if</span> <span style="color: #CC3300">&#39;(&#39;</span> <span style="color: #000000; font-weight: bold">in</span> line:
+        start <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        open_in <span style="color: #555555">=</span> line<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;(&#39;</span>)
+        tmp <span style="color: #555555">=</span> line[start:open_in]<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&#39; &#39;</span>, <span style="color: #CC3300">&#39;_&#39;</span>)
+        proteins<span style="color: #555555">.</span>add(tmp)
+        <span style="color: #006699; font-weight: bold">while</span> open_in <span style="color: #555555">&gt;=</span><span style="color: #FF6600">0</span>:
+            start <span style="color: #555555">=</span> open_in<span style="color: #555555">+</span><span style="color: #FF6600">1</span>
+            end <span style="color: #555555">=</span> line<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;)&#39;</span>, start)
+            proteins<span style="color: #555555">.</span>add(line[start:end]<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&#39; &#39;</span>, <span style="color: #CC3300">&#39;_&#39;</span>))
+            open_in <span style="color: #555555">=</span> line<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;(&#39;</span>, end)
+
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;for lines including [] trems&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">if</span> <span style="color: #CC3300">&#39;[&#39;</span> <span style="color: #000000; font-weight: bold">in</span> line:
+        raw <span style="color: #555555">=</span> line[line<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;[&#39;</span>):line<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;]&#39;</span>)]
+        <span style="color: #0099FF; font-style: italic">#print(&quot;THIS IS RAW:&quot;, raw[15:-1])</span>
+        raw <span style="color: #555555">=</span> raw[<span style="color: #FF6600">15</span>:<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]
+        lraw <span style="color: #555555">=</span> raw<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;; &quot;</span>)
+        <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> lraw:
+            <span style="color: #0099FF; font-style: italic">#print(item)</span>
+            <span style="color: #006699; font-weight: bold">if</span> <span style="color: #CC3300">&#39;(&#39;</span> <span style="color: #000000; font-weight: bold">in</span> item:
+                start <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+                open_in <span style="color: #555555">=</span> item<span style="color: #555555">.</span>find(<span style="color: #CC3300">&#39;(&#39;</span>)
+                tmp <span style="color: #555555">=</span> item[start:open_in]<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&#39; &#39;</span>, <span style="color: #CC3300">&#39;_&#39;</span>)
+                proteins<span style="color: #555555">.</span>add(tmp)
+            <span style="color: #006699; font-weight: bold">else</span>:
+                proteins<span style="color: #555555">.</span>add(item<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>replace(<span style="color: #CC3300">&#39; &#39;</span>, <span style="color: #CC3300">&#39;_&#39;</span>))
+    <span style="color: #006699; font-weight: bold">return</span> proteins
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>allProteins <span style="color: #555555">=</span> []
+i <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+<span style="color: #006699; font-weight: bold">for</span> u,p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(df[<span style="color: #CC3300">&#39;Entry&#39;</span>],df[<span style="color: #CC3300">&#39;Protein names&#39;</span>]):
+    <span style="color: #336666">print</span>(u,<span style="color: #CC3300">&quot;|&quot;</span>,p)
+    <span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;------------&quot;</span>)
+    <span style="color: #336666">print</span>(u,<span style="color: #CC3300">&quot;|&quot;</span>,<span style="color: #336666">filter</span>(p))
+    <span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;===================================================&quot;</span>)
+    i <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+    <span style="color: #006699; font-weight: bold">if</span> i<span style="color: #555555">&gt;</span><span style="color: #FF6600">4</span>:
+        <span style="color: #006699; font-weight: bold">break</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>A0A3R5SMJ6 | Genome polyprotein
+------------
+A0A3R5SMJ6 | {&#39;genome_polyprotein&#39;}
+===================================================
+M1UFP6 | Genome polyprotein
+------------
+M1UFP6 | {&#39;genome_polyprotein&#39;}
+===================================================
+P11223 | Spike glycoprotein (S glycoprotein) (E2) 
+(Peplomer protein) [Cleaved into: Spike protein S1; 
+Spike protein S2; Spike protein S2&#39;]
+------------
+P11223 | {&#39;peplomer_protein&#39;, &#39;spike_protein_s1&#39;,
+&#39;e2&#39;, &#39;spike_protein_s2&#39;, &#39;spike_glycoprotein&#39;,
+&#39;s_glycoprotein&#39;}
+===================================================
+P11224 | Spike glycoprotein (S glycoprotein) (E2) 
+(Peplomer protein) [Cleaved into: Spike protein S1;
+Spike protein S2; Spike protein S2&#39;]
+------------
+P11224 | {&#39;peplomer_protein&#39;, &#39;spike_protein_s1&#39;,
+&#39;e2&#39;, &#39;spike_protein_s2&#39;, &#39;spike_glycoprotein&#39;,
+&#39;s_glycoprotein&#39;}
+===================================================
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>allProteins <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> u,p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(df[<span style="color: #CC3300">&#39;Entry&#39;</span>],df[<span style="color: #CC3300">&#39;Protein names&#39;</span>]):
+    allProteins<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:u, <span style="color: #CC3300">&quot;names&quot;</span>:<span style="color: #336666">list</span>(<span style="color: #336666">filter</span>(p))})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>allProteins[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">5</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[{&#39;id&#39;: &#39;A0A3R5SMJ6&#39;, &#39;names&#39;: [&#39;genome_polyprotein&#39;]},
+ {&#39;id&#39;: &#39;M1UFP6&#39;, &#39;names&#39;: [&#39;genome_polyprotein&#39;]},
+ {&#39;id&#39;: &#39;P11223&#39;,
+  &#39;names&#39;: [&#39;peplomer_protein&#39;,
+   &#39;spike_protein_s1&#39;,
+   &#39;e2&#39;,
+   &#39;spike_protein_s2&#39;,
+   &#39;spike_glycoprotein&#39;,
+   &#39;s_glycoprotein&#39;]},
+ {&#39;id&#39;: &#39;P11224&#39;,
+  &#39;names&#39;: [&#39;peplomer_protein&#39;,
+   &#39;spike_protein_s1&#39;,
+   &#39;e2&#39;,
+   &#39;spike_protein_s2&#39;,
+   &#39;spike_glycoprotein&#39;,
+   &#39;s_glycoprotein&#39;]},
+ {&#39;id&#39;: &#39;P0C6X9&#39;,
+  &#39;names&#39;: [&#39;m-pro&#39;,
+   &#39;nsp16&#39;,
+   &#39;nsp7&#39;,
+   &#39;exon&#39;,
+   &#39;nsp14&#39;,
+   &#39;nsp10&#39;,
+   &#39;guanine-n7_methyltransferase&#39;,
+   &#39;ec_3.4.22.-&#39;,
+   &#39;nendou&#39;,
+   &#39;non-structural_protein_3&#39;,
+   &#39;non-structural_protein_2&#39;,
+   &#39;ec_2.1.1.-&#39;,
+   &quot;2&#39;-o-methyltransferase&quot;,
+   &#39;hel&#39;,
+   &#39;pol&#39;,
+   &#39;ec_3.6.4.13&#39;,
+   &#39;growth_factor-like_peptide&#39;,
+   &#39;non-structural_protein_7&#39;,
+   &#39;gfl&#39;,
+   &#39;ec_3.4.22.69&#39;,
+   &#39;p22&#39;,
+   &#39;p27&#39;,
+   &#39;non-structural_protein_9&#39;,
+   &#39;orf1ab_polyprotein&#39;,
+   &#39;nsp4&#39;,
+   &#39;uridylate-specific_endoribonuclease&#39;,
+   &#39;3cl-pro&#39;,
+   &#39;pp1ab&#39;,
+   &#39;p65&#39;,
+   &#39;host_translation_inhibitor_nsp1&#39;,
+   &#39;p15&#39;,
+   &#39;nsp1&#39;,
+   &#39;ec_3.6.4.12&#39;,
+   &#39;nsp2&#39;,
+   &#39;ec_2.7.7.48&#39;,
+   &#39;p67&#39;,
+   &#39;nsp12&#39;,
+   &#39;peptide_hd2&#39;,
+   &#39;nsp5&#39;,
+   &#39;p210&#39;,
+   &#39;rdrp&#39;,
+   &#39;nsp9&#39;,
+   &#39;p100&#39;,
+   &#39;nsp3&#39;,
+   &#39;nsp8&#39;,
+   &#39;non-structural_protein_6&#39;,
+   &#39;rna-directed_rna_polymerase&#39;,
+   &#39;p35&#39;,
+   &#39;3c-like_proteinase&#39;,
+   &#39;papain-like_proteinase&#39;,
+   &#39;ec_3.1.13.-&#39;,
+   &#39;non-structural_protein_4&#39;,
+   &#39;pl-pro&#39;,
+   &#39;3clp&#39;,
+   &#39;p12&#39;,
+   &#39;non-structural_protein_10&#39;,
+   &#39;p28&#39;,
+   &#39;non-structural_protein_8&#39;,
+   &#39;helicase&#39;,
+   &#39;nsp6&#39;,
+   &#39;nsp13&#39;,
+   &#39;nsp15&#39;,
+   &#39;p44&#39;,
+   &#39;ec_3.1.-.-&#39;,
+   &#39;replicase_polyprotein_1ab&#39;,
+   &#39;ec_3.4.19.12&#39;,
+   &#39;p10&#39;]}]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;virus-proteins.json&quot;</span>, <span style="color: #CC3300">&#39;w&#39;</span>) <span style="color: #006699; font-weight: bold">as</span> fn:
+    json<span style="color: #555555">.</span>dump(allProteins,fn)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../icd11/icd/" class="btn btn-neutral float-right" title="ICD 11 Codes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../mesh/mesh/" class="btn btn-neutral" title="MeSH Tree"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../mesh/mesh/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../icd11/icd/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

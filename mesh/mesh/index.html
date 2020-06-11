@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>MeSH Tree - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MeSH Tree";
+    var mkdocs_page_input_path = "mesh/mesh.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        MeSH Tree
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#mesh-tree-data">
+      MeSH Tree Data
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#mesh-tree">MeSH Tree</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#view-cvd-mesh-tree-online">View CVD MeSH Tree Online</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data Preparation &raquo;</li>
+        
+      
+    
+    <li>MeSH Tree</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="mesh-tree-data">MeSH Tree Data</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">collections</span> <span style="color: #006699; font-weight: bold">import</span> Counter
+</pre></div>
+
+
+<h4 id="mesh-tree">MeSH Tree</h4>
+<p>This MeSH tree data is available at National Library of Medicine (NLM) website. MeSH descriptors are organized in 16 categories: category A for anatomic terms, category B for organisms, C for diseases, D for drugs and chemicals, etc. Each category is further divided into subcategories. Within each subcategory, descriptors are arrayed hierarchically from most general to most specific in up to thirteen hierarchical levels. Because of the branching structure of the hierarchies, these lists are sometimes referred to as "trees". Each MeSH descriptor appears in at least one place in the trees, and may appear in as many additional places as may be appropriate. Those who use MeSH should find the most specific MeSH descriptor that is available to represent each concept of interest.<a href="https://www.nlm.nih.gov/mesh/intro_trees.html">Source</a></p>
+<ul>
+<li><a href="https://caseolap.github.io/meshtrees/trees/C14.html">View CVD MeSH Tree Online</a></li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>meshtree_file <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;./input/mtrees2020.bin&quot;</span> 
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Tree <span style="color: #555555">=</span> []
+id2name <span style="color: #555555">=</span> {}
+name2id <span style="color: #555555">=</span> {}
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(meshtree_file, <span style="color: #CC3300">&quot;r&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> ftree:
+    <span style="color: #006699; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> ftree:
+        term_tree <span style="color: #555555">=</span> line<span style="color: #555555">.</span>strip()<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;;&quot;</span>)
+        cur_term <span style="color: #555555">=</span> term_tree[<span style="color: #FF6600">0</span>]
+        cur_tree <span style="color: #555555">=</span> term_tree[<span style="color: #FF6600">1</span>]
+
+        id2name<span style="color: #555555">.</span>update({cur_tree:cur_term})                        
+        name2id<span style="color: #555555">.</span>update({cur_term:cur_tree})
+        Tree<span style="color: #555555">.</span>append({<span style="color: #CC3300">&#39;id&#39;</span>:cur_tree ,<span style="color: #CC3300">&#39;name&#39;</span>:cur_term})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CVDTree <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> name,ID <span style="color: #000000; font-weight: bold">in</span> name2id<span style="color: #555555">.</span>items():
+    <span style="color: #006699; font-weight: bold">if</span> ID[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">3</span>] <span style="color: #555555">==</span> <span style="color: #CC3300">&#39;C14&#39;</span>:
+            CVDTree<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;name&quot;</span>: name, <span style="color: #CC3300">&quot;ID&quot;</span>:ID})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">len</span>(<span style="color: #336666">list</span>(CVDTree))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>204
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CVD <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(CVDTree)
+CVD <span style="color: #555555">=</span> CVD<span style="color: #555555">.</span>set_index(<span style="color: #CC3300">&#39;name&#39;</span>)
+CVD <span style="color: #555555">=</span> CVD<span style="color: #555555">.</span>sort_values(<span style="color: #CC3300">&quot;ID&quot;</span>,ascending <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CVD<span style="color: #555555">.</span>head(<span style="color: #FF6600">50</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Cardiovascular Diseases</th>
+      <td>C14</td>
+    </tr>
+    <tr>
+      <th>Cardiovascular Infections</th>
+      <td>C14.260</td>
+    </tr>
+    <tr>
+      <th>Syphilis, Cardiovascular</th>
+      <td>C14.260.500</td>
+    </tr>
+    <tr>
+      <th>Tuberculosis, Cardiovascular</th>
+      <td>C14.260.750</td>
+    </tr>
+    <tr>
+      <th>Heart Diseases</th>
+      <td>C14.280</td>
+    </tr>
+    <tr>
+      <th>Carcinoid Heart Disease</th>
+      <td>C14.280.104</td>
+    </tr>
+    <tr>
+      <th>Cardiac Conduction System Disease</th>
+      <td>C14.280.123</td>
+    </tr>
+    <tr>
+      <th>Pre-Excitation Syndromes</th>
+      <td>C14.280.123.750</td>
+    </tr>
+    <tr>
+      <th>Lown-Ganong-Levine Syndrome</th>
+      <td>C14.280.123.750.560</td>
+    </tr>
+    <tr>
+      <th>Pre-Excitation, Mahaim-Type</th>
+      <td>C14.280.123.750.770</td>
+    </tr>
+    <tr>
+      <th>Cardiac Tamponade</th>
+      <td>C14.280.155</td>
+    </tr>
+    <tr>
+      <th>Cardiomyopathies</th>
+      <td>C14.280.238</td>
+    </tr>
+    <tr>
+      <th>Cardiomyopathy, Dilated</th>
+      <td>C14.280.238.070</td>
+    </tr>
+    <tr>
+      <th>Cardiomyopathy, Restrictive</th>
+      <td>C14.280.238.160</td>
+    </tr>
+    <tr>
+      <th>Chagas Cardiomyopathy</th>
+      <td>C14.280.238.190</td>
+    </tr>
+    <tr>
+      <th>Endocardial Fibroelastosis</th>
+      <td>C14.280.238.281</td>
+    </tr>
+    <tr>
+      <th>Endomyocardial Fibrosis</th>
+      <td>C14.280.238.406</td>
+    </tr>
+    <tr>
+      <th>Myocarditis</th>
+      <td>C14.280.238.625</td>
+    </tr>
+    <tr>
+      <th>Endocarditis</th>
+      <td>C14.280.282</td>
+    </tr>
+    <tr>
+      <th>Endocarditis, Bacterial</th>
+      <td>C14.280.282.407</td>
+    </tr>
+    <tr>
+      <th>Endocarditis, Subacute Bacterial</th>
+      <td>C14.280.282.407.407</td>
+    </tr>
+    <tr>
+      <th>Endocarditis, Non-Infective</th>
+      <td>C14.280.282.703</td>
+    </tr>
+    <tr>
+      <th>Heart Arrest</th>
+      <td>C14.280.383</td>
+    </tr>
+    <tr>
+      <th>Out-of-Hospital Cardiac Arrest</th>
+      <td>C14.280.383.610</td>
+    </tr>
+    <tr>
+      <th>Heart Failure</th>
+      <td>C14.280.434</td>
+    </tr>
+    <tr>
+      <th>Cardio-Renal Syndrome</th>
+      <td>C14.280.434.156</td>
+    </tr>
+    <tr>
+      <th>Heart Failure, Diastolic</th>
+      <td>C14.280.434.611</td>
+    </tr>
+    <tr>
+      <th>Heart Failure, Systolic</th>
+      <td>C14.280.434.676</td>
+    </tr>
+    <tr>
+      <th>Heart Neoplasms</th>
+      <td>C14.280.459</td>
+    </tr>
+    <tr>
+      <th>Heart Rupture</th>
+      <td>C14.280.470</td>
+    </tr>
+    <tr>
+      <th>Heart Rupture, Post-Infarction</th>
+      <td>C14.280.470.475</td>
+    </tr>
+    <tr>
+      <th>Ventricular Septal Rupture</th>
+      <td>C14.280.470.475.900</td>
+    </tr>
+    <tr>
+      <th>Heart Valve Diseases</th>
+      <td>C14.280.484</td>
+    </tr>
+    <tr>
+      <th>Aortic Valve Insufficiency</th>
+      <td>C14.280.484.095</td>
+    </tr>
+    <tr>
+      <th>Cardiomyopathy, Hypertrophic</th>
+      <td>C14.280.484.150.070.160</td>
+    </tr>
+    <tr>
+      <th>Heart Valve Prolapse</th>
+      <td>C14.280.484.400</td>
+    </tr>
+    <tr>
+      <th>Aortic Valve Prolapse</th>
+      <td>C14.280.484.400.100</td>
+    </tr>
+    <tr>
+      <th>Mitral Valve Prolapse</th>
+      <td>C14.280.484.400.500</td>
+    </tr>
+    <tr>
+      <th>Tricuspid Valve Prolapse</th>
+      <td>C14.280.484.400.875</td>
+    </tr>
+    <tr>
+      <th>Mitral Valve Insufficiency</th>
+      <td>C14.280.484.461</td>
+    </tr>
+    <tr>
+      <th>Mitral Valve Stenosis</th>
+      <td>C14.280.484.517</td>
+    </tr>
+    <tr>
+      <th>Pulmonary Valve Insufficiency</th>
+      <td>C14.280.484.660</td>
+    </tr>
+    <tr>
+      <th>Tricuspid Valve Insufficiency</th>
+      <td>C14.280.484.856</td>
+    </tr>
+    <tr>
+      <th>Tricuspid Valve Stenosis</th>
+      <td>C14.280.484.911</td>
+    </tr>
+    <tr>
+      <th>Pericardial Effusion</th>
+      <td>C14.280.695</td>
+    </tr>
+    <tr>
+      <th>Pericarditis</th>
+      <td>C14.280.720</td>
+    </tr>
+    <tr>
+      <th>Pericarditis, Constrictive</th>
+      <td>C14.280.720.595</td>
+    </tr>
+    <tr>
+      <th>Pericarditis, Tuberculous</th>
+      <td>C14.280.720.801</td>
+    </tr>
+    <tr>
+      <th>Pneumopericardium</th>
+      <td>C14.280.763</td>
+    </tr>
+    <tr>
+      <th>Pulmonary Heart Disease</th>
+      <td>C14.280.832</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CVD<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&quot;cvd.csv&quot;</span>)
+</pre></div>
+
+
+<h4 id="view-cvd-mesh-tree-online"><a href="https://caseolap.github.io/meshtrees/trees/C14.html">View CVD MeSH Tree Online</a></h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../uniprot/uniprot/" class="btn btn-neutral float-right" title="Uniprot">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../setup/neo4j/" class="btn btn-neutral" title="Setting up Neo4J"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../setup/neo4j/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../uniprot/uniprot/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

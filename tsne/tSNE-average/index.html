@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>tSNE - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "tSNE";
+    var mkdocs_page_input_path = "tsne/tSNE-average.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        tSNE
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#cluster-tsne-complete-linkage">
+      Cluster: tSNE complete linkage
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#which-is-maximum">Which is Maximum</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l2">
+    <a href="#cluster-aglo-complete">
+      Cluster-Aglo: Complete
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#build-the-manifold">Build the Manifold</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#results">Results</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#add-uniprot">Add UNiprot</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#seperate-cluster-plots">Seperate cluster plots</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#cluster-in-deep">Cluster In deep</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Machine Learning &raquo;</li>
+        
+      
+    
+    <li>tSNE</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="cluster-tsne-complete-linkage">Cluster: tSNE complete linkage</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">time</span> <span style="color: #006699; font-weight: bold">import</span> time
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">scipy</span> <span style="color: #006699; font-weight: bold">import</span> ndimage
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">sklearn</span> <span style="color: #006699; font-weight: bold">import</span> manifold, datasets
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">sklearn.cluster</span> <span style="color: #006699; font-weight: bold">import</span> AgglomerativeClustering
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">sklearn.metrics</span> <span style="color: #006699; font-weight: bold">import</span> silhouette_score
+<span style="color: #555555">%</span>matplotlib inline
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sns<span style="color: #555555">.</span>set(font_scale<span style="color: #555555">=</span><span style="color: #FF6600">1.8</span>)
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(<span style="color: #CC3300">&#39;../../datareader/score/score.csv&#39;</span>)
+data<span style="color: #555555">.</span>index <span style="color: #555555">=</span> data[<span style="color: #CC3300">&#39;Protein&#39;</span>]
+ndf <span style="color: #555555">=</span> data<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;Protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ndf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CHD</th>
+      <th>CM</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>VD</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>alpha-1-antitrypsin</th>
+      <td>0.009000</td>
+      <td>0.120724</td>
+      <td>0.036423</td>
+      <td>0.047402</td>
+      <td>0.103137</td>
+      <td>0.023655</td>
+    </tr>
+    <tr>
+      <th>mothers_against_decapentaplegic_homolog_4</th>
+      <td>0.005316</td>
+      <td>0.080604</td>
+      <td>0.056011</td>
+      <td>0.010512</td>
+      <td>0.039842</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>vascular_endothelial_growth_factor_b</th>
+      <td>0.000000</td>
+      <td>0.006129</td>
+      <td>0.073377</td>
+      <td>0.028607</td>
+      <td>0.121075</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>indoleamine_2,3-dioxygenase_1</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.034477</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>thyroxine-binding_globulin</th>
+      <td>0.000000</td>
+      <td>0.036206</td>
+      <td>0.020516</td>
+      <td>0.006959</td>
+      <td>0.048815</td>
+      <td>0.024457</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="which-is-maximum">Which is Maximum</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>mdata <span style="color: #555555">=</span> ndf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+dis <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;ARR&#39;</span>, <span style="color: #CC3300">&#39;CHD&#39;</span>, <span style="color: #CC3300">&#39;CM&#39;</span>, <span style="color: #CC3300">&#39;CVA&#39;</span>, <span style="color: #CC3300">&#39;IHD&#39;</span>, <span style="color: #CC3300">&#39;VD&#39;</span>]
+idx <span style="color: #555555">=</span> <span style="color: #336666">list</span>(mdata<span style="color: #555555">.</span>index)
+nmax <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> idx:
+    data <span style="color: #555555">=</span> mdata<span style="color: #555555">.</span>loc[item,:]
+    lst <span style="color: #555555">=</span> [data[<span style="color: #FF6600">0</span>],data[<span style="color: #FF6600">1</span>],data[<span style="color: #FF6600">2</span>],data[<span style="color: #FF6600">3</span>],data[<span style="color: #FF6600">4</span>],data[<span style="color: #FF6600">5</span>]]
+    m <span style="color: #555555">=</span> <span style="color: #336666">max</span>(lst)
+    <span style="color: #006699; font-weight: bold">for</span> d,e <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(dis,lst):
+        <span style="color: #006699; font-weight: bold">if</span> e <span style="color: #555555">==</span> m:
+            nmax<span style="color: #555555">.</span>append(d)
+</pre></div>
+
+
+<h2 id="cluster-aglo-complete">Cluster-Aglo: Complete</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>tdata <span style="color: #555555">=</span>ndf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>X <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(tdata)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>linkg <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;average&#39;</span>
+</pre></div>
+
+
+<h3 id="build-the-manifold">Build the Manifold</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># 2D embedding of the digits dataset</span>
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Computing embedding&quot;</span>)
+Xtsne <span style="color: #555555">=</span> manifold<span style="color: #555555">.</span>TSNE(n_components<span style="color: #555555">=</span><span style="color: #FF6600">2</span>)<span style="color: #555555">.</span>fit_transform(X)
+x_min, x_max <span style="color: #555555">=</span> np<span style="color: #555555">.</span>min(Xtsne, axis<span style="color: #555555">=</span><span style="color: #FF6600">0</span>), np<span style="color: #555555">.</span>max(Xtsne, axis<span style="color: #555555">=</span><span style="color: #FF6600">0</span>)
+Xtsne <span style="color: #555555">=</span> (Xtsne <span style="color: #555555">-</span> x_min) <span style="color: #555555">/</span> (x_max <span style="color: #555555">-</span> x_min)
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Done.&quot;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Computing embedding
+Done.
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Xtsne
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>array([[0.58949834, 0.7531166 ],
+       [0.60703075, 0.74036276],
+       [0.29339787, 0.49895537],
+       ...,
+       [0.49842042, 0.57060444],
+       [0.97006494, 0.53362143],
+       [0.02934294, 0.732129  ]], dtype=float32)
+</pre></div>
+
+
+<h3 id="results">Results</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">plot_clustering</span>(Xtsne, labels, title<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">None</span>):
+    myclc <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;mediumslateblue&#39;</span>,<span style="color: #CC3300">&#39;deepskyblue&#39;</span>,<span style="color: #CC3300">&#39;firebrick&#39;</span>,<span style="color: #CC3300">&#39;navy&#39;</span>,<span style="color: #CC3300">&#39;green&#39;</span>,<span style="color: #CC3300">&#39;darkgoldenrod&#39;</span>]
+    Color <span style="color: #555555">=</span> []
+    X <span style="color: #555555">=</span> []
+    Y <span style="color: #555555">=</span> []
+    plt<span style="color: #555555">.</span>figure(figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">15</span>, <span style="color: #FF6600">12</span>))
+    <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(Xtsne<span style="color: #555555">.</span>shape[<span style="color: #FF6600">0</span>]):
+        plt<span style="color: #555555">.</span>text(Xtsne[i, <span style="color: #FF6600">0</span>], Xtsne[i, <span style="color: #FF6600">1</span>], <span style="color: #336666">str</span>(labels[i]),
+                 color<span style="color: #555555">=</span> myclc[labels[i]],
+                 fontdict<span style="color: #555555">=</span>{<span style="color: #CC3300">&#39;weight&#39;</span>: <span style="color: #CC3300">&#39;bold&#39;</span>, <span style="color: #CC3300">&#39;size&#39;</span>: <span style="color: #FF6600">12</span>})
+        Color<span style="color: #555555">.</span>append(myclc[labels[i]])
+        X<span style="color: #555555">.</span>append(Xtsne[i, <span style="color: #FF6600">0</span>])
+        Y<span style="color: #555555">.</span>append(Xtsne[i, <span style="color: #FF6600">1</span>])
+
+    <span style="color: #006699; font-weight: bold">if</span> title <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        plt<span style="color: #555555">.</span>title(title, size<span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    plt<span style="color: #555555">.</span>axis([<span style="color: #555555">-</span><span style="color: #FF6600">0.25</span>, <span style="color: #FF6600">1.25</span>, <span style="color: #555555">-</span><span style="color: #FF6600">0.25</span>, <span style="color: #FF6600">1.25</span>])
+
+    <span style="color: #0099FF; font-style: italic">#plt.axhline(y=0, color=&#39;k&#39;)</span>
+    <span style="color: #0099FF; font-style: italic">#plt.axvline(x=0, color=&#39;k&#39;)</span>
+
+    plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+    plt<span style="color: #555555">.</span>grid(<span style="color: #006699; font-weight: bold">True</span>)
+    plt<span style="color: #555555">.</span>tight_layout()
+    <span style="color: #006699; font-weight: bold">return</span> X,Y,Color
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>myclc <span style="color: #555555">=</span> [<span style="color: #CC3300">&#39;mediumslateblue&#39;</span>,<span style="color: #CC3300">&#39;deepskyblue&#39;</span>,<span style="color: #CC3300">&#39;firebrick&#39;</span>,<span style="color: #CC3300">&#39;navy&#39;</span>,<span style="color: #CC3300">&#39;green&#39;</span>,<span style="color: #CC3300">&#39;darkgoldenrod&#39;</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>clustering <span style="color: #555555">=</span> AgglomerativeClustering(linkage<span style="color: #555555">=</span>linkg,n_clusters<span style="color: #555555">=</span><span style="color: #FF6600">6</span>)
+
+t0 <span style="color: #555555">=</span> time()
+clustering<span style="color: #555555">.</span>fit(Xtsne)
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;</span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> : </span><span style="color: #AA0000">%.2f</span><span style="color: #CC3300">s&quot;</span> <span style="color: #555555">%</span> (linkg, time() <span style="color: #555555">-</span> t0))
+
+
+X,Y,Color <span style="color: #555555">=</span> plot_clustering(Xtsne, clustering<span style="color: #555555">.</span>labels_,<span style="color: #CC3300">&quot;</span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> linkage&quot;</span> <span style="color: #555555">%</span> linkg)
+plt<span style="color: #555555">.</span>savefig(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span><span style="color: #CC3300">&#39;.png&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>average : 0.29s
+</pre></div>
+
+
+<p><img alt="png" src="../output_19_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">len</span>(clustering<span style="color: #555555">.</span>labels_)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>2702
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf <span style="color: #555555">=</span> ndf<span style="color: #555555">.</span>copy(deep <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf[<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #336666">list</span>(clustering<span style="color: #555555">.</span>labels_)
+resultdf[<span style="color: #CC3300">&#39;color&#39;</span>] <span style="color: #555555">=</span> Color
+resultdf[<span style="color: #CC3300">&#39;nmax&#39;</span>] <span style="color: #555555">=</span> nmax
+resultdf[<span style="color: #CC3300">&#39;X&#39;</span>] <span style="color: #555555">=</span> X
+resultdf[<span style="color: #CC3300">&#39;Y&#39;</span>] <span style="color: #555555">=</span> Y
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf<span style="color: #555555">.</span>head(<span style="color: #FF6600">5</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CHD</th>
+      <th>CM</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>VD</th>
+      <th>label</th>
+      <th>color</th>
+      <th>nmax</th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>alpha-1-antitrypsin</th>
+      <td>0.009000</td>
+      <td>0.120724</td>
+      <td>0.036423</td>
+      <td>0.047402</td>
+      <td>0.103137</td>
+      <td>0.023655</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>CHD</td>
+      <td>0.589498</td>
+      <td>0.753117</td>
+    </tr>
+    <tr>
+      <th>mothers_against_decapentaplegic_homolog_4</th>
+      <td>0.005316</td>
+      <td>0.080604</td>
+      <td>0.056011</td>
+      <td>0.010512</td>
+      <td>0.039842</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>CHD</td>
+      <td>0.607031</td>
+      <td>0.740363</td>
+    </tr>
+    <tr>
+      <th>vascular_endothelial_growth_factor_b</th>
+      <td>0.000000</td>
+      <td>0.006129</td>
+      <td>0.073377</td>
+      <td>0.028607</td>
+      <td>0.121075</td>
+      <td>0.000000</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.293398</td>
+      <td>0.498955</td>
+    </tr>
+    <tr>
+      <th>indoleamine_2,3-dioxygenase_1</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.034477</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>darkgoldenrod</td>
+      <td>IHD</td>
+      <td>0.949800</td>
+      <td>0.544562</td>
+    </tr>
+    <tr>
+      <th>thyroxine-binding_globulin</th>
+      <td>0.000000</td>
+      <td>0.036206</td>
+      <td>0.020516</td>
+      <td>0.006959</td>
+      <td>0.048815</td>
+      <td>0.024457</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.399345</td>
+      <td>0.635551</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr />
+<h3 id="add-uniprot">Add UNiprot</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>data <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>read_csv(<span style="color: #CC3300">&#39;uniprot.csv&#39;</span>)
+data<span style="color: #555555">.</span>index <span style="color: #555555">=</span> data[<span style="color: #CC3300">&#39;protein&#39;</span>]
+udf <span style="color: #555555">=</span> data<span style="color: #555555">.</span>drop(<span style="color: #CC3300">&#39;protein&#39;</span>,axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)
+udf<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>uniprot_id</th>
+      <th>gene_names</th>
+      <th>has_multiple_IDs</th>
+    </tr>
+    <tr>
+      <th>protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>natriuretic_peptides_b</th>
+      <td>P16860</td>
+      <td>NPPB</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>angiotensin-converting_enzyme</th>
+      <td>P12821</td>
+      <td>ACE DCP DCP1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>potassium_voltage-gated_channel_subfamily_h_member_2</th>
+      <td>Q12809</td>
+      <td>KCNH2 ERG ERG1 HERG</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>c-reactive_protein</th>
+      <td>P02741</td>
+      <td>CRP PTX1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>apolipoprotein_e</th>
+      <td>P02649</td>
+      <td>APOE</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>idx_cvd <span style="color: #555555">=</span> <span style="color: #336666">list</span>(resultdf<span style="color: #555555">.</span>index)
+idx_uprt <span style="color: #555555">=</span>  <span style="color: #336666">list</span>(udf<span style="color: #555555">.</span>index)
+
+uprot <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> idx_cvd:
+    <span style="color: #006699; font-weight: bold">if</span> item <span style="color: #000000; font-weight: bold">in</span> idx_uprt:
+        uprot<span style="color: #555555">.</span>append(udf<span style="color: #555555">.</span>loc[item,:][<span style="color: #FF6600">0</span>])
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #336666">print</span>(item,<span style="color: #CC3300">&#39;Match not Found&#39;</span>)
+        uprot<span style="color: #555555">.</span>append(<span style="color: #CC3300">&#39;NAN&#39;</span>)   
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>collectrin Match not Found
+aldo-keto_reductase_family_1_member_c4 Match not Found
+macrophage_receptor_marco Match not Found
+zinc_fingers_and_homeoboxes_protein_2 Match not Found
+transcription_factor_sp3 Match not Found
+synaptotagmin-9 Match not Found
+e3_ubiquitin-protein_ligase_nrdp1 Match not Found
+nuclear_factor_erythroid_2-related_factor_1 Match not Found
+serine/threonine-protein_phosphatase_2b_catalytic_subunit_gamma_isoform Match not Found
+myocyte-specific_enhancer_factor_2a Match not Found
+neuropeptide_s_receptor Match not Found
+fidgetin Match not Found
+histone_deacetylase_6 Match not Found
+transcription_factor_sox-2 Match not Found
+voltage-gated_potassium_channel_subunit_beta-1 Match not Found
+segment_polarity_protein_dishevelled_homolog_dvl-3 Match not Found
+mitochondrial_intermediate_peptidase Match not Found
+gtp-binding_protein_rit1 Match not Found
+oligodendrocyte_transcription_factor_1 Match not Found
+ets_homologous_factor Match not Found
+troponin_t,_slow_skeletal_muscle Match not Found
+dna_repair_protein_rad51_homolog_2 Match not Found
+xin_actin-binding_repeat-containing_protein_1 Match not Found
+3-ketoacyl-coa_thiolase,_peroxisomal Match not Found
+transcription_factor_sox-17 Match not Found
+cytochrome_p450_2b6 Match not Found
+cyclin-dependent_kinase_inhibitor_1 Match not Found
+leukotriene_b4_receptor_1 Match not Found
+trans-2,3-enoyl-coa_reductase-like Match not Found
+apoptosis-inducing_factor_1,_mitochondrial Match not Found
+frizzled-7 Match not Found
+cytohesin-2 Match not Found
+kinesin_heavy_chain_isoform_5a Match not Found
+phosphatidylcholine:ceramide_cholinephosphotransferase_1 Match not Found
+sulfiredoxin-1 Match not Found
+ubiquitin_carboxyl-terminal_hydrolase_cyld Match not Found
+ermin Match not Found
+wolframin Match not Found
+receptor-type_tyrosine-protein_phosphatase_beta Match not Found
+micos_complex_subunit_mic26 Match not Found
+neuropeptide_s Match not Found
+basic_helix-loop-helix_transcription_factor_scleraxis Match not Found
+transmembrane_6_superfamily_member_2 Match not Found
+dna_repair-scaffolding_protein Match not Found
+zinc_finger_protein_260 Match not Found
+retinoic_acid_receptor_rxr-gamma Match not Found
+electrogenic_sodium_bicarbonate_cotransporter_1 Match not Found
+zinc_finger_e-box-binding_homeobox_1 Match not Found
+beta-adrenergic_receptor_kinase_2 Match not Found
+adp-ribosylation_factor_6 Match not Found
+uroplakin-3a Match not Found
+endoplasmic_reticulum_resident_protein_44 Match not Found
+angiopoietin-related_protein_1 Match not Found
+tgf-beta-activated_kinase_1_and_map3k7-binding_protein_1 Match not Found
+rna-binding_protein_10 Match not Found
+dna-binding_protein_satb1 Match not Found
+cytosine-5)-methyltransferase_1 Match not Found
+laminin_subunit_gamma-1 Match not Found
+anthrax_toxin_receptor_2 Match not Found
+protein_kinase_c_zeta_type Match not Found
+cyclin-dependent_kinase_7 Match not Found
+potassium_channel_subfamily_k_member_2 Match not Found
+cytosolic_phospholipase_a2_gamma Match not Found
+aquaporin-3 Match not Found
+hyaluronidase_ph-20 Match not Found
+crk-like_protein Match not Found
+protein_kinase_c_eta_type Match not Found
+angiopoietin-like_protein_8 Match not Found
+fibronectin_type_iii_domain-containing_protein_5 Match not Found
+voltage-dependent_l-type_calcium_channel_subunit_beta-2 Match not Found
+eukaryotic_elongation_factor_2_kinase Match not Found
+voltage-gated_potassium_channel_subunit_beta-2 Match not Found
+complement_c1q_subcomponent_subunit_a Match not Found
+glutamate_receptor_ionotropic,_delta-2 Match not Found
+bromodomain-containing_protein_7 Match not Found
+cytosine-5)-methyltransferase_3b Match not Found
+ovarian_cancer_g-protein_coupled_receptor_1 Match not Found
+anoctamin-6 Match not Found
+complement_c4-b Match not Found
+apoptosis_regulator_bcl-2 Match not Found
+succinate_receptor_1 Match not Found
+aldo-keto_reductase_family_1_member_b15 Match not Found
+teratocarcinoma-derived_growth_factor_1 Match not Found
+s-phase_kinase-associated_protein_1 Match not Found
+talin-2 Match not Found
+transcription_factor_mafb Match not Found
+protein_kinase_c_iota_type Match not Found
+t-box_transcription_factor_tbx20 Match not Found
+nuclear_receptor_coactivator_7 Match not Found
+regulator_of_g-protein_signaling_12 Match not Found
+g-protein_coupled_receptor_family_c_group_6_member_a Match not Found
+multiple_pdz_domain_protein Match not Found
+b-cell_lymphoma_3_protein Match not Found
+bromodomain-containing_protein_4 Match not Found
+protein_kinase_c_theta_type Match not Found
+cdgsh_iron-sulfur_domain-containing_protein_1 Match not Found
+caspase_recruitment_domain-containing_protein_9 Match not Found
+interleukin-10_receptor_subunit_alpha Match not Found
+serine/threonine-protein_kinase_d3 Match not Found
+ubiquitin-like_protein_isg15 Match not Found
+e3_ubiquitin-protein_ligase_pellino_homolog_1 Match not Found
+protein_max Match not Found
+sonic_hedgehog_protein Match not Found
+matrilin-2 Match not Found
+src_kinase-associated_phosphoprotein_2 Match not Found
+toll-like_receptor_5 Match not Found
+mixed_lineage_kinase_domain-like_protein Match not Found
+cyclic_amp-dependent_transcription_factor_atf-6_alpha Match not Found
+proteasome_activator_complex_subunit_2 Match not Found
+atp-dependent_dna_helicase_q1 Match not Found
+sphingosine_1-phosphate_receptor_3 Match not Found
+protein_phosphatase_1g Match not Found
+hyaluronidase-3 Match not Found
+serine/threonine-protein_kinase_d2 Match not Found
+dual_oxidase_2 Match not Found
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf[<span style="color: #CC3300">&#39;uprot&#39;</span>] <span style="color: #555555">=</span> uprot
+resultdf<span style="color: #555555">.</span>head(<span style="color: #FF6600">10</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CHD</th>
+      <th>CM</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>VD</th>
+      <th>label</th>
+      <th>color</th>
+      <th>nmax</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>uprot</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>alpha-1-antitrypsin</th>
+      <td>0.009000</td>
+      <td>0.120724</td>
+      <td>0.036423</td>
+      <td>0.047402</td>
+      <td>0.103137</td>
+      <td>0.023655</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>CHD</td>
+      <td>0.589498</td>
+      <td>0.753117</td>
+      <td>P01009</td>
+    </tr>
+    <tr>
+      <th>mothers_against_decapentaplegic_homolog_4</th>
+      <td>0.005316</td>
+      <td>0.080604</td>
+      <td>0.056011</td>
+      <td>0.010512</td>
+      <td>0.039842</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>CHD</td>
+      <td>0.607031</td>
+      <td>0.740363</td>
+      <td>Q13485</td>
+    </tr>
+    <tr>
+      <th>vascular_endothelial_growth_factor_b</th>
+      <td>0.000000</td>
+      <td>0.006129</td>
+      <td>0.073377</td>
+      <td>0.028607</td>
+      <td>0.121075</td>
+      <td>0.000000</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.293398</td>
+      <td>0.498955</td>
+      <td>P49765</td>
+    </tr>
+    <tr>
+      <th>indoleamine_2,3-dioxygenase_1</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.034477</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>darkgoldenrod</td>
+      <td>IHD</td>
+      <td>0.949800</td>
+      <td>0.544562</td>
+      <td>P14902</td>
+    </tr>
+    <tr>
+      <th>thyroxine-binding_globulin</th>
+      <td>0.000000</td>
+      <td>0.036206</td>
+      <td>0.020516</td>
+      <td>0.006959</td>
+      <td>0.048815</td>
+      <td>0.024457</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.399345</td>
+      <td>0.635551</td>
+      <td>P05543</td>
+    </tr>
+    <tr>
+      <th>smoothelin</th>
+      <td>0.000000</td>
+      <td>0.010463</td>
+      <td>0.000000</td>
+      <td>0.020742</td>
+      <td>0.092131</td>
+      <td>0.013016</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.262940</td>
+      <td>0.600811</td>
+      <td>P53814</td>
+    </tr>
+    <tr>
+      <th>short-chain_specific_acyl-coa_dehydrogenase,_mitochondrial</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023999</td>
+      <td>0.000000</td>
+      <td>0.022102</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>firebrick</td>
+      <td>CM</td>
+      <td>0.658054</td>
+      <td>0.193892</td>
+      <td>P16219</td>
+    </tr>
+    <tr>
+      <th>protein_tyrosine_phosphatase_type_iva_1</th>
+      <td>0.030680</td>
+      <td>0.000000</td>
+      <td>0.022076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>ARR</td>
+      <td>0.580443</td>
+      <td>0.468921</td>
+      <td>Q93096</td>
+    </tr>
+    <tr>
+      <th>creatine_kinase_u-type,_mitochondrial</th>
+      <td>0.007622</td>
+      <td>0.000000</td>
+      <td>0.017123</td>
+      <td>0.000000</td>
+      <td>0.341386</td>
+      <td>0.000000</td>
+      <td>4</td>
+      <td>green</td>
+      <td>IHD</td>
+      <td>0.147972</td>
+      <td>0.526543</td>
+      <td>P12532</td>
+    </tr>
+    <tr>
+      <th>c-c_chemokine_receptor_type_5</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.019980</td>
+      <td>0.050426</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>deepskyblue</td>
+      <td>CVA</td>
+      <td>0.501680</td>
+      <td>0.598933</td>
+      <td>P51681</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;.csv&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df0 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">0</span>]
+df0<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;0.csv&#39;</span>)
+df1 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">1</span>]
+df1<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;1.csv&#39;</span>)
+df2 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">2</span>]
+df2<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;2.csv&#39;</span>)
+df3 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">3</span>]
+df3<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;3.csv&#39;</span>)
+df4 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">4</span>]
+df4<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;4.csv&#39;</span>)
+df5 <span style="color: #555555">=</span> resultdf[resultdf[<span style="color: #CC3300">&#39;label&#39;</span>]<span style="color: #555555">==</span><span style="color: #FF6600">5</span>]
+df5<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span> <span style="color: #CC3300">&#39;5.csv&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df0<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(519, 12)
+</pre></div>
+
+
+<h3 id="seperate-cluster-plots">Seperate cluster plots</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">22</span>,<span style="color: #FF6600">17</span>])
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">1</span>)
+plt<span style="color: #555555">.</span>scatter(df0[<span style="color: #CC3300">&#39;X&#39;</span>],df0[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df0[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-0&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
+plt<span style="color: #555555">.</span>scatter(df1[<span style="color: #CC3300">&#39;X&#39;</span>],df1[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df1[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-1&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">3</span>)
+plt<span style="color: #555555">.</span>scatter(df2[<span style="color: #CC3300">&#39;X&#39;</span>],df2[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df2[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-2&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">4</span>)
+plt<span style="color: #555555">.</span>scatter(df3[<span style="color: #CC3300">&#39;X&#39;</span>],df3[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df3[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-3&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">5</span>)
+plt<span style="color: #555555">.</span>scatter(df4[<span style="color: #CC3300">&#39;X&#39;</span>],df4[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df4[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-4&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">6</span>)
+plt<span style="color: #555555">.</span>scatter(df5[<span style="color: #CC3300">&#39;X&#39;</span>],df5[<span style="color: #CC3300">&#39;Y&#39;</span>],color<span style="color: #555555">=</span>df5[<span style="color: #CC3300">&#39;color&#39;</span>])
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&#39;Cluster-label-5&#39;</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;dimension 1&#39;</span>, fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;dimension 2&#39;</span>,fontsize <span style="color: #555555">=</span><span style="color: #FF6600">20</span>)
+plt<span style="color: #555555">.</span>savefig(<span style="color: #CC3300">&#39;average/&#39;</span><span style="color: #555555">+</span>linkg<span style="color: #555555">+</span><span style="color: #CC3300">&#39;-subplot.png&#39;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_33_0.png" /></p>
+<h3 id="cluster-in-deep">Cluster In deep</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>resultdf<span style="color: #555555">.</span>groupby(<span style="color: #CC3300">&#39;label&#39;</span>)<span style="color: #555555">.</span>count()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CHD</th>
+      <th>CM</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>VD</th>
+      <th>color</th>
+      <th>nmax</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>uprot</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+      <td>519</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+      <td>676</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+      <td>287</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+      <td>911</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+      <td>197</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df0<span style="color: #555555">.</span>head(<span style="color: #FF6600">10</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ARR</th>
+      <th>CHD</th>
+      <th>CM</th>
+      <th>CVA</th>
+      <th>IHD</th>
+      <th>VD</th>
+      <th>label</th>
+      <th>color</th>
+      <th>nmax</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>uprot</th>
+    </tr>
+    <tr>
+      <th>Protein</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sh3_and_multiple_ankyrin_repeat_domains_protein_3</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.039151</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.654033</td>
+      <td>0.959608</td>
+      <td>Q9BYB0</td>
+    </tr>
+    <tr>
+      <th>endophilin-b1</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.043899</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.516064</td>
+      <td>0.954616</td>
+      <td>Q9Y371</td>
+    </tr>
+    <tr>
+      <th>a_disintegrin_and_metalloproteinase_with_thrombospondin_motifs_12</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.062291</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>IHD</td>
+      <td>0.230749</td>
+      <td>0.748474</td>
+      <td>P58397</td>
+    </tr>
+    <tr>
+      <th>cytokine_receptor_common_subunit_gamma</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.039151</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.661077</td>
+      <td>0.969435</td>
+      <td>P31785</td>
+    </tr>
+    <tr>
+      <th>myelin_basic_protein</th>
+      <td>0.00000</td>
+      <td>0.007666</td>
+      <td>0.002121</td>
+      <td>0.349511</td>
+      <td>0.003877</td>
+      <td>0.003344</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.352625</td>
+      <td>0.888755</td>
+      <td>P02686</td>
+    </tr>
+    <tr>
+      <th>phosphate-regulating_neutral_endopeptidase</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.062291</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>IHD</td>
+      <td>0.226173</td>
+      <td>0.747243</td>
+      <td>P78562</td>
+    </tr>
+    <tr>
+      <th>protein_z-dependent_protease_inhibitor</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.065516</td>
+      <td>0.032020</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.432626</td>
+      <td>0.801987</td>
+      <td>Q9UK55</td>
+    </tr>
+    <tr>
+      <th>ste20-like_serine/threonine-protein_kinase</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.040786</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.545912</td>
+      <td>0.965827</td>
+      <td>Q9H2G2</td>
+    </tr>
+    <tr>
+      <th>tissue-type_plasminogen_activator</th>
+      <td>0.04285</td>
+      <td>0.013719</td>
+      <td>0.009599</td>
+      <td>0.330811</td>
+      <td>0.231620</td>
+      <td>0.006301</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.335407</td>
+      <td>0.886174</td>
+      <td>P00750</td>
+    </tr>
+    <tr>
+      <th>interleukin-20_receptor_subunit_alpha</th>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.039151</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>mediumslateblue</td>
+      <td>CVA</td>
+      <td>0.653468</td>
+      <td>0.972735</td>
+      <td>Q9UHF4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>df0[<span style="color: #FF6600">0</span>:<span style="color: #FF6600">50</span>]<span style="color: #555555">.</span>drop([<span style="color: #CC3300">&#39;X&#39;</span>,<span style="color: #CC3300">&#39;Y&#39;</span>,<span style="color: #CC3300">&#39;label&#39;</span>],axis <span style="color: #555555">=</span><span style="color: #FF6600">1</span>)<span style="color: #555555">.</span>plot<span style="color: #555555">.</span>barh(stacked<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>,figsize<span style="color: #555555">=</span>(<span style="color: #FF6600">16</span>, <span style="color: #FF6600">25</span>),fontsize <span style="color: #555555">=</span><span style="color: #FF6600">15</span> )
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f93a8b73358&gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_37_1.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../hcluster/hierarchical/" class="btn btn-neutral float-right" title="Hierarchical Clustering">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../pca/PCA-CVD/" class="btn btn-neutral" title="Principle Component Analysis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../pca/PCA-CVD/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../hcluster/hierarchical/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

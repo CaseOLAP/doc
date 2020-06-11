@@ -7,17 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="./img/favicon.ico">
-  <title>CaseOLAP</title>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>CaseOLAP Workflow - CaseOLAP</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
-  <script src="./js/jquery-2.1.1.min.js" defer></script>
-  <script src="./js/modernizr-2.8.3.min.js" defer></script>
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CaseOLAP Workflow";
+    var mkdocs_page_input_path = "caseolap/workflow.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -30,9 +37,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="./." class="icon icon-home"> CaseOLAP</a>
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -46,7 +53,7 @@
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="./.">Home</a>
+    <a class="" href="../..">Home</a>
   </li>
     
       
@@ -64,42 +71,42 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/env/">Setting up AWS cloud</a>
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/anaconda/">Setting up Python</a>
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/mongoDB/">Setting up MongoDB</a>
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/elasticsearch/">Setting up Elasticsearch</a>
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/git/">Setting up Git</a>
+    <a class="" href="../../setup/git/">Setting up Git</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./setup/neo4j/">Setting up Neo4J</a>
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
   </li>
         
       </ul>
@@ -120,35 +127,35 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./mesh/mesh/">MeSH Tree</a>
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./uniprot/uniprot/">Uniprot</a>
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./icd11/icd/">ICD 11 Codes</a>
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./reactome/Pathways/">Reactome</a>
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./drug/drugbank/">DrugBank</a>
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
   </li>
         
       </ul>
@@ -168,57 +175,76 @@
           
 
 
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        CaseOLAP Workflow
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#cloud-articture-and-workflow">
+      Cloud Articture and Workflow
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+
+  
+        
+          
+
+
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/workflow/">CaseOLAP Workflow</a>
+    <a class="" href="../Download/">Download Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/Download/">Download Pipeline</a>
+    <a class="" href="../Parsing/">Parsing Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/Parsing/">Parsing Pipeline</a>
+    <a class="" href="../Indexing/">Indexing Documents</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/Indexing/">Indexing Documents</a>
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./mongoDB/MongoPopulate/">Populate MongoDB</a>
+    <a class="" href="../TextCube/">Text-Cube Creation</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/TextCube/">Text-Cube Creation</a>
+    <a class="" href="../EntityCount/">Entity Search</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/EntityCount/">Entity Search</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="./caseolap/CaseOLAP/">CaseOLAP Score</a>
+    <a class="" href="../CaseOLAP/">CaseOLAP Score</a>
   </li>
         
       </ul>
@@ -239,28 +265,28 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./pca/PCA-CVD/">Principle Component Analysis</a>
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./tsne/tSNE-average/">tSNE</a>
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./hcluster/hierarchical/">Hierarchical Clustering</a>
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="./affinity/Affinity/">Affinity Propagation</a>
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
   </li>
         
       </ul>
@@ -276,7 +302,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="./.">CaseOLAP</a>
+        <a href="../..">CaseOLAP</a>
       </nav>
 
       
@@ -284,9 +310,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="./.">Docs</a> &raquo;</li>
+    <li><a href="../..">Docs</a> &raquo;</li>
     
+      
+        
+          <li>CaseOLAP Pipelines &raquo;</li>
+        
+      
     
+    <li>CaseOLAP Workflow</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -296,22 +328,24 @@
           <div role="main">
             <div class="section">
               
-
-  <h1 id="search">Search Results</h1>
-
-  <form id="content_search" action="search.html">
-    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
-  </form>
-
-  <div id="mkdocs-search-results" class="search-results">
-    Searching...
-  </div>
-
-
+                <h3 id="cloud-articture-and-workflow">Cloud Articture and Workflow</h3>
+<p>The detail of the workflow is shown in the figure below:</p>
+<p><img alt="img" src="https://cloudflare2.jove.com/files/ftp_upload/59108/59108fig2.jpg" /></p>
+<p>Image source: <a href="https://www.jove.com/video/59108/cloud-based-phrase-mining-analysis-user-defined-phrase-category">www.jove.com</a></p>
+<p>Figure : Platform architecture and workflow</p>
+              
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Download/" class="btn btn-neutral float-right" title="Download Pipeline">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../drug/drugbank/" class="btn btn-neutral" title="DrugBank"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -335,13 +369,17 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../../drug/drugbank/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Download/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="./js/theme.js" defer></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-      <script src="./search/main.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

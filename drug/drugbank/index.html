@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>DrugBank - CaseOLAP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "DrugBank";
+    var mkdocs_page_input_path = "drug/drugbank.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CaseOLAP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongoDB/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Preparation</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        DrugBank
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#parsing-drugs-data">
+      Parsing Drugs Data
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">CaseOLAP Pipelines</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CaseOLAP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data Preparation &raquo;</li>
+        
+      
+    
+    <li>DrugBank</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="parsing-drugs-data">Parsing Drugs Data</h3>
+<p>This notebook Explains how to parse Drug Data obtained from Drub Bank. The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug data with comprehensive drug target information. <a href="https://www.drugbank.ca/">Source</a></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">re</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">itertools</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">sys</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">os</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">time</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">traceback</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">lxml</span> <span style="color: #006699; font-weight: bold">import</span> etree
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">get_text</span>(element, tag):
+    e <span style="color: #555555">=</span> element<span style="color: #555555">.</span>find(tag)
+    <span style="color: #006699; font-weight: bold">if</span> e <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        <span style="color: #006699; font-weight: bold">return</span> e<span style="color: #555555">.</span>text
+    <span style="color: #006699; font-weight: bold">else</span>:
+        <span style="color: #006699; font-weight: bold">return</span> <span style="color: #CC3300">&#39;&#39;</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>database <span style="color: #555555">=</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;./data/fulldatabase.xml&quot;</span>, <span style="color: #CC3300">&#39;r&#39;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">xml.etree.ElementTree</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">ET</span>
+tree <span style="color: #555555">=</span> ET<span style="color: #555555">.</span>parse(database)
+root <span style="color: #555555">=</span> tree<span style="color: #555555">.</span>getroot()
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>k <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+f <span style="color: #555555">=</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;alldrugs.txt&quot;</span>, <span style="color: #CC3300">&#39;w&#39;</span>)
+Data <span style="color: #555555">=</span> []
+sdata <span style="color: #555555">=</span> []
+name <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">None</span>
+<span style="color: #006699; font-weight: bold">for</span> drug <span style="color: #000000; font-weight: bold">in</span> root:
+    k <span style="color: #555555">=</span> k <span style="color: #555555">+</span><span style="color: #FF6600">1</span>
+    name <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}name&quot;</span>)
+    <span style="color: #006699; font-weight: bold">if</span> name <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        d_name <span style="color: #555555">=</span> name<span style="color: #555555">.</span>text  
+        line  <span style="color: #555555">=</span> name<span style="color: #555555">.</span>text
+
+    state <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}state&quot;</span>)
+    <span style="color: #006699; font-weight: bold">if</span> state <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        d_state <span style="color: #555555">=</span> state<span style="color: #555555">.</span>text
+
+    description <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}description&quot;</span>)
+    <span style="color: #006699; font-weight: bold">if</span> description <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        d_description <span style="color: #555555">=</span> description<span style="color: #555555">.</span>text
+
+    indication <span style="color: #555555">=</span>  drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}indication&quot;</span>)
+    <span style="color: #006699; font-weight: bold">if</span> indication <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #006699; font-weight: bold">None</span>:
+        d_indication <span style="color: #555555">=</span> indication<span style="color: #555555">.</span>text
+
+    <span style="color: #0099FF; font-style: italic">#---------dosages --------</span>
+    dosages <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}dosages&quot;</span>)
+    D <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> dosage <span style="color: #000000; font-weight: bold">in</span> dosages:
+        d <span style="color: #555555">=</span> {}
+        <span style="color: #006699; font-weight: bold">for</span> item,n <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(dosage,[<span style="color: #CC3300">&quot;from&quot;</span>,<span style="color: #CC3300">&quot;route&quot;</span>,<span style="color: #CC3300">&quot;strength&quot;</span>]):
+            d<span style="color: #555555">.</span>update({n:item<span style="color: #555555">.</span>text})
+        D<span style="color: #555555">.</span>append(d)     
+
+    <span style="color: #0099FF; font-style: italic">#-----------------Targets -----</span>
+    targets <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}targets&quot;</span>)
+    T <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> targets:
+        T<span style="color: #555555">.</span>append(t<span style="color: #555555">.</span>text)
+
+    <span style="color: #0099FF; font-style: italic">#----------pathways ------</span>
+    pathways <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}pathways&quot;</span>)
+    P <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> pathways:
+        P<span style="color: #555555">.</span>append(t<span style="color: #555555">.</span>text)
+
+    <span style="color: #0099FF; font-style: italic">#----------synonyms ----------</span>
+    synonyms <span style="color: #555555">=</span> drug<span style="color: #555555">.</span>find(<span style="color: #CC3300">&quot;{http://www.drugbank.ca}synonyms&quot;</span>)
+    S <span style="color: #555555">=</span> []
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> synonyms:
+        S<span style="color: #555555">.</span>append(t<span style="color: #555555">.</span>text)
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(t<span style="color: #555555">.</span>text) <span style="color: #555555">&gt;</span> <span style="color: #FF6600">3</span>:
+            line <span style="color: #555555">=</span> line <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;|&quot;</span> <span style="color: #555555">+</span> t<span style="color: #555555">.</span>text
+
+    sdata<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;name&quot;</span>:d_name,\
+                 <span style="color: #CC3300">&quot;synonyms&quot;</span>:S})
+
+    Data<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;name&quot;</span>:d_name,\
+                <span style="color: #CC3300">&quot;description&quot;</span>:d_description,\
+                <span style="color: #CC3300">&quot;state&quot;</span>: d_state,\
+                <span style="color: #CC3300">&quot;indication&quot;</span>: d_indication,\
+                <span style="color: #CC3300">&quot;dosages&quot;</span>: D,\
+                <span style="color: #CC3300">&quot;synonyms&quot;</span>:S})
+    f<span style="color: #555555">.</span>write(line)
+    f<span style="color: #555555">.</span>write(<span style="color: #CC3300">&quot;</span><span style="color: #CC3300; font-weight: bold">\n</span><span style="color: #CC3300">&quot;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;Drugs.json&quot;</span>, <span style="color: #CC3300">&quot;w&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f:
+    json<span style="color: #555555">.</span>dump(Data,f)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;syn.json&quot;</span>, <span style="color: #CC3300">&quot;w&quot;</span>) <span style="color: #006699; font-weight: bold">as</span> f:
+    json<span style="color: #555555">.</span>dump(Data,f)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+DF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(sdata)
+DF<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>synonyms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lepirudin</td>
+      <td>[Hirudin variant-1, Lepirudin recombinant]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Cetuximab</td>
+      <td>[Cetuximab, Cétuximab, Cetuximabum, Immunoglob...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dornase alfa</td>
+      <td>[Deoxyribonuclease (human clone 18-1 protein m...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Denileukin diftitox</td>
+      <td>[Denileukin, Interleukin-2/diptheria toxin fus...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Etanercept</td>
+      <td>[Etanercept-szzs, RHU TNFR:FC, RHU-TNFR:FC, TN...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&quot;syn.csv&quot;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>shape
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(11922, 2)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">json</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">json</span>
+
+<span style="color: #006699; font-weight: bold">with</span> <span style="color: #336666">open</span>(<span style="color: #CC3300">&quot;Drugs.json&quot;</span>,<span style="color: #CC3300">&#39;r&#39;</span>)<span style="color: #006699; font-weight: bold">as</span> ff:
+    Data <span style="color: #555555">=</span> json<span style="color: #555555">.</span>load(ff)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+DF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(Data)
+DF<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>description</th>
+      <th>dosages</th>
+      <th>indication</th>
+      <th>name</th>
+      <th>state</th>
+      <th>synonyms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lepirudin is identical to natural hirudin exce...</td>
+      <td>[{'from': 'Injection, solution, concentrate', ...</td>
+      <td>For the treatment of heparin-induced thrombocy...</td>
+      <td>Lepirudin</td>
+      <td>liquid</td>
+      <td>[Hirudin variant-1, Lepirudin recombinant]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Cetuximab is an epidermal growth factor recept...</td>
+      <td>[{'from': 'Injection, solution', 'route': 'Int...</td>
+      <td>Cetuximab, used in combination with irinotecan...</td>
+      <td>Cetuximab</td>
+      <td>liquid</td>
+      <td>[Cetuximab, Cétuximab, Cetuximabum, Immunoglob...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dornase alfa is a biosynthetic form of human d...</td>
+      <td>[{'from': 'Solution', 'route': 'Respiratory (i...</td>
+      <td>Used as adjunct therapy in the treatment of cy...</td>
+      <td>Dornase alfa</td>
+      <td>liquid</td>
+      <td>[Deoxyribonuclease (human clone 18-1 protein m...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A recombinant DNA-derived cytotoxic protein co...</td>
+      <td>[{'from': 'Injection, solution', 'route': 'Int...</td>
+      <td>For treatment of cutaneous T-cell lymphoma</td>
+      <td>Denileukin diftitox</td>
+      <td>liquid</td>
+      <td>[Denileukin, Interleukin-2/diptheria toxin fus...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dimeric fusion protein consisting of the extra...</td>
+      <td>[{'from': 'Injection, powder, for solution', '...</td>
+      <td>Etanercept is indicated for the treatment of m...</td>
+      <td>Etanercept</td>
+      <td>liquid</td>
+      <td>[Etanercept-szzs, RHU TNFR:FC, RHU-TNFR:FC, TN...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF <span style="color: #555555">=</span> DF<span style="color: #555555">.</span>set_index(<span style="color: #CC3300">&quot;name&quot;</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>to_csv(<span style="color: #CC3300">&quot;Drugsall.csv&quot;</span>)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../caseolap/workflow/" class="btn btn-neutral float-right" title="CaseOLAP Workflow">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../reactome/Pathways/" class="btn btn-neutral" title="Reactome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../reactome/Pathways/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../caseolap/workflow/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -71,6 +71,13 @@
 
 
   <li class="navtree toctree-l2 inactive">
+    <a class="" href="../env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
     <a class="" href="../anaconda/">Setting up Python</a>
   </li>
         
@@ -78,14 +85,21 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../env/">Setting up Environment</a>
+    <a class="" href="../mongoDB/">Setting up MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../elastic/">Setting up Elasticsearch</a>
+    <a class="" href="../elasticsearch/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../git/">Setting up Git</a>
   </li>
         
           
@@ -102,62 +116,24 @@
     
       
 
-
-
-  <li class="toctree-l2 current">
-    <ul class="subnav-l2 current">
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#install-neo4j">Install Neo4j</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#startting-stopping-or-restarting-service">Startting Stopping or Restarting Service</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#for-forgotten-password">For Forgotten Password</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#for-remote-access">For remote access</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#how-to-use-new-graph-database">How to use new graph database</a>
-        </li>
-    
-    </ul>
+  <li class="toctree-l2 current with-children">
+    <a href="#implementation-of-neo4j-individual">
+      Implementation of Neo4j (Individual)
+      <span class="toctree-expand"></span>
+    </a>
   </li>
+
+
 
 
   
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../mongo/">Setting up MongoDB</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../git/">Setting up Git</a>
-  </li>
         
       </ul>
     </li>
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Introduction</p>
+    <p class="caption">Data Preparation</p>
   </li>
 
 
@@ -170,7 +146,35 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../workflow/">Workflow</a>
+    <a class="" href="../../mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../drug/drugbank/">DrugBank</a>
   </li>
         
       </ul>
@@ -178,7 +182,7 @@
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Pipelines</p>
+    <p class="caption">CaseOLAP Pipelines</p>
   </li>
 
 
@@ -191,42 +195,98 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../Download/">Download Pipeline</a>
+    <a class="" href="../../caseolap/workflow/">CaseOLAP Workflow</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../Parsing/">Parsing Pipeline</a>
+    <a class="" href="../../caseolap/Download/">Download Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../Indexing/">Indexing</a>
+    <a class="" href="../../caseolap/Parsing/">Parsing Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../TextCube/">Text-Cube Creation</a>
+    <a class="" href="../../caseolap/Indexing/">Indexing Documents</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../EntityCount/">EntityCount</a>
+    <a class="" href="../../mongoDB/MongoPopulate/">Populate MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../CaseOLAP/">CaseOLAP</a>
+    <a class="" href="../../caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../affinity/Affinity/">Affinity Propagation</a>
   </li>
         
       </ul>
@@ -268,66 +328,71 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="setting-up-neo4j">Setting Up Neo4j</h1>
-<p>The detail instruction for installing Neo4j(latest version) can be found at <a href="https://neo4j.com/docs/operations-manual/current/installation/linux/debian/">official website of Neo4j</a>. Here are the simple steps created the current time (2019 -Oct 15).</p>
-<p>Before you install, make sure the correct version of java is installed in your device</p>
-<h3 id="install-neo4j">Install Neo4j</h3>
+                <h3 id="implementation-of-neo4j-individual">Implementation of Neo4j (Individual)</h3>
 <ul>
-<li><strong>To install Neo4j Community Edition:</strong></li>
+<li>Install neo4j python driver</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install <span style="color: #003333">neo4j</span><span style="color: #555555">=</span>&lt;version&gt;
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install neo4j
 </pre></div>
 
 
 <ul>
-<li><strong>To install Neo4j Enterprise Edition:</strong></li>
+<li>Import neo4j to current environment</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install neo4j-enterprise<span style="color: #555555">=</span>&lt;version&gt;
-</pre></div>
-
-
-<h3 id="startting-stopping-or-restarting-service">Startting Stopping or Restarting Service</h3>
-<ul>
-<li><strong>To start the neo4j service</strong>:</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
-</pre></div>
-
-
-<p>Go to <code>IP/localhost:7474</code> to have neo4j browser.</p>
-<ul>
-<li><strong>To stop the neo4j service</strong>:</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
 </pre></div>
 
 
 <ul>
-<li><strong>To restart the neo4j service</strong>:</li>
+<li>Create a python driver</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo service neo4j start
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>driver <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,\
+                      auth <span style="color: #555555">=</span> (<span style="color: #CC3300">&quot;user&quot;</span>,<span style="color: #CC3300">&quot;password&quot;</span>))
 </pre></div>
 
 
-<h3 id="for-forgotten-password">For Forgotten Password</h3>
-<ol>
-<li>Stop the neo4j service</li>
-<li>remove the auth file inside <code>/var/lib/neo4j/data/dbms</code> </li>
-<li>restart the service</li>
-<li>Follow <code>server connect</code> command to recreate password</li>
-</ol>
-<h3 id="for-remote-access">For remote access</h3>
-<ol>
-<li>Stop the neo4j service</li>
-<li>Setup <code>0.0.0.0</code> instead of <code>localhost</code> in the configuration file</li>
-<li>Start the neo4j service</li>
-</ol>
-<h3 id="how-to-use-new-graph-database">How to use new graph database</h3>
-<ol>
-<li>Stop the neo4j service</li>
-<li>Find out <code>neo4j.config</code> file and repoint the new graph database.</li>
-<li>Start the neo4j service</li>
-</ol>
+<ul>
+<li>Clean the graph database, if using with pre-existing data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a) DETACH DELETE a&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create nodes in the graph</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> Data:
+    <span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MERGE(a:Disease{ID: $ID}) &quot;</span>
+                        <span style="color: #CC3300">&quot;ON CREATE SET a.code = $code, </span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.title = $title, a.defn = $defn,</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.syns = $syns, a.childs = $childs,</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.parents = $parents&quot;</span>,
+            ID<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;id&#39;</span>], code<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;code&#39;</span>], title<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;title&#39;</span>],\
+            defn<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;defn&#39;</span>], syns<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;syns&#39;</span>], childs<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;childs&#39;</span>],\
+            parents<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;parents&#39;</span>])
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship "parents"</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a:Disease),(b:Disease) &quot;</span>
+            <span style="color: #CC3300">&quot;WHERE a.ID in b.parents &quot;</span>
+            <span style="color: #CC3300">&quot;MERGE (a)&lt;-[r:Parent]-(b)&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship "children"</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a:Disease),(b:Disease) &quot;</span>
+            <span style="color: #CC3300">&quot;WHERE a.ID in b.childs &quot;</span>
+            <span style="color: #CC3300">&quot;MERGE (a)&lt;-[r:Child]-(b)&quot;</span>)
+</pre></div>
               
             </div>
           </div>
@@ -335,10 +400,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mongo/" class="btn btn-neutral float-right" title="Setting up MongoDB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../mesh/mesh/" class="btn btn-neutral float-right" title="MeSH Tree">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../elastic/" class="btn btn-neutral" title="Setting up Elasticsearch"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../git/" class="btn btn-neutral" title="Setting up Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -364,10 +429,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../elastic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../mongo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../mesh/mesh/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

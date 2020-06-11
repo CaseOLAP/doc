@@ -89,6 +89,13 @@
 
 
   <li class="navtree toctree-l2 inactive">
+    <a class="" href="setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
     <a class="" href="setup/anaconda/">Setting up Python</a>
   </li>
         
@@ -96,28 +103,14 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="setup/env/">Setting up Environment</a>
+    <a class="" href="setup/mongoDB/">Setting up MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="setup/elastic/">Setting up Elasticsearch</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="setup/neo4j/">Setting up Neo4J</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="setup/mongo/">Setting up MongoDB</a>
+    <a class="" href="setup/elasticsearch/">Setting up Elasticsearch</a>
   </li>
         
           
@@ -127,12 +120,19 @@
     <a class="" href="setup/git/">Setting up Git</a>
   </li>
         
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
       </ul>
     </li>
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Introduction</p>
+    <p class="caption">Data Preparation</p>
   </li>
 
 
@@ -145,7 +145,35 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="workflow/">Workflow</a>
+    <a class="" href="mesh/mesh/">MeSH Tree</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="uniprot/uniprot/">Uniprot</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="icd11/icd/">ICD 11 Codes</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="reactome/Pathways/">Reactome</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="drug/drugbank/">DrugBank</a>
   </li>
         
       </ul>
@@ -153,7 +181,7 @@
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Pipelines</p>
+    <p class="caption">CaseOLAP Pipelines</p>
   </li>
 
 
@@ -166,42 +194,98 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="Download/">Download Pipeline</a>
+    <a class="" href="caseolap/workflow/">CaseOLAP Workflow</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="Parsing/">Parsing Pipeline</a>
+    <a class="" href="caseolap/Download/">Download Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="Indexing/">Indexing</a>
+    <a class="" href="caseolap/Parsing/">Parsing Pipeline</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="TextCube/">Text-Cube Creation</a>
+    <a class="" href="caseolap/Indexing/">Indexing Documents</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="EntityCount/">EntityCount</a>
+    <a class="" href="mongoDB/MongoPopulate/">Populate MongoDB</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="CaseOLAP/">CaseOLAP</a>
+    <a class="" href="caseolap/TextCube/">Text-Cube Creation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="caseolap/EntityCount/">Entity Search</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="caseolap/CaseOLAP/">CaseOLAP Score</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Machine Learning</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="pca/PCA-CVD/">Principle Component Analysis</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="tsne/tSNE-average/">tSNE</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="hcluster/hierarchical/">Hierarchical Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="affinity/Affinity/">Affinity Propagation</a>
   </li>
         
       </ul>
@@ -242,11 +326,12 @@
                 <h3 id="caseolap-platform">CaseOLAP Platform</h3>
 <p>We are greatly excited with the new enthusiasm to introduce the Context-aware Semantic Online Analytical Processing pipeline (CaseOLAP), developed in 2016. The rapidly accumulating quantity of biomedical textual data has far exceeded the human capacity of manual curation and analysis, necessitating novel text-mining tools to extract biological insights from large volumes of scientific reports.CaseOLAP successfully quantifies user-defined phrase-category relationships through analysis of textual data.</p>
 <p>This online documents has been prepared for caseOLAP platform for coding tools development and implementation. We have developed a protocol for the complete CaseOLAP platform, including data preprocessing (i.e., downloading and parsing text documents), indexing and searching with Elasticsearch, creating a functional document structure called Text-Cube and quantifying phrase-category relationships using the core CaseOLAP algorithm.</p>
-<p>Data preprocessing generates key-value pairs for all documents involved. As an example, a key may refer to the document PMID, while a value may refer to different document metadata. Preprocessed data is rearranged by indexing and searching for an entity count, which further facilitates the CaseOLAP score calculation. Obtained raw CaseOLAP results can be taken to integrative analysis including dimensionality reduction, clustering, temporal and geographical analysis, as well as the creation of a graphical database which enables semantic mapping of the documents .</p>
-<p>CaseOLAP defines phrase-category relationships in an accurate (pinpoints relationships), consistent (highly reproducible), and efficient manner (processes 100,000 words/sec). Following our protocol, one can build up a cloud-computing environment supporting CaseOLAP which offers enhanced accessibility and affords grand opportunities to empower the biomedical community with phrase-mining tools for widespread research applications <a href="https://www.jove.com/video/59108/cloud-based-phrase-mining-analysis-user-defined-phrase-category">Read more</a>. </p>
 <p><img alt="img" src="https://cloudflare2.jove.com/files/ftp_upload/59108/59108fig1.jpg" /></p>
 <p>image source: <a href="https://www.jove.com/video/59108/cloud-based-phrase-mining-analysis-user-defined-phrase-category">www.jove.com</a></p>
 <p>Figure : Counting number of decendent nodes in each categories of ICD 11 code trees.</p>
+<hr />
+<p>Prepared By: PingLab (UCLA)</p>
+<hr />
               
             </div>
           </div>
@@ -254,7 +339,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup/anaconda/" class="btn btn-neutral float-right" title="Setting up Python">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="setup/env/" class="btn btn-neutral float-right" title="Setting up AWS cloud">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -282,7 +367,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="setup/anaconda/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="setup/env/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -296,5 +381,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-10-25 18:49:30
+Build Date UTC : 2020-06-11 07:22:15
 -->
